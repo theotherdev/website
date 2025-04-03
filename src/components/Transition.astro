@@ -21,7 +21,7 @@
     // Animate out before page unload
     document.addEventListener("click", (e) => {
       const link = e.target.closest("a");
-      if (link.target === "_blank") window.open(link, "_blank");
+      if (link && link.target === "_blank") window.open(link, "_blank");
       if (link && link.target !== "_blank") {
         e.preventDefault();
         gsap.to(".load-curtain", {
