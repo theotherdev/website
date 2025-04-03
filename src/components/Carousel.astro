@@ -1,0 +1,92 @@
+---
+const { images, carouselId: id } = Astro.props;
+---
+
+<div class="relative w-full">
+  <div
+    data-carousel-id={id}
+    class="group h-full whitespace-nowrap overflow-x-scroll scrollbar-hide snap-x snap-mandatory"
+    style="scroll-behavior: smooth;">
+    <div class="flex gap-4 h-full items-center">
+      {
+        images.map((image, index) => (
+          <div class="flex justify-center items-center">
+            <img
+              src={image}
+              alt="Gallery image"
+              class="w-auto object-contain snap-always snap-center"
+              style="height: auto; max-height: 80vh; max-width: 80vw;"
+            />
+          </div>
+        ))
+      }
+    </div>
+  </div>
+
+  <!-- Navigation controls (Fixed to prevent scrolling away) -->
+  <div class="absolute inset-y-0 w-full flex justify-between pointer-events-none">
+    <button
+      data-carousel-left={id}
+      class="absolute left-0 top-0 bottom-0 w-1/2 cursor-arrow-left bg-black/20-hover:bg-black/40 text-white opacity-0 hover:opacity-100 transition-opacity pointer-events-auto cursor-pointer"
+      aria-label="Previous image"></button>
+    <button
+      data-carousel-right={id}
+      class="absolute right-0 top-0 bottom-0 w-1/2 cursor-arrow-right bg-black/20-hover:bg-black/40 text-white opacity-0 hover:opacity-100 transition-opacity pointer-events-auto cursor-pointer"
+      aria-label="Next image"></button>
+  </div>
+</div>
+
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", () => {
+    const id = document.querySelector("[data-carousel-id]").dataset.carouselId;
+    const carousel = document.querySelector(`[data-carousel-id="${id}"]`);
+    const left = document.querySelector(`[data-carousel-left="${id}"]`);
+    const right = document.querySelector(`[data-carousel-right="${id}"]`);
+    const cursorExample = document.querySelector(".cursor-example");
+
+    if (!carousel || !left || !right) return;
+
+    const scrollAmount = () => carousel.clientWidth * 0.8;
+
+    left.addEventListener("click", () => {
+      carousel.scrollBy({ left: -scrollAmount(), behavior: "smooth" });
+    });
+
+    right.addEventListener("click", () => {
+      carousel.scrollBy({ left: scrollAmount(), behavior: "smooth" });
+    });
+
+    let initial;
+    left.addEventListener("mouseover", () => {
+        initial = cursorExample.style.scale;
+      cursorExample.style.scale = 2;
+    });
+    left.addEventListener("mouseout", () => {
+      cursorExample.style.scale = initial;
+    });
+    right.addEventListener("mouseover", () => {
+        initial = cursorExample.style.scale;
+      cursorExample.style.scale = 2;
+    });
+    right.addEventListener("mouseout", () => {
+      cursorExample.style.scale = initial;
+    });
+
+    // Handle keyboard navigation
+    carousel.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowLeft") left.click();
+      if (e.key === "ArrowRight") right.click();
+    });
+  });
+</script>
+
+<style>
+  /* Hide scrollbar while maintaining scrollability */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+</style>

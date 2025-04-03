@@ -1,0 +1,121 @@
+---
+import OpenInNew from "../assets/icons/open-in-new.svg";
+---
+
+<nav
+style="mix-blend-mode: exclusion;"
+  class="lg:hidden flex justify-between w-full align-middle px-8 pt-4 text-lg text-black bg-transparent- fixed top-0 z-[100]">
+  <div><p class="invert-100"><strong><a href="/">Other Dev®</a></strong></p></div>
+  <div><p class="invert-100 cursor-pointer mobile-navigation-trigger" data-active="false">Menu</p></div>
+</nav>
+<div class="mobile-navigation-backdrop overflow-scroll h-0 lg:hidden fixed w-full z-50 bg-amber-50">
+  <div class="mt-[70vh] mobile-navigation-content opacity-0">
+    <div class="pb-[3rem]">
+      {
+        [
+          {
+            title: "Work",
+            path: "/work",
+          },
+          {
+            title: "Experties",
+            path: "/experties",
+          },
+          {
+            title: "About",
+            path: "/about",
+          },
+          {
+            title: "Info",
+            path: "/info",
+          },
+        ].map((item) => (
+          <div class="border-b border-b-neutral-700 py-4 px-8">
+            <p class="text-lg">
+              <a href={item.path}>{item.title}</a>
+            </p>
+          </div>
+        ))
+      }
+    </div>
+    <div class="fixed bottom-0 w-full backdrop-blur-lg flex justify-between">
+      <div class="py-2 px-8 flex justify-right content-center items-center align-middle">
+        <img src={OpenInNew.src} class="w-8 h-8" />
+        <p class="text-md"><strong>LinkedIn</strong></p>
+      </div>
+      <div class="py-2 px-8 flex justify-right content-center items-center align-middle">
+        <img src={OpenInNew.src} class="w-8 h-8" />
+        <p class="text-md"><strong>Instagram</strong></p>
+      </div>
+      <div class="py-2 px-8 flex justify-right content-center items-center align-middle">
+        <img src={OpenInNew.src} class="w-8 h-8" />
+        <p class="text-md"><strong>Github</strong></p>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  const tl = gsap.timeline();
+  const mobileNavTrigger = document.querySelector(".mobile-navigation-trigger");
+  mobileNavTrigger?.addEventListener("click", async () => {
+    if (mobileNavTrigger?.getAttribute("data-active") === "true") {
+      tl.to(".mobile-navigation-content", { opacity: 0, duration: 0.25 }).to(
+        ".mobile-navigation-backdrop",
+        { height: 0, duration: 0.5 }
+      );
+      tl.to(".mobile-navigation-trigger", {
+        text: "Menu",
+        ease: "none",
+      });
+      mobileNavTrigger?.setAttribute("data-active", "false");
+    } else {
+      tl.to(".mobile-navigation-backdrop", { height: "100vh", duration: 0.5 }).to(
+        ".mobile-navigation-content",
+        { opacity: 1, duration: 0.25 }
+      );
+      tl.to(".mobile-navigation-trigger", {
+        text: "Close",
+        ease: "none",
+      });
+      mobileNavTrigger?.setAttribute("data-active", "true");
+    }
+  });
+</script>
+<nav
+style="mix-blend-mode: exclusion;"
+  class="hidden lg:flex justify-between invert-100 align-middle px-8 pt-4 text-lg text-white bg-transparent- fixed w-full top-0 z-[100]">
+  <div><p class="invert-100"><strong><a href="/">Other Dev®</a></strong></p></div>
+  <div><p class="invert-100">Software + Design</p></div>
+  <div class="flex invert-100"><p class="clock-time"></p><span>&nbsp;Karachi</span></div>
+  <div class="relative">
+    <ul class="absolute">
+      <li><p class="invert-100"><a href="/work">Work</a></p></li>
+      <li><p class="invert-100"><a href="/experties">Experties</a></p></li>
+      <li><p class="invert-100"><a href="/about">About</a></p></li>
+      <li><p class="invert-100"><a href="/info">Info</a></p></li>
+    </ul>
+  </div>
+  <div><p class="invert-100"><a href="/meat">Lets Meet!</a></p></div>
+</nav>
+<script is:inline>
+  const clock = document.querySelector(".clock-time");
+  const updateClockTime = async () => {
+    const date = new Date();
+    const hours = date.getHours().toString();
+    const minutes = date.getMinutes().toString();
+    const seconds = date.getSeconds().toString();
+    clock.innerHTML = `${hours < 10 ? "0" : ""}${hours}:${minutes < 10 ? "0" : ""}${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
+    requestAnimationFrame(updateClockTime);
+  };
+  window.addEventListener("resize", () => {
+    if (
+      clock.checkVisibility({
+        visibilityProperty: true,
+        contentVisibilityAuto: true,
+        contentVisibilityHidden: true,
+        contentVisibilityVisible: true,
+      })
+    )
+      requestAnimationFrame(updateClockTime);
+  });
+</script>

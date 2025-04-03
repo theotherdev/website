@@ -1,0 +1,96 @@
+<script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+<script is:inline src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/TextPlugin.min.js"></script>
+<!-- <script is:inline src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollToPlugin.min.js"></script> -->
+
+<div class="cursor-example hidden lg:block"></div>
+<!-- <script type="module">
+  import { gsap } from "../node_modules/gsap/index.js";
+</script> -->
+<script is:inline>
+  window.addEventListener("load", () => {
+    gsap.registerPlugin(TextPlugin);
+    // gsap.registerPlugin(ScrollToPlugin);
+    // Animate in on page load
+    gsap.to(".load-curtain", {
+      opacity: 0,
+      duration: 0.3,
+      delay: 0.2,
+    });
+    // gsap.to(".page", { opacity: 1, brightness: 100, duration: 0.2 });
+
+    // Animate out before page unload
+    document.addEventListener("click", (e) => {
+      const link = e.target.closest("a");
+      if (link) {
+        e.preventDefault();
+        gsap.to(".load-curtain", {
+          opacity: 1,
+          duration: 0.3,
+          onComplete: () => {
+            window.location.href = link.href;
+          },
+        });
+        // .to(".page", {
+        //   opacity: 0,
+        //   duration: 0.3, delay: 0.3,
+        //   brightness: 0,
+        //   onComplete: () => {
+        //     window.location.href = link.href;
+        //   },
+        // });
+      }
+    });
+    function isTouchDevice() {
+      return (
+        "ontouchstart" in window || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0
+      );
+    }
+    if (!isTouchDevice()) {
+      let posX = 0,
+        posY = 0;
+
+      let mouseX = 0,
+        mouseY = 0;
+
+      gsap.to(".cursor-example", {
+        duration: 0.01,
+        repeat: -1,
+        onRepeat: function () {
+          posX += (mouseX - posX) / 8;
+          posY += (mouseY - posY) / 8;
+
+          gsap.set(".cursor-example", {
+            css: {
+              left: posX - 1,
+              top: posY - 2,
+            },
+          });
+        },
+      });
+
+      document.addEventListener("mousemove", async (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+      });
+      window.addEventListener("click", async () => {
+        const initial = cursorExample.style.scale;
+        cursorExample.style.scale = 3;
+        setTimeout(() => (cursorExample.style.scale = initial), 250);
+      });
+    }
+  });
+</script>
+
+<style>
+  .cursor-example {
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition-duration: 0.3s;
+    width: 25px;
+    height: 25px;
+    border-radius: 100%;
+    background-color: white;
+    pointer-events: none;
+  }
+</style>

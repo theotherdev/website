@@ -1,11 +1,41 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
+import Navigation from "../components/Navigation.astro";
+import Shapes from "../components/Shapes.astro";
+import Layout from "../layouts/Layout.astro";
+import projects from "../data/projecta-yearly.json";
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-	<Welcome />
+  <Navigation />
+  <div class="bg-neutral-300 min-h-screen min-w-screen relative overflow-hidden flex flex-col">
+    <div class="flex-auto w-full">
+      <div class="w-full flex-auto top-[50%] fixed"><Shapes /></div>
+      <div class="absolute bottom-0 left-0 p-8 flex text-lg">
+        <ul class="mr-4">
+          {
+            projects.slice(0, 4).map((item) => (
+              <li>
+                <p>{item.year}</p>
+              </li>
+            ))
+          }
+        </ul>
+        <ul>
+          {
+            projects.slice(0, 4).map((item) => (
+              <li class="group relative">
+                <img
+                  src={item.imageSrc}
+                  class="w-[30rem] absolute max-w-[80vw] h-auto left-[30%] bottom-[2rem] group-hover:block hidden transition-all duration-75"
+                />
+                <p>{item.title}</p>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+  </div>
 </Layout>

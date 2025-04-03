@@ -1,0 +1,80 @@
+<div class="shapes-container">
+  <div class="shape-wrapper">
+    <img src="/shapes/Asterisk 2.svg" class="cursor-pointer shape-image" />
+  </div>
+</div>
+
+<script>
+  // Update to handle multiple images and better resize handling
+  const shapeImageElement = document.querySelector(".shape-image");
+  const shapeFiles = [
+    "/shapes/Asterisk 2.svg",
+    "/shapes/Butterfly.svg",
+    "/shapes/Flower.svg",
+    "/shapes/Magnet.svg",
+    "/shapes/Party.svg",
+    "/shapes/Summertime Sadness.svg",
+  ];
+  let index = 0;
+
+  const cycleShapes = () => {
+    index = (index + 1) % shapeFiles.length;
+    shapeImageElement?.setAttribute("src", shapeFiles[index]);
+  };
+
+  // Better interval handling with cleanup
+  let interval = setInterval(cycleShapes, 300);
+
+  // Pause on interaction
+  shapeImageElement?.addEventListener("click", () => {
+    clearInterval(interval);
+  });
+
+  // Restart on window blur/focus
+//   window.addEventListener("blur", () => clearInterval(interval));
+//   window.addEventListener("focus", () => (interval = setInterval(cycleShapes, 300)));
+</script>
+
+<style>
+  .shapes-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90vw;
+    height: 90vh;
+    max-width: 800px;
+    max-height: 800px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .shape-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    aspect-ratio: 1/1;
+    /* outline: solid black 2px; */
+  }
+
+  .shape-image {
+    position: absolute;
+    cursor: pointer;
+    padding: 5rem; user-select: none;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: grayscale(100%) brightness(0%);
+    transition: filter 0.3s ease;
+  }
+
+  @media (max-width: 768px) {
+    .shapes-container {
+      width: 60vh;
+      height: 60vh;
+      max-width: unset;
+      max-height: unset;
+    }
+  }
+</style>
