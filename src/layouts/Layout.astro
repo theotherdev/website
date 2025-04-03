@@ -2,6 +2,7 @@
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Transition from "../components/Transition.astro";
 import "../styles/global.css";
+import Footer from "@/components/Footer.astro";
 ---
 
 <!doctype html>
@@ -10,8 +11,24 @@ import "../styles/global.css";
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Astro Basics</title>
+    <title>The Other Dev — Creative software agency</title><meta
+      property="og:title"
+      content="The Other Dev — Creative software agency"
+    /><meta
+      property="og:image"
+      content="https://cdn.jsdelivr.net/gh/kabeer11000/docs-hosted@redirector-content/theotherdev/new-web/icon-512-maskable.png"
+    /><meta property="og:url" content="https://otherdev.com" /><meta
+      name="twitter:card"
+      content="summary_small_image"
+    /><meta
+      property="og:description"
+      content="Driven by a commitment to innovation and inclusivity, our web development approach centers on creating digital experiences that are as accessible as they are engaging. Every project is guided by the belief that good design should empower, connect, and include all users, regardless of their background or abilities.
+
+    By blending creativity with cutting-edge technology, we aim to build websites that not only meet today’s standards but also adapt and thrive in tomorrow’s digital landscape. Our team is passionate about crafting solutions that reflect these values—ensuring that every detail serves a purpose, enhances usability, and leaves a meaningful impact."
+    /><meta property="og:site_name" content="The Other Dev" /><meta
+      name="twitter:site"
+      content="@otherdevistaken"
+    />
   </head>
   <body>
     <div
@@ -75,8 +92,11 @@ import "../styles/global.css";
       </div>
     </div>
 
-    <main class="page">
-      <slot />
+    <main class="page snap-always snap-mandatory snap-y">
+      <div class="snap-center"><slot /></div>
+      <div class="snap-center">
+        <Footer />
+      </div>
     </main>
     <Transition />
   </body>

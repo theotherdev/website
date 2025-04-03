@@ -9,16 +9,19 @@ const { images, carouselId: id } = Astro.props;
     style="scroll-behavior: smooth;">
     <div class="flex gap-4 h-full items-center">
       {
-        images.map((image, index) => (
-          <div class="flex justify-center items-center">
-            <img
-              src={image}
-              alt="Gallery image"
-              class="w-auto object-contain snap-always snap-center"
-              style="height: auto; max-height: 80vh; max-width: 80vw;"
-            />
-          </div>
-        ))
+        images.map(
+          (image, index) =>
+            image && (
+              <div class="flex justify-center items-center">
+                <img
+                  src={image}
+                  alt="Gallery image"
+                  class="w-auto object-contain snap-always snap-center"
+                  style="height: auto; max-height: 80vh; max-width: 80vw;"
+                />
+              </div>
+            )
+        )
       }
     </div>
   </div>
@@ -58,14 +61,14 @@ const { images, carouselId: id } = Astro.props;
 
     let initial;
     left.addEventListener("mouseover", () => {
-        initial = cursorExample.style.scale;
+      initial = cursorExample.style.scale;
       cursorExample.style.scale = 2;
     });
     left.addEventListener("mouseout", () => {
       cursorExample.style.scale = initial;
     });
     right.addEventListener("mouseover", () => {
-        initial = cursorExample.style.scale;
+      initial = cursorExample.style.scale;
       cursorExample.style.scale = 2;
     });
     right.addEventListener("mouseout", () => {

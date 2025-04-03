@@ -3,10 +3,12 @@ import OpenInNew from "../assets/icons/open-in-new.svg";
 ---
 
 <nav
-style="mix-blend-mode: exclusion;"
+  style="mix-blend-mode: exclusion;"
   class="lg:hidden flex justify-between w-full align-middle px-8 pt-4 text-lg text-black bg-transparent- fixed top-0 z-[100]">
   <div><p class="invert-100"><strong><a href="/">Other Dev®</a></strong></p></div>
-  <div><p class="invert-100 cursor-pointer mobile-navigation-trigger" data-active="false">Menu</p></div>
+  <div>
+    <p class="invert-100 cursor-pointer mobile-navigation-trigger" data-active="false">Menu</p>
+  </div>
 </nav>
 <div class="mobile-navigation-backdrop overflow-scroll h-0 lg:hidden fixed w-full z-50 bg-amber-50">
   <div class="mt-[70vh] mobile-navigation-content opacity-0">
@@ -41,15 +43,15 @@ style="mix-blend-mode: exclusion;"
     <div class="fixed bottom-0 w-full backdrop-blur-lg flex justify-between">
       <div class="py-2 px-8 flex justify-right content-center items-center align-middle">
         <img src={OpenInNew.src} class="w-8 h-8" />
-        <p class="text-md"><strong>LinkedIn</strong></p>
+        <p class="text-md"><strong><a href="https://www.linkedin.com/company/theotherdev/" target="_blank">LinkedIn</a></strong></p>
       </div>
       <div class="py-2 px-8 flex justify-right content-center items-center align-middle">
         <img src={OpenInNew.src} class="w-8 h-8" />
-        <p class="text-md"><strong>Instagram</strong></p>
+        <p class="text-md"><strong><a href="https://instagram.com/other.dev" target="_blank">Instagram</a></strong></p>
       </div>
       <div class="py-2 px-8 flex justify-right content-center items-center align-middle">
         <img src={OpenInNew.src} class="w-8 h-8" />
-        <p class="text-md"><strong>Github</strong></p>
+        <p class="text-md"><strong><a href="https://github.com/kabeer11000" target="_blank">Github</a></strong></p>
       </div>
     </div>
   </div>
@@ -82,7 +84,7 @@ style="mix-blend-mode: exclusion;"
   });
 </script>
 <nav
-style="mix-blend-mode: exclusion;"
+  style="mix-blend-mode: exclusion;"
   class="hidden lg:flex justify-between invert-100 align-middle px-8 pt-4 text-lg text-white bg-transparent- fixed w-full top-0 z-[100]">
   <div><p class="invert-100"><strong><a href="/">Other Dev®</a></strong></p></div>
   <div><p class="invert-100">Software + Design</p></div>
@@ -118,4 +120,13 @@ style="mix-blend-mode: exclusion;"
     )
       requestAnimationFrame(updateClockTime);
   });
+  if (
+    clock.checkVisibility({
+      visibilityProperty: true,
+      contentVisibilityAuto: true,
+      contentVisibilityHidden: true,
+      contentVisibilityVisible: true,
+    })
+  )
+    requestAnimationFrame(updateClockTime);
 </script>

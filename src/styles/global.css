@@ -1,9 +1,12 @@
 @import "tailwindcss";
-@plugin "@tailwindcss/typography";
+/* @plugin "@tailwindcss/typography"; */
 @import "tw-animate-css";
 
+* {
+    /* outline: solid red 1px */
+}
 .body {
-    background: #000;
+  background: #000;
 }
 .roboto-mono-main {
   font-family: "Roboto Mono", monospace;
@@ -12,10 +15,10 @@
   font-style: normal;
 }
 .cursor-arrow-left {
-    cursor: url('/icons/arrow-left.svg') 30 30, auto;
+  cursor: url("/icons/arrow-left.svg") 30 30, auto;
 }
 .cursor-arrow-right {
-    cursor: url('/icons/arrow-right.svg') 30 30, auto;
+  cursor: url("/icons/arrow-right.svg") 30 30, auto;
 }
 /* 
 @custom-variant dark (&:is(.dark *));
@@ -126,12 +129,16 @@
     --color-sidebar-border: var(--sidebar-border);
     --color-sidebar-ring: var(--sidebar-ring);
 }
-
+ */
 @layer base {
   * {
-    @apply border-border outline-ring/50;
-    }
+    /* @apply border-border outline-ring/50; */
+  }
   body {
-    @apply bg-background text-foreground;
-    }
-} */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    /* @apply bg-background text-foreground; */
+  }
+}

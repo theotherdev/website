@@ -1,7 +1,13 @@
 [
   {
+    "id": "1",
+    "title": "Development & SEO for Narkins Builders",
+    "year": "2025",
+    "description": "Website Development & SEO"
+  },
+  {
     "id": "4",
-    "title": "Groovy Pakistan",
+    "title": "Store launch for Groovy Pakistan",
     "year": "2024",
     "description": "Website Design",
     "imageSrc": "https://cdn.jsdelivr.net/gh/kabeer11000/docs-hosted@redirector-content/theotherdev/new-web/groovy-dev.webp",
@@ -9,23 +15,15 @@
   },
   {
     "id": "1",
-    "title": "Narkins Builders",
+    "title": "Website infrastructure creation for Narkins Builders",
     "year": "2023",
     "description": "Website Design, Development & Infrastructure",
     "imageSrc": "https://cdn.jsdelivr.net/gh/kabeer11000/docs-hosted@redirector-content/theotherdev/new-web/narkins.webp",
     "url": "/blog/fdc784b9-2f1d-43a2-8919-658ec1901491"
   },
   {
-    "id": "2",
-    "title": "Engineering our personal website",
-    "year": "2024",
-    "description": "Website Development & Design",
-    "imageSrc": "https://cdn.jsdelivr.net/gh/kabeer11000/docs-hosted@redirector-content/theotherdev/new-web/otherdev.webp",
-    "url": "#"
-  },
-  {
     "id": "3",
-    "title": "Wish Apparels",
+    "title": "Website development and Branding for Wish Apparels",
     "year": "2024",
     "description": "Website Development & Design",
     "imageSrc": "https://cdn.jsdelivr.net/gh/kabeer11000/docs-hosted@redirector-content/theotherdev/new-web/wish-phones.webp",
@@ -33,7 +31,7 @@
   },
   {
     "id": "5",
-    "title": "Groovy Pakistan",
+    "title": "Website creation for Groovy Pakistan",
     "year": "2024",
     "description": "Shopfiy Theme Development, Website Development & Launch",
     "imageSrc": "https://cdn.jsdelivr.net/gh/kabeer11000/docs-hosted@redirector-content/theotherdev/new-web/groovy-layers.webp",
@@ -41,14 +39,15 @@
   },
   {
     "id": "6",
-    "title": "Tiny Footprint Coffee — 2024",
+    "title": "Payment infrastructure migration for Tiny Footprint Coffee",
+    "year": "2024",
     "description": "Website Design, Recharge Migration & Shopify Theme Development",
     "imageSrc": "https://cdn.jsdelivr.net/gh/kabeer11000/docs-hosted@redirector-content/theotherdev/new-web/tinyfootprintcoffee.webp",
     "url": "/blog/dc423a1a-f68e-42bd-a9b3-430bd57f82c1"
   },
   {
     "id": "7",
-    "title": "Neubee's Tailors",
+    "title": "Website development and Branding for Neubee's Tailors",
     "year": "2023",
     "description": "Design, Headless Shopify Deployment, Marketing & Website Development",
     "imageSrc": "https://cdn.jsdelivr.net/gh/kabeer11000/docs-hosted@redirector-content/theotherdev/new-web/neubees.webp",
@@ -56,7 +55,7 @@
   },
   {
     "id": "8",
-    "title": "Ek Qadam Aur",
+    "title": "Enterprise infrastucture development for Ek Qadam Aur",
     "year": "2023",
     "description": "Website Design, Website Development & Infrastructure",
     "imageSrc": "https://cdn.jsdelivr.net/gh/kabeer11000/docs-hosted@redirector-content/theotherdev/new-web/ekqadamaur.webp",
