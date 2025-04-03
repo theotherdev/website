@@ -15,7 +15,7 @@ import projects from "../data/projecta-yearly.json";
           {
             projects.map((item, index) => (
               <tr class="border-b-neutral-700 border-b">
-                <td class="select-none text-right py-10 pl-8">{index+1}</td>
+                <td class="select-none text-left py-10 pl-8">{index+1}</td>
                 <td class="group relative py-10 px-8">
                   {item.imageSrc && <img
                     src={item.imageSrc}

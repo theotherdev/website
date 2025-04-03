@@ -11,7 +11,7 @@ import OpenInNew from "../assets/icons/open-in-new.svg";
   </div>
 </nav>
 <div class="mobile-navigation-backdrop overflow-scroll h-0 lg:hidden fixed w-full z-50 bg-green-500">
-  <div class="mt-[70vh] mobile-navigation-content opacity-0">
+  <div class="mt-[100%] mobile-navigation-content opacity-0">
     <div class="pb-[3rem]">
       {
         [
@@ -28,13 +28,13 @@ import OpenInNew from "../assets/icons/open-in-new.svg";
             path: "/about",
           },
           {
-            title: "Info",
-            path: "/info",
+            title: "Lets Meet!", target: "_blank",
+            path: "https://calendly.com/otherdev/30-minute-consultation-call-1",
           },
         ].map((item) => (
           <div class="border-b border-b-neutral-700 py-4 px-8">
             <p class="text-lg">
-              <a href={item.path}>{item.title}</a>
+              <a href={item.path} target={item.target}>{item.title}</a>
             </p>
           </div>
         ))
@@ -90,14 +90,14 @@ import OpenInNew from "../assets/icons/open-in-new.svg";
   <div><p class="invert-100">Software + Design</p></div>
   <div class="flex invert-100"><p class="clock-time"></p><span>&nbsp;Karachi</span></div>
   <div class="relative">
-    <ul class="absolute">
+    <ul class="absolute text-nowrap">
       <li><p class="invert-100"><a href="/work">Work</a></p></li>
       <li><p class="invert-100"><a href="/experties">Experties</a></p></li>
       <li><p class="invert-100"><a href="/about">About</a></p></li>
-      <li><p class="invert-100"><a href="/info">Info</a></p></li>
+      <!-- <li><p class="invert-100"><a href="https://calendly.com/otherdev/30-minute-consultation-call-1" target="_blank">Lets Meet!</a></p></li> -->
     </ul>
   </div>
-  <div><p class="invert-100"><a href="/meat">Lets Meet!</a></p></div>
+  <div><p class="invert-100"><a href="https://calendly.com/otherdev/30-minute-consultation-call-1" target="_blank">Lets Meet!</a></p></div>
 </nav>
 <script is:inline>
   const clock = document.querySelector(".clock-time");
