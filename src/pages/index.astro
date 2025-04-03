@@ -17,7 +17,7 @@ import projects from "../data/projecta-yearly.json";
           {
             projects.slice(0, 4).map((item) => (
               <li>
-                <p>{item.year}</p>
+                <p class="select-none">{item.year}</p>
               </li>
             ))
           }
@@ -28,9 +28,9 @@ import projects from "../data/projecta-yearly.json";
               <li class="group relative">
                 <img
                   src={item.imageSrc}
-                  class="w-[30rem] absolute max-w-[80vw] h-auto left-[30%] bottom-[2rem] group-hover:block hidden transition-all duration-75"
+                  class="w-[30rem] pointer-events-none absolute max-w-[80vw] h-auto left-[30%] bottom-[2rem] group-hover:block hidden transition-all duration-75"
                 />
-                <p>{item.title}</p>
+                <p class="select-none">{item.title}</p>
               </li>
             ))
           }
