@@ -1,57 +1,63 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import { getLangFromUrl } from "@/i18n/utils";
-import SEO from "@/components/SEO.astro";
-
-import { getRelativeLocaleUrl } from "astro:i18n";
-import { sanitize } from "./work/[id].astro";
+import Shapes from "@/components/Shapes.astro";
+import Layout from "@/layouts/Layout.astro";
+import { getLangFromUrl } from '@/i18n/utils';
+import SEO from "@/components/SEO.astro"; 
 
 const lang = getLangFromUrl(Astro.url);
 
-const importProjectsModule = import.meta.glob("@/data/*/projects.json")[
-  `/src/data/${lang}/projects.json`
-];
-let Projects = [];
-if (importProjectsModule) Projects = (await importProjectsModule()).default;
-else
-  console.warn(
-    `Could not find projects module importer for key: ${`/src/data/${lang}/projects.json`}`
-  );
+// 1. Define the glob pattern (path relative to the current file or use alias)
+// Note: Keys in the returned object might be relative or absolute depending on usage
+const projectModules = import.meta.glob('@/data/*/projects.json');
+
+// 2. Construct the key to access the correct module importer function
+// The key often needs to be the full path relative to the project root,
+// matching how Vite resolves it. You might need to experiment or log `projectModules`
+// to see the exact key format. Let's assume it needs `/src/data/...`
+const moduleKey = `/src/data/${lang}/projects.json`;
+const importModule = projectModules[moduleKey];
+
+let projects = [];
+if (importModule) {
+  // 3. Call the importer function (it's async) and get the default export
+  const module = await importModule();
+  projects = module.default;
+} else {
+  console.warn(`Could not find projects module importer for key: ${moduleKey}`);
+  // Handle error
+}
+
 ---
 
 <Layout>
-  <SEO pageName="work" />
-  <div class="pt-[10rem] min-h-screen w-full relative overflow-hidde-n flex flex-col">
-    <div class="flex-auto w-full overflow-visible-overflow-x-auto">
-      <table class="table-auto w-full">
-        <tbody>
+  <SEO pageName="index"/>
+  <div class="min-h-screen relative overflow-hidden flex flex-col">
+    <div class="flex-auto w-full">
+      <div data-speed="clamp(0.9)" class="w-full flex-auto absolute overflow-hidden h-full"><Shapes /></div>
+      <div class="absolute bottom-0 hidden lg:flex left-0 p-8 text-lg">
+        <ul class="mr-4">
           {
-            Projects.map((item, index) => (
-              <tr class="border-b-black border-b">
-                <td class="select-none text-left py-10 pl-8">{index + 1}</td>
-                <td class="group relative py-10 px-8">
-                  <a
-                    href={
-                      item.hasPage ?
-                        `${getRelativeLocaleUrl(lang, "work/" + sanitize(item.title))}`
-                      : "#"
-                    }>
-                    {item.imageSrc && (
-                      <img
-                        src={item.imageSrc}
-                        class="w-[30rem] pointer-events-none absolute max-w-[80vw] h-auto left-1/2 translate-x-1/3 bottom-[2rem] group-hover:block hidden transition-all duration-75"
-                      />
-                    )}
-                    <p class="select-none text-3xl">{item.title}</p>
-                    <p class="select-none mt-2">{item.description}</p>
-                  </a>
-                </td>
-                <td class="select-none text-right py-10 px-8">{item.year}</td>
-              </tr>
+            projects.slice(0, 4).map((item) => (
+              <li>
+                <a href={item.title}><p class="select-none">{item.year}</p></a>
+              </li>
             ))
           }
-        </tbody>
-      </table>
+        </ul>
+        <ul>
+          {
+            projects.slice(0, 4).map((item) => (
+              <li class="group relative">
+                <img
+                  src={item.imageSrc}
+                  class="w-[30rem] pointer-events-none absolute max-w-[80vw] h-auto left-[30%] bottom-[2rem] group-hover:block hidden transition-all duration-75"
+                />
+                <p class="select-none">{item.title}</p>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
     </div>
   </div>
 </Layout>
