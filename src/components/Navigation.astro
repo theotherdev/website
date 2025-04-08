@@ -71,7 +71,7 @@ const karachiTimezone = "Asia/Karachi"; // Explicitly define Karachi timezone
     aria-expanded="false"
     type="button"
   >
-    <span class="sr-only">{t("nav.toggleMenu") ?? "Toggle menu"}</span>
+    <span class="sr-only close">{t("nav.close") ?? "Close"}</span>
     <span class="menu-text">{t("nav.menu") ?? "Menu"}</span>
      {/* Add burger/close icon SVGs here if desired, toggling visibility with JS/CSS */}
   </button>
@@ -207,9 +207,10 @@ const karachiTimezone = "Asia/Karachi"; // Explicitly define Karachi timezone
   const mobileNavTrigger = document.getElementById('mobile-nav-toggle');
   const mobileMenu = document.getElementById('mobile-menu');
   const menuTextSpan = mobileNavTrigger?.querySelector('.menu-text');
+  const close = mobileNavTrigger?.querySelector('.close');
 
-  const textMenu = t('nav.menu', 'Menu');
-  const textClose = t('nav.close', 'Close');
+  const textMenu = close.innerText;
+  const textClose = menuTextSpan.innerText;
 
 
   if (mobileNavTrigger && mobileMenu && menuTextSpan) {
