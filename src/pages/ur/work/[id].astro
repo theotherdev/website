@@ -1,7 +1,6 @@
 ---
 import type { GetStaticPaths } from "astro";
 import Layout from "@/layouts/Layout.astro";
-import { languages } from "@/i18n/ui"; // Assuming config file
 import { useTranslations, getLangFromUrl } from "@/i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
@@ -9,17 +8,17 @@ const t = useTranslations(lang);
 // @/utils/sanitize.ts (Example - adjust as needed)
 export const sanitize = (str: string): string => {
   return str
-    .normalize("NFKD")                          // Normalize accented characters
-    .replace(/[\u0300-\u036f]/g, "")            // Remove diacritical marks
-    .replace(/&/g, "and")                       // Replace ampersands
-    .replace(/\s+/g, "-")                       // Replace spaces with dashes
-    .replace(/[^\p{L}\p{N}-]+/gu, "")           // Remove all but letters, numbers, dashes
-    .replace(/--+/g, "-")                       // Replace multiple dashes with one
-    .toLowerCase();                             // Lowercase
+    .normalize("NFKD") // Normalize accented characters
+    .replace(/[\u0300-\u036f]/g, "") // Remove diacritical marks
+    .replace(/&/g, "and") // Replace ampersands
+    .replace(/\s+/g, "-") // Replace spaces with dashes
+    .replace(/[^\p{L}\p{N}-]+/gu, "") // Remove all but letters, numbers, dashes
+    .replace(/--+/g, "-") // Replace multiple dashes with one
+    .toLowerCase(); // Lowercase
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const lang = 'ur';
+  const lang = "ur";
   const paths: { params: { lang: string; slug: string }; props: { project: any } }[] = [];
   const importProjectsModule = import.meta.glob("@/data/*/projects.json");
 
@@ -29,10 +28,20 @@ export const getStaticPaths: GetStaticPaths = async () => {
     const projectData = (await importProjectsModule[`/src/data/${currentLang}/projects.json`]())
       ?.default as any[]; // Explicitly type projectData as an array of any
     if (projectData) {
-      const languagePaths = projectData.map((project) => ({
-        params: { lang: currentLang, slug: sanitize(project.title), id: sanitize(project.title) },
-        props: { project },
-      }));
+      const languagePaths = projectData
+        .map((project) => {
+          if (project.hasPage)
+            return {
+              params: {
+                lang: currentLang,
+                slug: sanitize(project.title),
+                id: sanitize(project.title),
+              },
+              props: { project },
+            };
+          return null;
+        })
+        .filter((a) => a);
       paths.push(...languagePaths);
     } else {
       console.warn(`Could not find projects data for language: ${currentLang}`);
