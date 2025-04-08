@@ -1,0 +1,71 @@
+{
+  "site": {
+    "name": "The Other Dev",
+    "url": "https://otherdev.com",
+    "logo": "/images/icons/other-dev-logo.png",
+    "sitemap": "/sitemap-index.xml",
+    "gmbLink": "https://g.page/17231828160667184010",
+    "robots": "index, follow",
+    "canonicalUrl": "https://otherdev.com"
+  },
+  "pages": {
+    "index": {
+      "title": "The Other Dev — Kreative Softwareagentur",
+      "description": "The Other Dev ist eine kreative Softwareagentur, die sich auf die Gestaltung zugänglicher und ansprechender digitaler Erlebnisse konzentriert und Kreativität mit modernster Technologie für Kunden aller Hintergründe verbindet.",
+      "ogDescription": "Angetrieben von einem Engagement für Innovation und Inklusivität konzentriert sich unser Webentwicklungsansatz auf die Schaffung digitaler Erlebnisse, die ebenso zugänglich wie ansprechend sind. Jedes Projekt wird von der Überzeugung geleitet, dass gutes Design alle Nutzer unabhängig von ihrem Hintergrund oder ihren Fähigkeiten befähigen, verbinden und einbeziehen sollte. Durch die Verbindung von Kreativität mit modernster Technologie wollen wir Websites entwickeln, die nicht nur die heutigen Standards erfüllen, sondern sich auch an die digitale Landschaft von morgen anpassen und darin erfolgreich sein.",
+      "twitterDescription": "Angetrieben von einem Engagement für Innovation und Inklusivität konzentriert sich unser Webentwicklungsansatz auf die Schaffung digitaler Erlebnisse, die ebenso zugänglich wie ansprechend sind. Jedes Projekt wird von der Überzeugung geleitet, dass gutes Design alle Nutzer unabhängig von ihrem Hintergrund oder ihren Fähigkeiten befähigen, verbinden und einbeziehen sollte.",
+      "image": "/images/icons/other-dev-intro.png",
+      "imageAlt": "The Other Dev Logo - Kreative Softwareagentur",
+      "keywords": "Webentwicklung, Kreativagentur, digitale Erlebnisse, Grafikdesign, Softwareentwicklung, Technologielösungen, Suchmaschinenoptimierung, SEO"
+    },
+    "about": {
+      "title": "Über The Other Dev — Kreative Softwareagentur",
+      "description": "The Other Dev ist eine kreative Softwareagentur, die sich auf die Gestaltung zugänglicher und ansprechender digitaler Erlebnisse konzentriert und Kreativität mit modernster Technologie für Kunden aller Hintergründe verbindet.",
+      "ogDescription": "Angetrieben von einem Engagement für Innovation und Inklusivität konzentriert sich unser Webentwicklungsansatz auf die Schaffung digitaler Erlebnisse, die ebenso zugänglich wie ansprechend sind. Jedes Projekt wird von der Überzeugung geleitet, dass gutes Design alle Nutzer unabhängig von ihrem Hintergrund oder ihren Fähigkeiten befähigen, verbinden und einbeziehen sollte. Durch die Verbindung von Kreativität mit modernster Technologie wollen wir Websites entwickeln, die nicht nur die heutigen Standards erfüllen, sondern sich auch an die digitale Landschaft von morgen anpassen und darin erfolgreich sein.",
+      "twitterDescription": "Angetrieben von einem Engagement für Innovation und Inklusivität konzentriert sich unser Webentwicklungsansatz auf die Schaffung digitaler Erlebnisse, die ebenso zugänglich wie ansprechend sind. Jedes Projekt wird von der Überzeugung geleitet, dass gutes Design alle Nutzer unabhängig von ihrem Hintergrund oder ihren Fähigkeiten befähigen, verbinden und einbeziehen sollte.",
+      "image": "/images/icons/other-dev-intro.png",
+      "imageAlt": "The Other Dev Logo - Kreative Softwareagentur",
+      "keywords": "Webentwicklung, Kreativagentur, digitale Erlebnisse, Grafikdesign, Softwareentwicklung, Technologielösungen, Suchmaschinenoptimierung, SEO"
+    },
+    "work": {
+      "title": "Arbeiten von The Other Dev — Kreative Softwareagentur",
+      "description": "The Other Dev ist eine kreative Softwareagentur, die sich auf die Gestaltung zugänglicher und ansprechender digitaler Erlebnisse konzentriert und Kreativität mit modernster Technologie für Kunden aller Hintergründe verbindet.",
+      "ogDescription": "Angetrieben von einem Engagement für Innovation und Inklusivität konzentriert sich unser Webentwicklungsansatz auf die Schaffung digitaler Erlebnisse, die ebenso zugänglich wie ansprechend sind. Jedes Projekt wird von der Überzeugung geleitet, dass gutes Design alle Nutzer unabhängig von ihrem Hintergrund oder ihren Fähigkeiten befähigen, verbinden und einbeziehen sollte. Durch die Verbindung von Kreativität mit modernster Technologie wollen wir Websites entwickeln, die nicht nur die heutigen Standards erfüllen, sondern sich auch an die digitale Landschaft von morgen anpassen und darin erfolgreich sein.",
+      "twitterDescription": "Angetrieben von einem Engagement für Innovation und Inklusivität konzentriert sich unser Webentwicklungsansatz auf die Schaffung digitaler Erlebnisse, die ebenso zugänglich wie ansprechend sind. Jedes Projekt wird von der Überzeugung geleitet, dass gutes Design alle Nutzer unabhängig von ihrem Hintergrund oder ihren Fähigkeiten befähigen, verbinden und einbeziehen sollte.",
+      "image": "/images/icons/other-dev-intro.png",
+      "imageAlt": "The Other Dev Logo - Kreative Softwareagentur",
+      "keywords": "Webentwicklung, Kreativagentur, digitale Erlebnisse, Grafikdesign, Softwareentwicklung, Technologielösungen, Suchmaschinenoptimierung, SEO"
+    },
+    "experties": {
+      "title": "Other Dev's Fachgebiete – Kreative Softwareagentur",
+      "description": "The Other Dev ist eine kreative Softwareagentur, die sich auf die Gestaltung zugänglicher und ansprechender digitaler Erlebnisse konzentriert und Kreativität mit modernster Technologie für Kunden aller Hintergründe verbindet.",
+      "ogDescription": "Angetrieben von einem Engagement für Innovation und Inklusivität konzentriert sich unser Webentwicklungsansatz auf die Schaffung digitaler Erlebnisse, die ebenso zugänglich wie ansprechend sind. Jedes Projekt wird von der Überzeugung geleitet, dass gutes Design alle Nutzer unabhängig von ihrem Hintergrund oder ihren Fähigkeiten befähigen, verbinden und einbeziehen sollte. Durch die Verbindung von Kreativität mit modernster Technologie wollen wir Websites entwickeln, die nicht nur die heutigen Standards erfüllen, sondern sich auch an die digitale Landschaft von morgen anpassen und darin erfolgreich sein.",
+      "twitterDescription": "Angetrieben von einem Engagement für Innovation und Inklusivität konzentriert sich unser Webentwicklungsansatz auf die Schaffung digitaler Erlebnisse, die ebenso zugänglich wie ansprechend sind. Jedes Projekt wird von der Überzeugung geleitet, dass gutes Design alle Nutzer unabhängig von ihrem Hintergrund oder ihren Fähigkeiten befähigen, verbinden und einbeziehen sollte.",
+      "image": "/images/icons/other-dev-intro.png",
+      "imageAlt": "The Other Dev Logo - Kreative Softwareagentur",
+      "keywords": "Webentwicklung, Kreativagentur, digitale Erlebnisse, Grafikdesign, Softwareentwicklung, Technologielösungen, Suchmaschinenoptimierung, SEO"
+    }
+  },
+  "social": {
+    "twitter": {
+      "handle": "@otherdevistaken",
+      "card": "summary_large_image"
+    },
+    "profiles": [
+      "https://twitter.com/otherdevistaken",
+      "https://www.linkedin.com/company/theotherdev",
+      "https://www.facebook.com/other.dev"
+    ]
+  },
+  "business": {
+    "type": "LocalBusiness",
+    "contact": {
+      "telephone": "+92315 6893331",
+      "email": "hello@otherdev.com",
+      "type": "Kundenservice"
+    },
+    "areaServed": ["Vereinigte Staaten", "Kanada", "Vereinigtes Königreich", "Australien", "Pakistan", "Deutschland"],
+    "availableLanguage": ["Englisch", "Deutsch", "Urdu"],
+    "openingHours": "Mo-So 00:00-23:59"
+  }
+}

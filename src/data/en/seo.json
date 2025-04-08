@@ -1,0 +1,71 @@
+{
+  "site": {
+    "name": "The Other Dev",
+    "url": "https://otherdev.com",
+    "logo": "/images/icons/other-dev-logo.png",
+    "sitemap": "/sitemap-index.xml",
+    "gmbLink": "https://g.page/17231828160667184010",
+    "robots": "index, follow",
+    "canonicalUrl": "https://otherdev.com"
+  },
+  "pages": {
+    "index": {
+      "title": "The Other Dev — Creative software agency",
+      "description": "The Other Dev is a creative software agency focused on designing accessible and engaging digital experiences, blending creativity with cutting-edge technology for clients of all backgrounds.",
+      "ogDescription": "Driven by a commitment to innovation and inclusivity, our web development approach centers on creating digital experiences that are as accessible as they are engaging. Every project is guided by the belief that good design should empower, connect, and include all users, regardless of their background or abilities. By blending creativity with cutting-edge technology, we aim to build websites that not only meet today’s standards but also adapt and thrive in tomorrow’s digital landscape.",
+      "twitterDescription": "Driven by a commitment to innovation and inclusivity, our web development approach centers on creating digital experiences that are as accessible as they are engaging. Every project is guided by the belief that good design should empower, connect, and include all users, regardless of their background or abilities.",
+      "image": "/images/icons/other-dev-intro.png",
+      "imageAlt": "The Other Dev Logo - Creative Software Agency",
+      "keywords": "web development, creative agency, digital experiences, graphic design, software development, technology solutions, search engine optimization, seo"
+    },    
+    "about": {
+      "title": "About The Other Dev — Creative software agency",
+      "description": "The Other Dev is a creative software agency focused on designing accessible and engaging digital experiences, blending creativity with cutting-edge technology for clients of all backgrounds.",
+      "ogDescription": "Driven by a commitment to innovation and inclusivity, our web development approach centers on creating digital experiences that are as accessible as they are engaging. Every project is guided by the belief that good design should empower, connect, and include all users, regardless of their background or abilities. By blending creativity with cutting-edge technology, we aim to build websites that not only meet today’s standards but also adapt and thrive in tomorrow’s digital landscape.",
+      "twitterDescription": "Driven by a commitment to innovation and inclusivity, our web development approach centers on creating digital experiences that are as accessible as they are engaging. Every project is guided by the belief that good design should empower, connect, and include all users, regardless of their background or abilities.",
+      "image": "/images/icons/other-dev-intro.png",
+      "imageAlt": "The Other Dev Logo - Creative Software Agency",
+      "keywords": "web development, creative agency, digital experiences, graphic design, software development, technology solutions, search engine optimization, seo"
+    },
+    "work": {
+      "title": "Work by The Other Dev — Creative software agency",
+      "description": "The Other Dev is a creative software agency focused on designing accessible and engaging digital experiences, blending creativity with cutting-edge technology for clients of all backgrounds.",
+      "ogDescription": "Driven by a commitment to innovation and inclusivity, our web development approach centers on creating digital experiences that are as accessible as they are engaging. Every project is guided by the belief that good design should empower, connect, and include all users, regardless of their background or abilities. By blending creativity with cutting-edge technology, we aim to build websites that not only meet today’s standards but also adapt and thrive in tomorrow’s digital landscape.",
+      "twitterDescription": "Driven by a commitment to innovation and inclusivity, our web development approach centers on creating digital experiences that are as accessible as they are engaging. Every project is guided by the belief that good design should empower, connect, and include all users, regardless of their background or abilities.",
+      "image": "/images/icons/other-dev-intro.png",
+      "imageAlt": "The Other Dev Logo - Creative Software Agency",
+      "keywords": "web development, creative agency, digital experiences, graphic design, software development, technology solutions, search engine optimization, seo"
+    },
+    "experties": {
+      "title": "Other Dev's Experties — Creative software agency",
+      "description": "The Other Dev is a creative software agency focused on designing accessible and engaging digital experiences, blending creativity with cutting-edge technology for clients of all backgrounds.",
+      "ogDescription": "Driven by a commitment to innovation and inclusivity, our web development approach centers on creating digital experiences that are as accessible as they are engaging. Every project is guided by the belief that good design should empower, connect, and include all users, regardless of their background or abilities. By blending creativity with cutting-edge technology, we aim to build websites that not only meet today’s standards but also adapt and thrive in tomorrow’s digital landscape.",
+      "twitterDescription": "Driven by a commitment to innovation and inclusivity, our web development approach centers on creating digital experiences that are as accessible as they are engaging. Every project is guided by the belief that good design should empower, connect, and include all users, regardless of their background or abilities.",
+      "image": "/images/icons/other-dev-intro.png",
+      "imageAlt": "The Other Dev Logo - Creative Software Agency",
+      "keywords": "web development, creative agency, digital experiences, graphic design, software development, technology solutions, search engine optimization, seo"
+    }
+  },
+  "social": {
+    "twitter": {
+      "handle": "@otherdevistaken",
+      "card": "summary_large_image"
+    },
+    "profiles": [
+      "https://twitter.com/otherdevistaken",
+      "https://www.linkedin.com/company/theotherdev",
+      "https://www.facebook.com/other.dev"
+    ]
+  },
+  "business": {
+    "type": "LocalBusiness",
+    "contact": {
+      "telephone": "+92315 6893331",
+      "email": "hello@otherdev.com",
+      "type": "Customer Service"
+    },
+    "areaServed": ["United States", "Canada", "United Kingdom", "Australia", "Pakistan", "Germany"],
+    "availableLanguage": ["English", "German", "Urdu"],
+    "openingHours": "Mo-Su 00:00-23:59"
+  }
+}

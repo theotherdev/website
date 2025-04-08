@@ -1,0 +1,26 @@
+[
+  {
+      "id": "1",
+      "title": "Webseiten-Design",
+      "imageSrc": "https://cdn.jsdelivr.net/gh/kabeer11000/docs-hosted@redirector-content/theotherdev/new-web/web-design.webp",
+      "description": "Wir helfen bei der Erstellung und Entwicklung von Online-Werbeideen, mit besonderem Augenmerk auf deren visuelle Erscheinung."
+    },
+    {
+      "id": "2",
+      "title": "Branding",
+      "imageSrc": "https://cdn.jsdelivr.net/gh/kabeer11000/docs-hosted@redirector-content/theotherdev/new-web/branding.webp",
+      "description": "Wir gestalten zentrale Markenelemente wie das Logo, das Farbschema, die Typografie und andere Designkomponenten, die Ihre Marke von der Konkurrenz abheben."
+    },
+    {
+      "id": "3",
+      "title": "Webseitenentwicklung",
+      "imageSrc": "https://cdn.jsdelivr.net/gh/kabeer11000/docs-hosted@redirector-content/theotherdev/new-web/web-developmet.webp",
+      "description": "Wir erstellen und optimieren Ihre Online-Präsenz. Die Website ist der digitale Einstiegspunkt in Ihr Unternehmen und ein leistungsstarker Umsatzkanal."
+    },
+    {
+      "id": "4",
+      "title": "Werbung & Marketing",
+      "imageSrc": "https://cdn.jsdelivr.net/gh/kabeer11000/docs-hosted@redirector-content/theotherdev/new-web/ads.webp",
+      "description": "Wir kombinieren kreatives Design und technische Fähigkeiten, um eindrucksvolle 3D-Visualisierungen zu erstellen, die Ihr Projekt zum Leben erwecken."
+    }
+]

@@ -1,0 +1,47 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { getLangFromUrl } from "@/i18n/utils";
+import SEO from "@/components/SEO.astro";
+
+const lang = getLangFromUrl(Astro.url);
+
+const importProjectsModule = import.meta.glob("@/data/*/services.json")[
+  `/src/data/${lang}/services.json`
+];
+let Services = [];
+if (importProjectsModule) Services = (await importProjectsModule()).default;
+else
+  console.warn(
+    `Could not find projects module importer for key: ${`/src/data/${lang}/projects.json`}`
+  );
+---
+
+<Layout>
+  <SEO pageName="experties" />
+  <div class="pt-[10rem] min-h-screen w-full relative overflow-hidde-n flex flex-col">
+    <div class="flex-auto w-full overflow-visible-overflow-x-auto">
+      <table class="table-auto w-full">
+        <tbody>
+          {
+            Services.map((item, index) => (
+              <tr class="border-b-black border-b">
+                <td class="select-none text-left py-10 pl-8">{index + 1}</td>
+                <td class="group relative py-10 px-8">
+                  {item.imageSrc && (
+                    <img
+                      src={item.imageSrc}
+                      class="w-[30rem] pointer-events-none absolute max-w-[80vw] h-auto left-1/2 translate-x-1/3 bottom-[2rem] group-hover:block hidden transition-all duration-75"
+                    />
+                  )}
+                  <p class="select-none text-3xl">{item.title}</p>
+                  <p class="select-none mt-2">{item.description}</p>
+                </td>
+                <td class="select-none text-right py-10 px-8">{item.year}</td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+</Layout>

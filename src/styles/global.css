@@ -2,18 +2,102 @@
 /* @plugin "@tailwindcss/typography"; */
 @import "tw-animate-css";
 
+:root {
+  --animation-duration: 0.5s;
+  --background: var(--color-neutral-400);
+  --text: var(--color-black);
+}
 * {
-    /* outline: solid red 1px */
+  /* outline: solid red 1px; */
 }
-.body {
-  background: #000;
+@font-face {
+  font-family: 'Roboto';
+  src: url('/fonts/Roboto/atatic/Roboto-Regular.ttf');
 }
-.roboto-mono-main {
+@font-face {
+  font-family: 'Domaine';
+  src: url('/fonts/Domaine/TestDomaineDisplay-Regular-BF66174a224cb3d.otf');
+}
+@font-face {
+  font-family: 'Allura';
+  src: url('/fonts/Allura/Allura-Regular.ttf');
+}
+@font-face {
+  font-family: 'Lausanne';
+  src: url('/fonts/Lausanne/Lausanne.eot');
+  src: local('Lausanne'),
+      url('/fonts/Lausanne/Lausanne.eot?#iefix') format('embedded-opentype'),
+      url('/fonts/Lausanne/Lausanne.woff2') format('woff2'),
+      url('/fonts/Lausanne/Lausanne.woff') format('woff'),
+      url('/fonts/Lausanne/Lausanne.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+.lausanne {
+  font-family: 'Lausanne';
+}
+.domaine {
+  font-family: 'Domaine';
+}
+.allura {
+  font-family: 'Allura';
+}
+body {
+  background-color: var(--background);
+  font-family: 'Roboto', sans-serif;
+  /* font-family: 'Lausanne'; */
+}
+.dynamic-underline-left,
+.dynamic-underline-right {
+  position: relative;
+  color: var(--color-black);
+  text-decoration: none;
+  display: inline-block; /* Important for the underline to span only the text */
+}
+
+/* Animate the line from the left on hover */
+.dynamic-underline-left:hover::before {
+  transform: scaleX(1);
+}
+
+.dynamic-underline-left::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--color-black);
+  transform: scaleX(0);
+  transform-origin: top left;
+  transition: transform var(--animation-duration) ease;
+}
+
+/* Animate the line from the right on hover */
+.dynamic-underline-right:hover::before {
+  transform: scaleX(1);
+}
+
+.dynamic-underline-right::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0; /* Corrected: Should be left: 0 for right origin */
+  background-color: var(--color-black);
+  transform: scaleX(0);
+  transform-origin: top right;
+  transition: transform var(--animation-duration) ease;
+}
+/* .roboto-mono-main {
   font-family: "Roboto Mono", monospace;
   font-optical-sizing: auto;
   font-weight: 300;
   font-style: normal;
-}
+} */
 .cursor-arrow-left {
   cursor: url("/icons/arrow-left.svg") 30 30, auto;
 }
@@ -137,8 +221,26 @@
   body {
     margin: 0;
     padding: 0;
+    background-color: var(--background);
+    color: var(--text);
     box-sizing: border-box;
     scroll-behavior: smooth;
     /* @apply bg-background text-foreground; */
   }
+}
+@layer utilities {
+  /* Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}
+.noise-bg {
+  opacity: 0.2;
+  filter: grayscale(100%);
+  filter: url(#noise-bg-fx);
 }

@@ -12,7 +12,7 @@ const { images, carouselId: id } = Astro.props;
         images.map(
           (image, index) =>
             image && (
-              <div class="flex justify-center items-center">
+              <div data-speed="clamp(0.8)" class="flex justify-center items-center">
                 <img
                   src={image}
                   alt="Gallery image"

@@ -1,0 +1,184 @@
+---
+import type { GetStaticPaths } from "astro";
+import Layout from "@/layouts/Layout.astro";
+import { languages } from "@/i18n/ui"; // Assuming config file
+import { useTranslations, getLangFromUrl } from "@/i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+// @/utils/sanitize.ts (Example - adjust as needed)
+export const sanitize = (str: string): string => {
+  return str
+    .normalize("NFKD")                          // Normalize accented characters
+    .replace(/[\u0300-\u036f]/g, "")            // Remove diacritical marks
+    .replace(/&/g, "and")                       // Replace ampersands
+    .replace(/\s+/g, "-")                       // Replace spaces with dashes
+    .replace(/[^\p{L}\p{N}-]+/gu, "")           // Remove all but letters, numbers, dashes
+    .replace(/--+/g, "-")                       // Replace multiple dashes with one
+    .toLowerCase();                             // Lowercase
+};
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const lang = 'ur';
+  const paths: { params: { lang: string; slug: string }; props: { project: any } }[] = [];
+  const importProjectsModule = import.meta.glob("@/data/*/projects.json");
+
+  // for (const currentLang of Object.keys(languages)) {
+  const currentLang = lang;
+  try {
+    const projectData = (await importProjectsModule[`/src/data/${currentLang}/projects.json`]())
+      ?.default as any[]; // Explicitly type projectData as an array of any
+    if (projectData) {
+      const languagePaths = projectData.map((project) => ({
+        params: { lang: currentLang, slug: sanitize(project.title), id: sanitize(project.title) },
+        props: { project },
+      }));
+      paths.push(...languagePaths);
+    } else {
+      console.warn(`Could not find projects data for language: ${currentLang}`);
+    }
+  } catch (error) {
+    console.error(`Error importing projects data for language ${currentLang}:`, error);
+  }
+  // }
+  console.log(paths);
+  return paths;
+};
+
+const { project }: { project: any } = Astro.props;
+const absoluteImageUrl = project.image ? new URL(project.image, Astro.url).toString() : null;
+const { page } = project;
+---
+
+<title>{project.title}</title>
+<meta name="description" content={project.description + " " + project.page.excerpt} />
+<meta name="keywords" content={project.keywords} />
+
+<meta property="og:title" content={`${project.title}`} />
+<meta property="og:description" content={project.description + " " + project.page.excerpt} />
+{absoluteImageUrl && <meta property="og:image" content={absoluteImageUrl} />}
+{absoluteImageUrl && <meta property="og:image:alt" content={project.title} />}
+
+<meta name="twitter:title" content={`${project.title}`} />
+<meta name="twitter:description" content={project.description + " " + project.page.excerpt} />
+{absoluteImageUrl && <meta name="twitter:image" content={absoluteImageUrl} />}
+{absoluteImageUrl && <meta name="twitter:image:alt" content={project.title} />}
+<Layout>
+  <div class="-bg-gradient-to-b-from-black-to-[var(--background)]">
+    <div class="pt-[35vh] mx-auto container relative">
+      <div class="relative overflow-hidden px-8">
+        <div data-speed="clamp(0.5)" class="pb-[4rem] grid grid-cols-1 md:grid-cols-4 gap-x-8">
+          <div class="col-span-3">
+            <h1
+              class="mt-auto domaine text-[20vw] text-left align-bottom p-0 m-0 h-[6rem] md:h-[20vh] md:text-[20vh] z-0">
+              {project.company}
+            </h1>
+          </div>
+          <div
+            class="flex md:justify-end justify-start text-left md:text-right items-baseline mt-4 md:mt-auto">
+            <p class="mr-4">{project.location}</p>
+            <div class="flex gap-4 items-center space-between">
+              <p>{project.year}</p>
+              <div
+                class="bg-black text-lg flex items-center py-1 text-nowrap cursor-pointer px-4 rounded-full">
+                <p><a href={project.url} target="_blank">{t("work.view-website")}</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="-bg-[var(--background)] shadow relative w-full z-2 px-8">
+    <div class="container mx-auto">
+      <img
+        src={project.coverImage}
+        alt={project.coverImageAlt}
+        class="mx-auto w-full object-contain"
+      />
+      <div class="items-center content-center flex py-[3rem]">
+        <p class="mr-8" style="writing-mode: vertical-rl; text-orientation: mixed;">
+          {project.title}
+        </p>
+        <div class="relative flex justify-between overflow-hidden items-center">
+          <p
+            class="text-xl z-1 domaine mt-[2rem] lg:text-5xl mb-[4rem] -roboto-mono-main max-w-6xl">
+            {project.page.excerpt}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="border-t border-t-neutral-700"></div>
+  <div class="-bg-[var(--background)] relative py-[3rem] mx-auto px-8 container">
+    <div class="w-full grid mx-auto text-lg grid-cols-1 md:grid-cols-2 gap-y-6 gap-x-[4rem]">
+      {
+        page.splitSections.map((section) => (
+          <div class="">
+            <h4 class="text-sm py-2 font-bold">{section.heading}</h4>
+            <p>{section.content}</p>
+            <div class="flex no-scrollbar gap-4 text-sm py-4 overflow-x-scroll">
+              {section.tags &&
+                section.tags.map((tag) => (
+                  <div class="bg-neutral-800 text-sm flex items-center py-1 text-nowrap cursor-pointer px-4 rounded-full">
+                    <p>{tag}</p>
+                  </div>
+                ))}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+  <div
+    class="duration-250 ease-in-out transition upper-image-slideshow-container brightness-75 hover:brightness-50 cursor-pointer">
+    <img
+      src={page.secondCover}
+      class="w-full h-auto max-h-screen object-cover shadow-xl upper-slideshow-image"
+      alt=""
+    />
+  </div>
+  <div
+    class="grid h-full grid-cols-1 md:grid-cols-2 pt-[0rem] gap-y-10-gap-x-8 gap-1 relative overflow-hidden">
+    {
+      project.page.upperSlideshow.map((image, index) => (
+        <img
+          key={image}
+          src={image}
+          class="w-full h-auto upper-slideshow-image object-cover"
+          data-slide-direction={index % 2 === 0 ? "left" : "right"}
+          alt=""
+          style={{ opacity: 0, transform: `translateX(${index % 2 === 0 ? "-100%" : "100%"})` }}
+        />
+      ))
+    }
+  </div>
+  <div class="py-[3rem] mx-auto px-8 container">
+    <div class="-bg-[var(--background) w-full container mx-auto py-[6rem]">
+      <p class="text-xl z-1 domaine lg:text-5xl max-w-6xl">
+        "{project.page.testimonial.content}"
+      </p>
+      <p class="my-4 italic">- {project.page.testimonial.author}</p>
+    </div>
+    <script type="module">
+      gsap.to(".upper-slideshow-image", {
+        x: 0,
+        opacity: 1,
+        scrollTrigger: {
+          once: false,
+          trigger: ".upper-image-slideshow-container",
+          start: "top 20%", // When the top of the trigger hits 80% of the viewport
+          end: "bottom 10%", // When the bottom of the trigger hits 20% of the viewport
+          scrub: true, // Smoothly link animation progress to scroll
+          markers: false, // For debugging - shows start and end lines
+        },
+      });
+    </script>
+  </div>
+  <style>
+    :root {
+      --background: var(--color-neutral-900);
+      --text: var(--color-neutral-300);
+    }
+  </style>
+</Layout>

@@ -1,23 +1,45 @@
 ---
-import Navigation from "../components/Navigation.astro";
-import Shapes from "../components/Shapes.astro";
-import Layout from "../layouts/Layout.astro";
-import projects from "../data/projecta-yearly.json";
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Shapes from "@/components/Shapes.astro";
+import Layout from "@/layouts/Layout.astro";
+import { getLangFromUrl } from '@/i18n/utils';
+import SEO from "@/components/SEO.astro"; 
+
+const lang = getLangFromUrl(Astro.url);
+
+// 1. Define the glob pattern (path relative to the current file or use alias)
+// Note: Keys in the returned object might be relative or absolute depending on usage
+const projectModules = import.meta.glob('@/data/*/projects.json');
+
+// 2. Construct the key to access the correct module importer function
+// The key often needs to be the full path relative to the project root,
+// matching how Vite resolves it. You might need to experiment or log `projectModules`
+// to see the exact key format. Let's assume it needs `/src/data/...`
+const moduleKey = `/src/data/${lang}/projects.json`;
+const importModule = projectModules[moduleKey];
+
+let projects = [];
+if (importModule) {
+  // 3. Call the importer function (it's async) and get the default export
+  const module = await importModule();
+  projects = module.default;
+} else {
+  console.warn(`Could not find projects module importer for key: ${moduleKey}`);
+  // Handle error
+}
+
 ---
 
 <Layout>
-  <Navigation />
-  <div class="bg-neutral-300 min-h-screen relative overflow-hidden flex flex-col">
+  <SEO pageName="index"/>
+  <div class="min-h-screen relative overflow-hidden flex flex-col">
     <div class="flex-auto w-full">
-      <div class="w-full flex-auto absolute overflow-hidden h-full"><Shapes /></div>
+      <div data-speed="clamp(0.9)" class="w-full flex-auto absolute overflow-hidden h-full"><Shapes /></div>
       <div class="absolute bottom-0 hidden lg:flex left-0 p-8 text-lg">
         <ul class="mr-4">
           {
             projects.slice(0, 4).map((item) => (
               <li>
-                <p class="select-none">{item.year}</p>
+                <a href={item.title}><p class="select-none">{item.year}</p></a>
               </li>
             ))
           }

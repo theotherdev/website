@@ -1,0 +1,26 @@
+[
+  {
+      "id": "1",
+      "title": "ویب سائٹ ڈیزائن",
+      "imageSrc": "https://cdn.jsdelivr.net/gh/kabeer11000/docs-hosted@redirector-content/theotherdev/new-web/web-design.webp",
+      "description": "ہم آن لائن اشتہاری آئیڈیاز کی تخلیق اور ڈیولپمنٹ میں مدد کرتے ہیں، خاص طور پر ان کی بصری ظاہری شکل پر توجہ مرکوز کرتے ہوئے۔"
+    },
+    {
+      "id": "2",
+      "title": "برانڈنگ",
+      "imageSrc": "https://cdn.jsdelivr.net/gh/kabeer11000/docs-hosted@redirector-content/theotherdev/new-web/branding.webp",
+      "description": "ہم کلیدی برانڈ عناصر ڈیزائن کرتے ہیں جیسے لوگو، رنگ سکیم، ٹائپوگرافی، اور دیگر ڈیزائن اجزاء جو آپ کے برانڈ کو حریفوں سے ممتاز بناتے ہیں۔"
+    },
+    {
+      "id": "3",
+      "title": "ویب سائٹ ڈیولپمنٹ",
+      "imageSrc": "https://cdn.jsdelivr.net/gh/kabeer11000/docs-hosted@redirector-content/theotherdev/new-web/web-developmet.webp",
+      "description": "ہم آپ کی آن لائن موجودگی کو بناتے اور بہتر بناتے ہیں۔ ویب سائٹ آپ کے کاروبار کا ڈیجیٹل داخلی نقطہ اور ایک طاقتور آمدنی کا ذریعہ ہے۔"
+    },
+    {
+      "id": "4",
+      "title": "اشتہارات اور مارکیٹنگ",
+      "imageSrc": "https://cdn.jsdelivr.net/gh/kabeer11000/docs-hosted@redirector-content/theotherdev/new-web/ads.webp",
+      "description": "ہم تخلیقی ڈیزائن اور تکنیکی مہارتوں کو ملا کر شاندار 3D ویژولائزیشنز بناتے ہیں جو آپ کے پروجیکٹ کو زندہ کر دیتے ہیں۔"
+    }
+]

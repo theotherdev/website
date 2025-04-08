@@ -1,132 +1,295 @@
 ---
-import OpenInNew from "../assets/icons/open-in-new.svg";
+// src/components/Header.astro
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+// --- Define Navigation Data Once ---
+const navLinks = [
+  { title: t("nav.work"), path: "/work" },
+  { title: t("nav.experties"), path: "/experties" }, // Spelling: "expertise"?
+  { title: t("nav.about"), path: "/about" },
+];
+
+// Define action/social links separately for clarity
+const letsMeetLink = {
+    title: t("nav.lets-meet"),
+    path: "https://calendly.com/otherdev/30-minute-consultation-call-1",
+    target: "_blank",
+    // SVG for the arrow icon (used on desktop)
+    svgArrow: `<svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" aria-hidden="true"><g clip-path="url(#clip0_659_90_desktop)"><path d="M27.9487 0L28 23.6922H23.8898V6.97433L2.87707 28L0 25.1281L21.0128 4.10256H4.31559V0H27.9487Z" fill="currentColor"></path></g><defs><clipPath id="clip0_659_90_desktop"><rect width="28" height="28" fill="white"></rect></clipPath></defs></svg>`
+};
+
+const socialLinks = [
+  {
+    title: "LinkedIn",
+    path: "https://www.linkedin.com/company/theotherdev/",
+    // SVG for LinkedIn
+    svgContent: `<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" aria-hidden="true"><g clip-path="url(#clip0_659_84_social)"><path d="M88.0952 0H11.9048C5.33333 0 0 5.33333 0 11.9048V88.0952C0 94.6667 5.33333 100 11.9048 100H88.0952C94.6667 100 100 94.6667 100 88.0952V11.9048C100 5.33333 94.6667 0 88.0952 0ZM30.9524 38.0952V83.3333H16.6667V38.0952H30.9524ZM16.6667 24.9286C16.6667 21.5952 19.5238 19.0476 23.8095 19.0476C28.0952 19.0476 30.7857 21.5952 30.9524 24.9286C30.9524 28.2619 28.2857 30.9524 23.8095 30.9524C19.5238 30.9524 16.6667 28.2619 16.6667 24.9286ZM83.3333 83.3333H69.0476C69.0476 83.3333 69.0476 61.2857 69.0476 59.5238C69.0476 54.7619 66.6667 50 60.7143 49.9048H60.5238C54.7619 49.9048 52.381 54.8095 52.381 59.5238C52.381 61.6905 52.381 83.3333 52.381 83.3333H38.0952V38.0952H52.381V44.1905C52.381 44.1905 56.9762 38.0952 66.2143 38.0952C75.6667 38.0952 83.3333 44.5952 83.3333 57.7619V83.3333Z" fill="currentColor"></path></g><defs><clipPath id="clip0_659_84_social"><rect width="100" height="100" fill="white"></rect></clipPath></defs></svg>`
+  },
+  {
+    title: "Instagram",
+    path: "https://instagram.com/other.dev",
+    // SVG for Instagram
+    svgContent: `<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" aria-hidden="true"><path d="M49.5508 0C3.59828 0 0 3.59828 0 49.5508V50.4492C0 96.4017 3.59828 100 49.5508 100H50.4492C96.4017 100 100 96.4017 100 50.4492V50C100 3.63 96.37 0 50 0H49.5508ZM40 10H60C87.8225 10 90 12.1775 90 40V60C90 87.8225 87.8225 90 60 90H40C12.1775 90 10 87.8225 10 60V40C10 12.1775 12.1775 10 40 10ZM74.9854 20C72.2229 20.0075 69.9925 22.2521 70 25.0146C70.0075 27.7771 72.2521 30.0075 75.0146 30C77.7771 29.9925 80.0075 27.7479 80 24.9854C79.9925 22.2229 77.7479 19.9925 74.9854 20ZM49.9414 25C36.1364 25.0325 24.9675 36.2536 25 50.0586C25.0325 63.8636 36.2536 75.0325 50.0586 75C63.8636 74.9675 75.0325 63.7464 75 49.9414C74.9675 36.1364 63.7464 24.9675 49.9414 25ZM49.9658 35C58.2483 34.98 64.98 41.6833 65 49.9658C65.0175 58.2483 58.3167 64.98 50.0342 65C41.7517 65.02 35.02 58.3192 35 50.0342C34.98 41.7517 41.6833 35.02 49.9658 35Z" fill="currentColor"></path></svg>`
+  },
+];
+
+// Combine links needed for the right side of the desktop nav
+const desktopRightLinks = [letsMeetLink, ...socialLinks];
+
+const karachiTimezone = "Asia/Karachi"; // Explicitly define Karachi timezone
 ---
 
+{/* --- JSON-LD Schema for Navigation --- */}
+<script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "SiteNavigationElement",
+    "name": t("nav.schemaMainNavigation") ?? "Main Navigation", // Use i18n key
+    "potentialAction": navLinks.map(link => ({
+      "@type": "Action",
+      "name": link.title,
+      "target": `${Astro.url.origin}${link.path}`
+    }))
+})} />
+
+
+{/* --- Mobile Navigation --- */}
 <nav
-  style="mix-blend-mode: exclusion;"
-  class="lg:hidden flex justify-between w-full align-middle px-8 pt-4 text-lg text-black bg-transparent- fixed top-0 z-[100]">
-  <div><p class="invert-100"><strong><a href="/">Other Dev®</a></strong></p></div>
-  <div>
-    <p class="invert-100 cursor-pointer mobile-navigation-trigger" data-active="false">Menu</p>
+  aria-label={t("nav.mobileAriaLabel") ?? "Mobile Navigation"}
+  class="lg:hidden flex justify-between items-center w-full px-6 pt-4 text-lg text-black invert bg-transparent fixed top-0 z-50 header-blend-mode"
+>
+  <div class="font-bold text-black"> {/* Text color override if needed */}
+    <a href="/" aria-label="Other Dev® Home">Other Dev®</a>
   </div>
+  <button
+    id="mobile-nav-toggle"
+    class="mobile-navigation-trigger p-2 -mr-2 text-black" {/* Text color override */}
+    aria-controls="mobile-menu"
+    aria-expanded="false"
+    type="button"
+  >
+    <span class="sr-only">{t("nav.toggleMenu") ?? "Toggle menu"}</span>
+    <span class="menu-text">{t("nav.menu") ?? "Menu"}</span>
+     {/* Add burger/close icon SVGs here if desired, toggling visibility with JS/CSS */}
+  </button>
 </nav>
-<div class="mobile-navigation-backdrop overflow-scroll h-0 lg:hidden fixed w-full z-50 bg-green-500">
-  <div class="mt-[100%] mobile-navigation-content opacity-0">
-    <div class="pb-[3rem]">
-      {
-        [
-          {
-            title: "Work",
-            path: "/work",
-          },
-          {
-            title: "Experties",
-            path: "/experties",
-          },
-          {
-            title: "About",
-            path: "/about",
-          },
-          {
-            title: "Lets Meet!", target: "_blank",
-            path: "https://calendly.com/otherdev/30-minute-consultation-call-1",
-          },
-        ].map((item) => (
-          <div class="border-b border-b-neutral-700 py-4 px-8">
-            <p class="text-lg">
-              <a href={item.path} target={item.target}>{item.title}</a>
-            </p>
-          </div>
-        ))
-      }
-    </div>
-    <div class="fixed bottom-0 w-full backdrop-blur-lg flex justify-between">
-      <div class="py-2 px-8 flex justify-right content-center items-center align-middle">
-        <img src={OpenInNew.src} class="w-8 h-8" />
-        <p class="text-md"><strong><a href="https://www.linkedin.com/company/theotherdev/" target="_blank">LinkedIn</a></strong></p>
-      </div>
-      <div class="py-2 px-8 flex justify-right content-center items-center align-middle">
-        <img src={OpenInNew.src} class="w-8 h-8" />
-        <p class="text-md"><strong><a href="https://instagram.com/other.dev" target="_blank">Instagram</a></strong></p>
-      </div>
-      <div class="py-2 px-8 flex justify-right content-center items-center align-middle">
-        <img src={OpenInNew.src} class="w-8 h-8" />
-        <p class="text-md"><strong><a href="https://github.com/kabeer11000" target="_blank">Github</a></strong></p>
-      </div>
+
+{/* --- Mobile Menu Panel --- */}
+<div
+  id="mobile-menu"
+  class="mobile-navigation-backdrop overflow-y-auto h-0 lg:hidden fixed w-full top-0 left-0 z-40 bg-green-500 transition-height duration-500 ease-in-out"
+  aria-hidden="true"
+>
+  <div class="pt-24 mobile-navigation-content opacity-0 transition-opacity duration-250 ease-in-out delay-200">
+    <ul class="pb-12" aria-label={t("nav.mobileAriaLabelLinks") ?? "Mobile Navigation Links"}>
+      {/* Main Nav Links */}
+      {navLinks.map((item) => (
+        <li class="border-b border-b-black">
+          <a href={item.path} class="block py-4 px-8 text-lg text-black hover:bg-green-600 transition-colors">
+            {item.title}
+          </a>
+        </li>
+      ))}
+      {/* Let's Meet Link */}
+      <li class="border-b border-b-black">
+          <a
+            href={letsMeetLink.path}
+            target={letsMeetLink.target}
+            rel={letsMeetLink.target === '_blank' ? 'noopener noreferrer' : undefined}
+            class="block py-4 px-8 text-lg text-black hover:bg-green-600 transition-colors"
+          >
+            {letsMeetLink.title}
+          </a>
+      </li>
+    </ul>
+
+    {/* Mobile Footer Social Links */}
+    <div class="fixed px-8 bottom-0 left-0 w-full bg-green-500/80 backdrop-blur-lg flex justify-between items-center border-t border-black">
+      {socialLinks.map(link => (
+        <a
+          href={link.path}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="py-4 text-md font-medium text-black flex items-center gap-2 hover:text-neutral-800 transition-colors"
+          aria-label={`${link.title} (${t('nav.opensNewTab') ?? 'opens in a new tab'})`}
+        >
+          {/* Inject SVG directly, set fill="currentColor" */}
+          <Fragment set:html={link.svgContent} />
+          {link.title}
+        </a>
+      ))}
     </div>
   </div>
 </div>
-<script>
-  const tl = gsap.timeline();
-  const mobileNavTrigger = document.querySelector(".mobile-navigation-trigger");
-  mobileNavTrigger?.addEventListener("click", async () => {
-    if (mobileNavTrigger?.getAttribute("data-active") === "true") {
-      tl.to(".mobile-navigation-content", { opacity: 0, duration: 0.25 }).to(
-        ".mobile-navigation-backdrop",
-        { height: 0, duration: 0.5 }
-      );
-      tl.to(".mobile-navigation-trigger", {
-        text: "Menu",
-        ease: "none",
-      });
-      mobileNavTrigger?.setAttribute("data-active", "false");
-    } else {
-      tl.to(".mobile-navigation-backdrop", { height: "100vh", duration: 0.5 }).to(
-        ".mobile-navigation-content",
-        { opacity: 1, duration: 0.25 }
-      );
-      tl.to(".mobile-navigation-trigger", {
-        text: "Close",
-        ease: "none",
-      });
-      mobileNavTrigger?.setAttribute("data-active", "true");
-    }
-  });
-</script>
+
+{/* --- Desktop Navigation --- */}
 <nav
-  style="mix-blend-mode: exclusion;"
-  class="hidden lg:flex justify-between invert-100 align-middle px-8 pt-4 text-lg text-white bg-transparent- fixed w-full top-0 z-[100]">
-  <div><p class="invert-100"><strong><a href="/">Other Dev®</a></strong></p></div>
-  <div><p class="invert-100">Software + Design</p></div>
-  <div class="flex invert-100"><p class="clock-time"></p><span>&nbsp;Karachi</span></div>
-  <div class="relative">
-    <ul class="absolute text-nowrap">
-      <li><p class="invert-100"><a href="/work">Work</a></p></li>
-      <li><p class="invert-100"><a href="/experties">Experties</a></p></li>
-      <li><p class="invert-100"><a href="/about">About</a></p></li>
-      <!-- <li><p class="invert-100"><a href="https://calendly.com/otherdev/30-minute-consultation-call-1" target="_blank">Lets Meet!</a></p></li> -->
-    </ul>
+  aria-label={t("nav.desktopAriaLabel") ?? "Primary Navigation"}
+  class="hidden lg:flex justify-between items-center w-full px-8 pt-4 text-lg text-black bg-transparent fixed top-0 z-50 header-blend-mode invert"
+>
+  <div class="font-bold">
+    <a href="/" class="dynamic-underline dynamic-underline-left" aria-label="Other Dev® Home">Other Dev®</a>
   </div>
-  <div><p class="invert-100"><a href="https://calendly.com/otherdev/30-minute-consultation-call-1" target="_blank">Lets Meet!</a></p></div>
+
+  <div>{t("nav.software-and-design")}</div>
+
+  <div class="flex items-center gap-2">
+    <span class="clock-time tabular-nums"></span> {/* Class for JS targeting */}
+    <span>{t('nav.location', { default: 'Karachi' })}</span> {/* Use i18n for location */}
+  </div>
+
+  {/* Main Desktop Links */}
+  <ul class="flex gap-6">
+    {navLinks.map((item) => (
+      <li>
+        <a href={item.path} class="dynamic-underline dynamic-underline-left hover:opacity-75 transition-all">
+          {item.title}
+        </a>
+      </li>
+    ))}
+  </ul>
+
+  {/* Desktop Right-Side Links (Action & Social) */}
+  <ul class="flex gap-4 items-center">
+     {desktopRightLinks.map(link => (
+        <li>
+         <a
+          href={link.path}
+          target={link.target ?? "_blank"} /* Default to _blank if not specified */
+          rel={ (link.target === '_blank' || !link.target) ? 'noopener noreferrer' : undefined}
+          class="flex items-center gap-2 text-sm hover:opacity-80 transition-opacity"
+          aria-label={`${link.title}${ (link.target === '_blank' || !link.target) ? ` (${t('nav.opensNewTab') ?? 'opens in a new tab'})` : ''}`}
+        >
+          {/* Inject SVG content conditionally */}
+          {link.svgArrow && <Fragment set:html={link.svgArrow} />}
+          {link.svgContent && <Fragment set:html={link.svgContent} />}
+          <span class="font-medium">{link.title}</span> {/* Keep text medium weight */}
+         </a>
+        </li>
+     ))}
+  </ul>
 </nav>
-<script is:inline>
-  const clock = document.querySelector(".clock-time");
-  const updateClockTime = async () => {
-    const date = new Date();
-    const hours = date.getHours().toString();
-    const minutes = date.getMinutes().toString();
-    const seconds = date.getSeconds().toString();
-    clock.innerHTML = `${hours < 10 ? "0" : ""}${hours}:${minutes < 10 ? "0" : ""}${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
-    requestAnimationFrame(updateClockTime);
-  };
-  window.addEventListener("resize", () => {
-    if (
-      clock.checkVisibility({
-        visibilityProperty: true,
-        contentVisibilityAuto: true,
-        contentVisibilityHidden: true,
-        contentVisibilityVisible: true,
-      })
-    )
-      requestAnimationFrame(updateClockTime);
-  });
-  if (
-    clock.checkVisibility({
-      visibilityProperty: true,
-      contentVisibilityAuto: true,
-      contentVisibilityHidden: true,
-      contentVisibilityVisible: true,
-    })
-  )
-    requestAnimationFrame(updateClockTime);
+
+{/* --- Global Styles --- */}
+<style is:global> /* Use is:global if styles affect injected SVGs or child elements broadly */
+  .header-blend-mode {
+    mix-blend-mode: exclusion;
+  }
+  .mobile-navigation-backdrop {
+    transition: height 0.5s ease-in-out;
+  }
+  .mobile-navigation-backdrop.active {
+    height: 100vh; /* Or 100dvh */
+  }
+  .mobile-navigation-content {
+     transition: opacity 0.25s ease-in-out 0.2s; /* Added delay */
+  }
+   .mobile-navigation-backdrop.active .mobile-navigation-content {
+      opacity: 1;
+  }
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+  /* Ensure SVGs inherit color correctly if needed */
+  .invert svg path[fill="currentColor"] {
+      /* fill: white; */ /* Or handled by parent invert */
+  }
+  /* You might need more specific selectors ifcurrentColor isn't working as expected */
+</style>
+
+
+{/* --- Scripts --- */}
+<script>
+  // --- Mobile Menu Toggle ---
+  const mobileNavTrigger = document.getElementById('mobile-nav-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuTextSpan = mobileNavTrigger?.querySelector('.menu-text');
+
+  // Fetch translated text (replace with your actual i18n client-side getter if available)
+  function getClientSideTranslation(key, fallback) {
+      // Example: Check for a global object or data attributes
+      // return window.myTranslations?.[key] ?? fallback;
+      // Simple fallback for example purposes:
+      const translations = {
+          'nav.menu': 'Menu',
+          'nav.close': 'Close'
+      };
+      // Basic lang check - adapt to your setup
+      const lang = document.documentElement.lang || 'en';
+      // In a real app, you'd load the correct language strings
+      return translations[key] || fallback;
+  }
+
+  const textMenu = getClientSideTranslation('nav.menu', 'Menu');
+  const textClose = getClientSideTranslation('nav.close', 'Close');
+
+
+  if (mobileNavTrigger && mobileMenu && menuTextSpan) {
+    mobileNavTrigger.addEventListener('click', () => {
+      const isActive = mobileNavTrigger.getAttribute('aria-expanded') === 'true';
+
+      if (isActive) {
+        mobileNavTrigger.setAttribute('aria-expanded', 'false');
+        mobileMenu.classList.remove('active');
+        mobileMenu.setAttribute('aria-hidden', 'true');
+        menuTextSpan.textContent = textMenu;
+      } else {
+        mobileNavTrigger.setAttribute('aria-expanded', 'true');
+        mobileMenu.classList.add('active');
+        mobileMenu.setAttribute('aria-hidden', 'false');
+        menuTextSpan.textContent = textClose;
+      }
+    });
+  } else {
+      console.error("Mobile navigation elements not found.");
+  }
+
+  // --- Desktop Clock - Karachi Time ---
+  const clockElement = document.querySelector('.clock-time');
+  const karachiTimezone = 'Asia/Karachi'; // Ensure correct timezone ID
+
+  function updateClockTime() {
+    const now = new Date();
+    try {
+        const timeString = now.toLocaleTimeString('en-US', { // Using 'en-US' locale for formatting consistency, adjust if needed
+          timeZone: karachiTimezone,
+          hour: '2-digit',
+          minute: '2-digit',
+          second: '2-digit',
+          hour12: false // 24-hour format
+        });
+        if (clockElement) {
+            clockElement.textContent = timeString;
+        }
+    } catch (error) {
+        console.error("Error formatting time for timezone:", karachiTimezone, error);
+        // Display fallback or clear the element
+        if (clockElement) clockElement.textContent = '--:--:--';
+        // Stop the loop if timezone is invalid
+        clockElement._isClockVisible = false;
+    }
+
+    if (clockElement?._isClockVisible) {
+        requestAnimationFrame(updateClockTime);
+    }
+  }
+
+  if (clockElement) {
+      const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+              clockElement._isClockVisible = entry.isIntersecting;
+              if (entry.isIntersecting) {
+                  requestAnimationFrame(updateClockTime); // Start/resume updates
+              }
+          });
+      }, { threshold: 0.1 }); // Trigger when 10% visible
+
+      observer.observe(clockElement);
+
+  } else {
+      console.error("Clock element not found.");
+  }
+
 </script>

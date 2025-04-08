@@ -1,0 +1,129 @@
+[
+  {
+    "id": "4",
+    "title": "Branding & website development for Wish",
+    "company": "Wish",
+    "hasPage": true,
+    "year": "2025",
+    "description": "Website design, development & branding",
+    "imageSrc": "/images/projects/wish-2024/wishapparels.com_.webp",
+    "url": "https://wishapparels.com/",
+    "coverImage": "/images/projects/wish-2024/wishapparels.com_.webp",
+    "coverImageAlt": "Wish Store Launch",
+    "page": {
+      "excerpt": "Our collaboration with Wish Apparels involved crafting a digital experience that mirrors the quality and style of their upcoming clothing line. We designed an intuitive e-commerce platform that not only showcases their products with high-quality visuals and detailed information but also provides a seamless and secure shopping journey. The branding and design elements, meticulously developed in tandem with the website, work harmoniously to communicate the brand's ethos and appeal to their target audience. This project underscores our agency's commitment to creating impactful digital solutions that drive brand growth and customer engagement for innovative businesses.",
+      "splitSections": [
+        {
+          "heading": "Challenges",
+          "content": "Establishing a New Brand Identity: As Wish Apparels was a new entrant to the market, a key challenge was to create a distinct and memorable brand identity from the ground up. This involved developing a visual language that resonated with their target demographic and effectively communicated their brand values through logo design, typography, color palettes, and overall aesthetic. Building a Scalable E-commerce Platform: We needed to develop an e-commerce website that was not only visually appealing and user-friendly but also robust and scalable to accommodate future growth in product offerings and customer traffic. Ensuring seamless integration of essential features like product browsing, secure checkout, and inventory management was crucial.",
+          "tags": ["Brand Development", "Visual Identity", "Shopify", "UI/UX Design"]
+        },
+        {
+          "heading": "Inspiration",
+          "content": "Minimalist Elegance: The design direction was heavily inspired by a desire for minimalist elegance, allowing the apparel itself to take center stage. Clean lines, ample white space, and sophisticated typography were employed to create a sense of understated luxury and timeless style. Focus on Visual Storytelling: Recognizing the importance of visual appeal in fashion, we focused on creating a platform that prioritized high-quality imagery and compelling visual storytelling. The website design aimed to immerse users in the brand's world and showcase the garments in an aspirational and engaging manner."
+        }
+      ],
+      "upperSlideshow": [
+        "/images/projects/wish-2024/upper-slideshow-1.webp",
+        "/images/projects/wish-2024/1743813808292_100.webp",
+        "/images/projects/wish-2024/wish-girl-11.webp",
+        "/images/projects/wish-2024/wish-boy-1.webp",
+        "/images/projects/wish-2024/wish-logo.webp",
+        "/images/projects/wish-2024/with-other-dev.webp"
+      ],
+      "testimonial": {
+        "content": "Working with Other Dev was a game-changer for Wish Apparels. Their holistic approach to website development and branding delivered results far beyond our expectations. The new website's user-friendly design and compelling presentation directly contributed to an incredible 500% surge in sales. The branding they crafted is sophisticated, memorable, and perfectly reflects our brand identity, which we have proudly adopted across all aspects of our business. We highly recommend Other Dev to any emerging brand looking for impactful digital solutions.",
+        "author": "Talha, Founder of Wish"
+      },
+      "secondCover": "https://images.unsplash.com/photo-1509114397022-ed747cca3f65?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    }
+  },
+  {
+    "id": "1",
+    "title": "Website infrastructure creation for Narkins Builders",
+    "company": "Narkins Builders",
+    "hasPage": true,
+    "year": "2025",
+    "description": "Website Design, Development & Infrastructure",
+    "imageSrc": "/images/projects/narkins-2025/narkinsbuilders.com_.webp",
+    "url": "/blog/fdc784b9-2f1d-43a2-8919-658ec1901491",
+    "coverImage": "/images/projects/narkins-2025/narkinsbuilders.com_.webp",
+    "coverImageAlt": "Narkins Builders Website Launch",
+    "page": {
+      "excerpt": "We partnered with Narkins Builders, a leading construction company, to create a robust and scalable website infrastructure that forms the foundation of their online presence. This project involved designing and developing a user-friendly platform to showcase their portfolio of construction projects, provide detailed information about their services, and facilitate client inquiries. Our focus was on building a reliable and efficient system that supports Narkins Builders' growth and enhances their digital communication with stakeholders.",
+      "splitSections": [
+        {
+          "heading": "Challenges",
+          "content": "Developing a Scalable Infrastructure: Narkins Builders required a website infrastructure capable of handling a large volume of project data, including images, plans, and technical specifications. We needed to design a system that could efficiently manage and display this information while ensuring optimal website performance. Integrating Project Management Tools: To streamline client communication and project updates, we integrated project management tools into the website, enabling seamless interaction and information sharing. This required careful planning and implementation to ensure compatibility and security. Ensuring Data Security and Reliability: Given the sensitive nature of construction data, including contracts and blueprints, ensuring robust data security and system reliability was paramount. We implemented industry-standard security measures and backup protocols to protect against data loss and unauthorized access.",
+          "tags": [
+            "Web Development",
+            "Infrastructure",
+            "Database Design",
+            "API Integration",
+            "Project Management Tools",
+            "Data Security"
+          ]
+        },
+        {
+          "heading": "Our Approach",
+          "content": "Modular Design and Development: We adopted a modular design and development approach, allowing for flexibility and scalability as Narkins Builders' needs evolve. This involved creating reusable components and a well-structured codebase. Content Management System (CMS) Implementation: We implemented a user-friendly CMS, empowering Narkins Builders to easily update website content, add new projects, and manage client inquiries without requiring extensive technical expertise. Performance Optimization: We focused on optimizing website performance to ensure fast loading times and a smooth user experience across all devices. This included image optimization, caching strategies, and efficient code execution.",
+          "tags": [
+            "CMS (e.g., WordPress, Drupal)",
+            "Performance Optimization",
+            "Responsive Design",
+            "Modular Design",
+            "User Experience (UX)",
+            "Content Management"
+          ]
+        }
+      ],
+      "upperSlideshow": [
+        "/images/projects/narkins-2025/narkins-collage.webp",
+        "/images/projects/narkins-2025/1743813250549_100.webp",
+        "/images/projects/narkins-2025/hcr_new.webp"
+      ],
+      "testimonial": {
+        "content": "The Other Dev provided us with a website infrastructure that has significantly improved our online operations. Their team's expertise in handling complex data and integrating vital tools has streamlined our project management and enhanced our communication with clients. The website is robust, user-friendly, and has enabled us to showcase our work effectively. We appreciate The Other Dev's professionalism and commitment to delivering a high-quality solution.",
+        "author": "Sarim"
+      },
+      "secondCover": "https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    }
+  },
+  {
+    "id": "3",
+    "title": "Website development & Branding for Parcheh81",
+    "year": "2024",
+    "description": "Website Development & Design",
+    "imageSrc": "/images/projects/parcheh81-2024/parcheh81.com_.webp"
+  },
+  {
+    "id": "5",
+    "title": "Website creation for Groovy Pakistan",
+    "year": "2024",
+    "description": "Shopfiy Theme Development, Website Development & Launch",
+    "imageSrc": "https://cdn.jsdelivr.net/gh/kabeer11000/docs-hosted@redirector-content/theotherdev/new-web/groovy-layers.webp"
+  },
+  {
+    "id": "6",
+    "title": "Payment infrastructure migration for Tiny Footprint Coffee",
+    "year": "2024",
+    "description": "Website Design, Recharge Migration & Shopify Theme Development",
+    "imageSrc": "https://cdn.jsdelivr.net/gh/kabeer11000/docs-hosted@redirector-content/theotherdev/new-web/tinyfootprintcoffee.webp",
+    "url": "/blog/dc423a1a-f68e-42bd-a9b3-430bd57f82c1"
+  },
+  {
+    "id": "7",
+    "title": "Website development and Branding for Neubee's Tailors",
+    "year": "2023",
+    "description": "Design, Headless Shopify Deployment, Marketing & Website Development",
+    "imageSrc": "https://cdn.jsdelivr.net/gh/kabeer11000/docs-hosted@redirector-content/theotherdev/new-web/neubees.webp"
+  },
+  {
+    "id": "8",
+    "title": "Enterprise infrastucture development for Ek Qadam Aur",
+    "year": "2023",
+    "description": "Website Design, Website Development & Infrastructure",
+    "imageSrc": "https://cdn.jsdelivr.net/gh/kabeer11000/docs-hosted@redirector-content/theotherdev/new-web/ekqadamaur.webp",
+    "url": "http://ekqadamaur.kabeers.network/"
+  }
+]
