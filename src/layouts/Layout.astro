@@ -47,7 +47,7 @@ const schemaData = {
 };
 
 const currentPage = Astro.url.pathname;
-const isIndexPage = currentPage === "/";
+const isIndexPage = currentPage === "/" || currentPage === "/de" || currentPage === "/ur" || currentPage === "/de/" || currentPage === "/ur/";
 ---
 
 <!doctype html>

@@ -1,15 +1,16 @@
 ---
 // src/components/Header.astro
 import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+import { getRelativeLocaleUrl } from "astro:i18n";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
 // --- Define Navigation Data Once ---
 const navLinks = [
-  { title: t("nav.work"), path: "/work" },
-  { title: t("nav.experties"), path: "/experties" }, // Spelling: "expertise"?
-  { title: t("nav.about"), path: "/about" },
+  { title: t("nav.work"), path: getRelativeLocaleUrl(lang, "work") },
+  { title: t("nav.experties"), path: getRelativeLocaleUrl(lang, "experties") }, // Spelling: "expertise"?
+  { title: t("nav.about"), path: getRelativeLocaleUrl(lang, "about") },
 ];
 
 // Define action/social links separately for clarity
@@ -207,23 +208,8 @@ const karachiTimezone = "Asia/Karachi"; // Explicitly define Karachi timezone
   const mobileMenu = document.getElementById('mobile-menu');
   const menuTextSpan = mobileNavTrigger?.querySelector('.menu-text');
 
-  // Fetch translated text (replace with your actual i18n client-side getter if available)
-  function getClientSideTranslation(key, fallback) {
-      // Example: Check for a global object or data attributes
-      // return window.myTranslations?.[key] ?? fallback;
-      // Simple fallback for example purposes:
-      const translations = {
-          'nav.menu': 'Menu',
-          'nav.close': 'Close'
-      };
-      // Basic lang check - adapt to your setup
-      const lang = document.documentElement.lang || 'en';
-      // In a real app, you'd load the correct language strings
-      return translations[key] || fallback;
-  }
-
-  const textMenu = getClientSideTranslation('nav.menu', 'Menu');
-  const textClose = getClientSideTranslation('nav.close', 'Close');
+  const textMenu = t('nav.menu', 'Menu');
+  const textClose = t('nav.close', 'Close');
 
 
   if (mobileNavTrigger && mobileMenu && menuTextSpan) {
