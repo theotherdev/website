@@ -1,63 +1,128 @@
 [
   {
-    "id": "1",
-    "title": "Entwicklung & SEO für Narkins Builders",
-    "year": "2025",
-    "description": "Webseitenentwicklung & SEO"
-  },
-  {
     "id": "4",
-    "title": "Store-Start für Groovy Pakistan",
-    "year": "2024",
-    "description": "Webseiten-Design",
-    "imageSrc": "https://cdn.jsdelivr.net/gh/kabeer11000/docs-hosted@redirector-content/theotherdev/new-web/groovy-dev.webp",
-    "url": "https://groovypakistan.com/"
+    "title": "Branding & Website-Entwicklung für Wish",
+    "company": "Wish",
+    "hasPage": true,
+    "year": "2025",
+    "description": "Website-Design, Entwicklung & Branding",
+    "imageSrc": "/images/projects/wish-2024/wishapparels.com_.webp",
+    "url": "https://wishapparels.com/",
+    "coverImage": "/images/projects/wish-2024/wishapparels.com_.webp",
+    "coverImageAlt": "Wish Store Launch",
+    "page": {
+      "excerpt": "Unsere Zusammenarbeit mit Wish Apparels umfasste die Gestaltung eines digitalen Erlebnisses, das die Qualität und den Stil ihrer kommenden Bekleidungslinie widerspiegelt. Wir haben eine intuitive E-Commerce-Plattform entworfen, die nicht nur ihre Produkte mit hochwertigen Bildern und detaillierten Informationen präsentiert, sondern auch ein nahtloses und sicheres Einkaufserlebnis bietet. Die Branding- und Designelemente, die in enger Abstimmung mit der Website entwickelt wurden, arbeiten harmonisch zusammen, um das Ethos der Marke zu kommunizieren und ihre Zielgruppe anzusprechen. Dieses Projekt unterstreicht das Engagement unserer Agentur, wirkungsvolle digitale Lösungen zu schaffen, die das Markenwachstum und die Kundenbindung für innovative Unternehmen fördern.",
+      "splitSections": [
+        {
+          "heading": "Herausforderungen",
+          "content": "Etablierung einer neuen Markenidentität: Da Wish Apparels ein neuer Marktteilnehmer war, bestand eine zentrale Herausforderung darin, von Grund auf eine unverwechselbare und einprägsame Markenidentität zu schaffen. Dies umfasste die Entwicklung einer visuellen Sprache, die bei ihrer Zielgruppe Anklang fand und ihre Markenwerte durch Logodesign, Typografie, Farbpaletten und die allgemeine Ästhetik effektiv kommunizierte. Aufbau einer skalierbaren E-Commerce-Plattform: Wir mussten eine E-Commerce-Website entwickeln, die nicht nur visuell ansprechend und benutzerfreundlich, sondern auch robust und skalierbar war, um zukünftiges Wachstum des Produktangebots und des Kundenverkehrs zu bewältigen. Die nahtlose Integration wesentlicher Funktionen wie Produktsuche, sichere Kasse und Bestandsverwaltung war entscheidend.",
+          "tags": ["Markenentwicklung", "Visuelle Identität", "Shopify", "UI/UX Design"]
+        },
+        {
+          "heading": "Inspiration",
+          "content": "Minimalistische Eleganz: Die Designrichtung war stark von dem Wunsch nach minimalistischer Eleganz inspiriert, wodurch die Bekleidung selbst in den Mittelpunkt rücken konnte. Klare Linien, viel Weißraum und eine anspruchsvolle Typografie wurden eingesetzt, um ein Gefühl von unaufdringlichem Luxus und zeitlosem Stil zu schaffen. Fokus auf visuelles Storytelling: Die Bedeutung visueller Anziehungskraft in der Mode erkennend, konzentrierten wir uns auf die Schaffung einer Plattform, die hochwertige Bilder und fesselndes visuelles Storytelling in den Vordergrund stellte. Das Website-Design zielte darauf ab, die Nutzer in die Welt der Marke einzutauchen und die Kleidungsstücke auf eine inspirierende und ansprechende Weise zu präsentieren."
+        }
+      ],
+      "upperSlideshow": [
+        "/images/projects/wish-2024/upper-slideshow-1.webp",
+        "/images/projects/wish-2024/1743813808292_100.webp",
+        "/images/projects/wish-2024/wish-girl-11.webp",
+        "/images/projects/wish-2024/wish-boy-1.webp",
+        "/images/projects/wish-2024/wish-logo.webp",
+        "/images/projects/wish-2024/with-other-dev.webp"
+      ],
+      "testimonial": {
+        "content": "Die Zusammenarbeit mit Other Dev war ein Wendepunkt für Wish Apparels. Ihr ganzheitlicher Ansatz in der Website-Entwicklung und im Branding lieferte Ergebnisse, die unsere Erwartungen weit übertrafen. Das benutzerfreundliche Design und die überzeugende Präsentation der neuen Website trugen direkt zu einem unglaublichen Umsatzanstieg von 500 % bei. Das von ihnen entwickelte Branding ist anspruchsvoll, einprägsam und spiegelt unsere Markenidentität perfekt wider, die wir mit Stolz in allen Bereichen unseres Unternehmens übernommen haben. Wir empfehlen Other Dev jedem aufstrebenden Unternehmen, das nach wirkungsvollen digitalen Lösungen sucht, wärmstens.",
+        "author": "Talha, Gründer von Wish"
+      },
+      "secondCover": "https://images.unsplash.com/photo-1509114397022-ed747cca3f65?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    }
   },
   {
     "id": "1",
     "title": "Erstellung der Website-Infrastruktur für Narkins Builders",
-    "year": "2023",
-    "description": "Webseiten-Design, Entwicklung & Infrastruktur",
-    "imageSrc": "https://cdn.jsdelivr.net/gh/kabeer11000/docs-hosted@redirector-content/theotherdev/new-web/narkins.webp",
-    "url": "/blog/fdc784b9-2f1d-43a2-8919-658ec1901491"
+    "company": "Narkins Builders",
+    "hasPage": true,
+    "year": "2025",
+    "description": "Website-Design, Entwicklung & Infrastruktur",
+    "imageSrc": "/images/projects/narkins-2025/narkinsbuilders.com_.webp",
+    "url": "/blog/fdc784b9-2f1d-43a2-8919-658ec1901491",
+    "coverImage": "/images/projects/narkins-2025/narkinsbuilders.com_.webp",
+    "coverImageAlt": "Narkins Builders Website Launch",
+    "page": {
+      "excerpt": "Wir haben mit Narkins Builders, einem führenden Bauunternehmen, zusammengearbeitet, um eine robuste und skalierbare Website-Infrastruktur zu schaffen, die das Fundament ihrer Online-Präsenz bildet. Dieses Projekt umfasste die Gestaltung und Entwicklung einer benutzerfreundlichen Plattform zur Präsentation ihres Portfolios an Bauprojekten, zur Bereitstellung detaillierter Informationen über ihre Dienstleistungen und zur Erleichterung von Kundenanfragen. Unser Fokus lag auf dem Aufbau eines zuverlässigen und effizienten Systems, das das Wachstum von Narkins Builders unterstützt und ihre digitale Kommunikation mit Stakeholdern verbessert.",
+      "splitSections": [
+        {
+          "heading": "Herausforderungen",
+          "content": "Entwicklung einer skalierbaren Infrastruktur: Narkins Builders benötigte eine Website-Infrastruktur, die ein großes Volumen an Projektdaten, einschließlich Bildern, Plänen und technischen Spezifikationen, verarbeiten konnte. Wir mussten ein System entwerfen, das diese Informationen effizient verwalten und anzeigen konnte und gleichzeitig eine optimale Website-Leistung gewährleistete. Integration von Projektmanagement-Tools: Um die Kundenkommunikation und Projektaktualisierungen zu optimieren, haben wir Projektmanagement-Tools in die Website integriert, die eine nahtlose Interaktion und den Informationsaustausch ermöglichen. Dies erforderte eine sorgfältige Planung und Implementierung, um Kompatibilität und Sicherheit zu gewährleisten. Gewährleistung von Datensicherheit und Zuverlässigkeit: Angesichts der sensiblen Natur von Baudaten, einschließlich Verträgen und Bauplänen, war die Gewährleistung einer robusten Datensicherheit und Systemzuverlässigkeit von größter Bedeutung. Wir haben branchenübliche Sicherheitsmaßnahmen und Backup-Protokolle implementiert, um Datenverlust und unbefugten Zugriff zu verhindern.",
+          "tags": [
+            "Webentwicklung",
+            "Infrastruktur",
+            "Datenbankdesign",
+            "API-Integration",
+            "Projektmanagement-Tools",
+            "Datensicherheit"
+          ]
+        },
+        {
+          "heading": "Unser Ansatz",
+          "content": "Modulares Design und Entwicklung: Wir haben einen modularen Design- und Entwicklungsansatz gewählt, der Flexibilität und Skalierbarkeit ermöglicht, wenn sich die Bedürfnisse von Narkins Builders weiterentwickeln. Dies umfasste die Erstellung wiederverwendbarer Komponenten und einer gut strukturierten Codebasis. Implementierung eines Content-Management-Systems (CMS): Wir haben ein benutzerfreundliches CMS implementiert, das Narkins Builders in die Lage versetzt, Website-Inhalte einfach zu aktualisieren, neue Projekte hinzuzufügen und Kundenanfragen zu verwalten, ohne umfangreiche technische Kenntnisse zu benötigen. Leistungsoptimierung: Wir haben uns auf die Optimierung der Website-Leistung konzentriert, um schnelle Ladezeiten und eine reibungslose Benutzererfahrung auf allen Geräten zu gewährleisten. Dies umfasste Bildoptimierung, Caching-Strategien und effiziente Codeausführung.",
+          "tags": [
+            "CMS (z.B. WordPress, Drupal)",
+            "Leistungsoptimierung",
+            "Responsives Design",
+            "Modulares Design",
+            "Benutzererfahrung (UX)",
+            "Content-Management"
+          ]
+        }
+      ],
+      "upperSlideshow": [
+        "/images/projects/narkins-2025/narkins-collage.webp",
+        "/images/projects/narkins-2025/1743813250549_100.webp",
+        "/images/projects/narkins-2025/hcr_new.webp"
+      ],
+      "testimonial": {
+        "content": "The Other Dev hat uns eine Website-Infrastruktur bereitgestellt, die unsere Online-Abläufe erheblich verbessert hat. Die Expertise ihres Teams im Umgang mit komplexen Daten und der Integration wichtiger Tools hat unser Projektmanagement optimiert und unsere Kommunikation mit Kunden verbessert. Die Website ist robust, benutzerfreundlich und hat es uns ermöglicht, unsere Arbeit effektiv zu präsentieren. Wir schätzen die Professionalität und das Engagement von The Other Dev bei der Bereitstellung einer hochwertigen Lösung.",
+        "author": "Sarim"
+      },
+      "secondCover": "https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    }
   },
   {
     "id": "3",
-    "title": "Webseitenentwicklung und Branding für Wish Apparels",
+    "title": "Website-Entwicklung & Branding für Parcheh81",
     "year": "2024",
-    "description": "Webseitenentwicklung & Design",
-    "imageSrc": "https://cdn.jsdelivr.net/gh/kabeer11000/docs-hosted@redirector-content/theotherdev/new-web/wish-phones.webp",
-    "url": "#"
+    "description": "Website-Entwicklung & Design",
+    "imageSrc": "/images/projects/parcheh81-2024/parcheh81.com_.webp"
   },
   {
     "id": "5",
     "title": "Website-Erstellung für Groovy Pakistan",
     "year": "2024",
-    "description": "Shopify Theme-Entwicklung, Webseitenentwicklung & Start",
-    "imageSrc": "https://cdn.jsdelivr.net/gh/kabeer11000/docs-hosted@redirector-content/theotherdev/new-web/groovy-layers.webp",
-    "url": "#"
+    "description": "Shopify Theme Entwicklung, Website Entwicklung & Launch",
+    "imageSrc": "https://cdn.jsdelivr.net/gh/kabeer11000/docs-hosted@redirector-content/theotherdev/new-web/groovy-layers.webp"
   },
   {
     "id": "6",
     "title": "Migration der Zahlungsinfrastruktur für Tiny Footprint Coffee",
     "year": "2024",
-    "description": "Webseiten-Design, Recharge-Migration & Shopify Theme-Entwicklung",
+    "description": "Website-Design, Recharge Migration & Shopify Theme Entwicklung",
     "imageSrc": "https://cdn.jsdelivr.net/gh/kabeer11000/docs-hosted@redirector-content/theotherdev/new-web/tinyfootprintcoffee.webp",
     "url": "/blog/dc423a1a-f68e-42bd-a9b3-430bd57f82c1"
   },
   {
     "id": "7",
-    "title": "Webseitenentwicklung und Branding für Neubee's Tailors",
+    "title": "Website-Entwicklung und Branding für Neubee's Tailors",
     "year": "2023",
-    "description": "Design, Headless Shopify-Bereitstellung, Marketing & Webseitenentwicklung",
-    "imageSrc": "https://cdn.jsdelivr.net/gh/kabeer11000/docs-hosted@redirector-content/theotherdev/new-web/neubees.webp",
-    "url": "#"
+    "description": "Design, Headless Shopify Deployment, Marketing & Website-Entwicklung",
+    "imageSrc": "https://cdn.jsdelivr.net/gh/kabeer11000/docs-hosted@redirector-content/theotherdev/new-web/neubees.webp"
   },
   {
     "id": "8",
-    "title": "Entwicklung der Unternehmens-Infrastruktur für Ek Qadam Aur",
+    "title": "Entwicklung der Unternehmensinfrastruktur für Ek Qadam Aur",
     "year": "2023",
-    "description": "Webseiten-Design, Webseitenentwicklung & Infrastruktur",
+    "description": "Website-Design, Website-Entwicklung & Infrastruktur",
     "imageSrc": "https://cdn.jsdelivr.net/gh/kabeer11000/docs-hosted@redirector-content/theotherdev/new-web/ekqadamaur.webp",
     "url": "http://ekqadamaur.kabeers.network/"
   }
