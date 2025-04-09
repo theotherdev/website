@@ -22,7 +22,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const paths: { params: { lang: string; slug: string }; props: { project: any } }[] = [];
   const importProjectsModule = import.meta.glob("@/data/*/projects.json");
 
-  // for (const currentLang of Object.keys(languages)) {
   const currentLang = lang;
   try {
     const projectData = (await importProjectsModule[`/src/data/${currentLang}/projects.json`]())
@@ -49,29 +48,30 @@ export const getStaticPaths: GetStaticPaths = async () => {
   } catch (error) {
     console.error(`Error importing projects data for language ${currentLang}:`, error);
   }
-  // }
-  console.log(paths);
   return paths;
 };
 
 const { project }: { project: any } = Astro.props;
-const absoluteImageUrl = project.image ? new URL(project.image, Astro.url).toString() : null;
+const absoluteImageUrl =
+  project.coverImage ? new URL(project.coverImage, Astro.url).toString() : null;
 const { page } = project;
 ---
 
-<title>{project.title}</title>
-<meta name="description" content={project.description + " " + project.page.excerpt} />
-<meta name="keywords" content={project.keywords} />
+<slot name="head">
+  <title>{project.title}</title>
+  <meta name="description" content={project.description + " " + project.page.excerpt} />
+  <meta name="keywords" content={project.keywords} />
 
-<meta property="og:title" content={`${project.title}`} />
-<meta property="og:description" content={project.description + " " + project.page.excerpt} />
-{absoluteImageUrl && <meta property="og:image" content={absoluteImageUrl} />}
-{absoluteImageUrl && <meta property="og:image:alt" content={project.title} />}
+  <meta property="og:title" content={`${project.title}`} />
+  <meta property="og:description" content={project.description + " " + project.page.excerpt} />
+  {absoluteImageUrl && <meta property="og:image" content={absoluteImageUrl} />}
+  {absoluteImageUrl && <meta property="og:image:alt" content={project.title} />}
 
-<meta name="twitter:title" content={`${project.title}`} />
-<meta name="twitter:description" content={project.description + " " + project.page.excerpt} />
-{absoluteImageUrl && <meta name="twitter:image" content={absoluteImageUrl} />}
-{absoluteImageUrl && <meta name="twitter:image:alt" content={project.title} />}
+  <meta name="twitter:title" content={`${project.title}`} />
+  <meta name="twitter:description" content={project.description + " " + project.page.excerpt} />
+  {absoluteImageUrl && <meta name="twitter:image" content={absoluteImageUrl} />}
+  {absoluteImageUrl && <meta name="twitter:image:alt" content={project.title} />}
+</slot>
 <Layout>
   <div class="-bg-gradient-to-b-from-black-to-[var(--background)]">
     <div class="pt-[35vh] mx-auto container relative">

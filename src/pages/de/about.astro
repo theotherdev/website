@@ -28,8 +28,8 @@ else
   );
 ---
 
+<SEO pageName="about" />
 <Layout>
-  <SEO pageName="about" />
   <div class="about-page-scroll-start"></div>
   <div
     data-speed="clamp(0.8)"
@@ -44,12 +44,12 @@ else
     <div class="rounded-t-lg flex mt-[-1rem] w-full relative">
       <div class="px-8 items-center content-center flex py-[4rem]" data-speed="clamp(0.95)">
         <p class="mr-8" style="writing-mode: vertical-rl; text-orientation: mixed;">
-          {t('about.about-the-company-text')}
+          {t("about.about-the-company-text")}
         </p>
         <div class="relative flex justify-between overflow-hidden- items-center">
           <p
             class="text-xl z-1 domaine mt-[2rem] lg:text-5xl mb-[4rem] -roboto-mono-main max-w-6xl">
-            {t('about.about-otherdev')}
+            {t("about.about-otherdev")}
           </p>
 
           <div class="spikey-boy-clickable hidden lg:block"><img src="/shapes/Party.svg" /></div>
@@ -60,7 +60,7 @@ else
     </div>
     <hr class="border-black" />
 
-    <p class="absolute px-8 text-[15vw] font-serif">{t('about.projects')}</p>
+    <p class="absolute px-8 text-[15vw] font-serif">{t("about.projects")}</p>
     <div class="mt-[15vw]">
       <Carousel carouselId={"about-page"} images={Projects.map((item) => item.imageSrc)} />
     </div>

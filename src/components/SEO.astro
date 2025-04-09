@@ -1,11 +1,11 @@
 ---
-import { getLangFromUrl } from '@/i18n/utils';
-const {pageName} = Astro.props;
+import { getLangFromUrl } from "@/i18n/utils";
+const { pageName } = Astro.props;
 const lang = getLangFromUrl(Astro.url);
 
 // 1. Define the glob pattern (path relative to the current file or use alias)
 // Note: Keys in the returned object might be relative or absolute depending on usage
-const seoModules = import.meta.glob('@/data/*/seo.json');
+const seoModules = import.meta.glob("@/data/*/seo.json");
 
 // 2. Construct the key to access the correct module importer function
 // The key often needs to be the full path relative to the project root,
@@ -28,19 +28,19 @@ const page = pages[pageName];
 // Construct full URLs if needed (assuming Astro.url is configured in astro.config.mjs)
 const absoluteImageUrl = page.image ? new URL(page.image, Astro.url).toString() : null;
 ---
-<Fragment slot="head"> 
-<title>{page.title}</title>
-<meta name="description" content={page.description} />
-<meta name="keywords" content={page.keywords} />
 
-<meta property="og:title" content={`${page.title}`} />
-<meta property="og:description" content={page.ogDescription} />
-{absoluteImageUrl && <meta property="og:image" content={absoluteImageUrl} />}
-{absoluteImageUrl && <meta property="og:image:alt" content={page.imageAlt} />}
+<slot name="head">
+  <title>{page.title}</title>
+  <meta name="description" content={page.description} />
+  <meta name="keywords" content={page.keywords} />
 
+  <meta property="og:title" content={`${page.title}`} />
+  <meta property="og:description" content={page.ogDescription} />
+  {absoluteImageUrl && <meta property="og:image" content={absoluteImageUrl} />}
+  {absoluteImageUrl && <meta property="og:image:alt" content={page.imageAlt} />}
 
-<meta name="twitter:title" content={`${page.title}`} />
-<meta name="twitter:description" content={page.description} />
-{absoluteImageUrl && <meta name="twitter:image" content={absoluteImageUrl} />}
-{absoluteImageUrl && <meta name="twitter:image:alt" content={page.imageAlt} />}
-</Fragment>
+  <meta name="twitter:title" content={`${page.title}`} />
+  <meta name="twitter:description" content={page.description} />
+  {absoluteImageUrl && <meta name="twitter:image" content={absoluteImageUrl} />}
+  {absoluteImageUrl && <meta name="twitter:image:alt" content={page.imageAlt} />}
+</slot>
