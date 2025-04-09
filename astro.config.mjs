@@ -9,6 +9,8 @@ import partytown from "@astrojs/partytown";
 
 // https://astro.build/config
 export default defineConfig({
+  url: 'https://www.otherdev.com',
+  site: 'https://www.otherdev.com',
   vite: {
     plugins: [tailwindcss()],
   },
