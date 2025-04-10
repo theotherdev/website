@@ -72,7 +72,7 @@ body {
 .dynamic-underline-left,
 .dynamic-underline-right {
   position: relative;
-  color: var(--color-white);
+  /* color: var(--color-white); */
   text-decoration: none;
   display: inline-block; /* Important for the underline to span only the text */
 }

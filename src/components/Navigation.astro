@@ -128,9 +128,9 @@ const karachiTimezone = "Asia/Karachi"; // Explicitly define Karachi timezone
 {/* --- Desktop Navigation --- */}
 <nav
   aria-label={t("nav.desktopAriaLabel") ?? "Primary Navigation"}
-  class="hidden text-white px-4 pt-4 text-lg bg-transparent fixed top-0 z-50 header-blend-mode"
+  class="hidden md:block w-full text-red px-4 pt-4 text-lg bg-transparent text-white fixed top-0 z-50 header-blend-mode"
 >
-<div class="md:flex justify-between items-center mx-auto container">
+<div class="flex justify-between items-center mx-auto container">
   <div class="font-bold">
     <a href="/" class="dynamic-underline dynamic-underline-left" aria-label="Other Dev® Home">Other Dev®</a>
   </div>
@@ -196,7 +196,7 @@ const karachiTimezone = "Asia/Karachi"; // Explicitly define Karachi timezone
   }
   /* Ensure SVGs inherit color correctly if needed */
   .invert svg path[fill="currentColor"] {
-      /* fill: white; */ /* Or handled by parent invert */
+      fill: white; /* Or handled by parent invert */
   }
   /* You might need more specific selectors ifcurrentColor isn't working as expected */
 </style>
