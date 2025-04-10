@@ -1,0 +1,196 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { getLangFromUrl } from "@/i18n/utils";
+import { useTranslations } from "@/i18n/utils";
+import ShapesEmbeddable from "@/components/ShapesEmbeddable.astro";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const importProjectsModule = import.meta.glob("@/data/*/services.json")[
+  `/src/data/${lang}/services.json`
+];
+let Services = [];
+if (importProjectsModule) Services = (await importProjectsModule()).default;
+else
+  console.warn(
+    `Could not find projects module importer for key: ${`/src/data/${lang}/projects.json`}`
+  );
+---
+
+<slot name="head">
+  <title>
+    Nos expertises – Studio de branding, stratégie et design | Blackpizza®
+  </title>
+  <meta
+    name="dc.title"
+    content="Nos expertises – Studio de branding, stratégie et design | Blackpizza®"
+  />
+  <meta
+    name="dc.description"
+    content="Explorez les expertises de Blackpizza®, studio de branding 360° à Paris. Stratégie, design graphique et digital pour les marques ambitieuses."
+  />
+  <meta name="dc.language" content="fr_FR" />
+  <meta
+    name="description"
+    content="Explorez les expertises de Blackpizza®, studio de branding 360° à Paris. Stratégie, design graphique et digital pour les marques ambitieuses."
+  />
+  <meta
+    name="robots"
+    content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+  />
+  <meta property="og:site_name" content="Blackpizza®" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:type" content="article" />
+  <meta
+    property="og:title"
+    content="Nos expertises – Studio de branding, stratégie et design | Blackpizza®"
+  />
+  <meta
+    property="og:description"
+    content="Explorez les expertises de Blackpizza®, studio de branding 360° à Paris. Stratégie, design graphique et digital pour les marques ambitieuses."
+  />
+  <meta
+    property="og:image"
+    content="https://blackpizza.com/wp-content/uploads/2025/01/Expertises-Image1-blackpizza-paris.jpg"
+  />
+  <meta
+    property="og:image:secure_url"
+    content="https://blackpizza.com/wp-content/uploads/2025/01/Expertises-Image1-blackpizza-paris.jpg"
+  />
+  <meta property="og:image:width" content="1440" />
+  <meta property="og:image:height" content="900" />
+  <meta
+    property="og:image:alt"
+    content="L'équipe Blackpizza devant le studio graphique rue des Trois Bornes."
+  />
+  <meta property="fb:app_id" content="mambolive" />
+  <meta name="twitter:card" content="summary" />
+  <meta
+    name="twitter:title"
+    content="Nos expertises – Studio de branding, stratégie et design | Blackpizza®"
+  />
+  <meta
+    name="twitter:description"
+    content="Explorez les expertises de Blackpizza®, studio de branding 360° à Paris. Stratégie, design graphique et digital pour les marques ambitieuses."
+  />
+  <meta
+    name="twitter:image"
+    content="https://blackpizza.com/wp-content/uploads/2025/01/Expertises-Image1-blackpizza-paris.jpg"
+  />
+</slot>
+<Layout>
+  <div class="-bg-gradient-to-b-from-black-to-[var(--background)] bg-[var(--background)]">
+    <div class="relative overflow-hidden px-4 pt-[5rem] mx-auto container">
+      <div class="w-full relative py-[6rem] max-w-5xl">
+        <h1 class="mt-auto queens-compressed text-left align-bottom text-5xl md:text-7xl z-0">
+          We are a team of passionate developers, designers, and researchers who are dedicated to
+          creating innovative solutions.
+        </h1>
+        <p class="py-8 max-w-5xl text-lg">
+          Establishing a New Brand Identity: As Wish Apparels was a new entrant to the market, a key
+          challenge was to create a distinct and memorable brand identity from the ground up. This
+          involved developing a visual language that resonated with their target demographic and
+          effectively communicated their brand values through logo design, typography, color
+          palettes, and overall aesthetic. Building a Scalable E-commerce Platform: We needed to
+          develop an e-commerce website that was not only visually appealing and user-friendly but
+          also robust and scalable to accommodate future growth in product offerings and customer
+          traffic. Ensuring seamless integration of essential features like product browsing, secure
+          checkout, and inventory management was crucial.
+        </p>
+        <!-- <div data-speed="clamp(.9)" class="absolute top-[3rem] h-[400px] right-5 grayscale brightness-0"><ShapesEmbeddable /></div> -->
+      </div>
+    </div>
+    <div class="shadow relative w-full z-2">
+      <div class="md:container md:mx-auto md:px-4">
+        <img
+          src={"https://blackpizza.com/wp-content/uploads/2025/01/Expertises-Image1-blackpizza-paris.jpg"}
+          alt={"project.coverImageAlt"}
+          class="mx-auto w-screen h-screen object-cover"
+        />
+      </div>
+      <div class="items-center px-4 mx-auto container content-center flex py-[3rem]">
+        <p class="mr-8" style="writing-mode: vertical-rl; text-orientation: mixed;">
+          {"project.title"}
+        </p>
+        <div class="relative flex justify-between overflow-hidden items-center">
+          <p
+            class="text-xl z-1 queens-compressed mt-[2rem] lg:text-5xl mb-[4rem] -roboto-mono-main max-w-6xl">
+            {"project.page.excerpt"}
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-t-neutral-700"></div>
+    <!-- <div class="-bg-[var(--background)] relative py-[3rem] mx-auto px-4 container">
+      <div class="w-full grid mx-auto text-lg grid-cols-1 md:grid-cols-2 gap-y-6 gap-x-[4rem]">
+        {
+          page.splitSections.map((section) => (
+            <div class="">
+              <h4 class="text-sm py-2 font-bold">{section.heading}</h4>
+              <p>{section.content}</p>
+              <div class="flex no-scrollbar gap-4 text-sm py-4 overflow-x-scroll">
+                {section.tags &&
+                  section.tags.map((tag) => (
+                    <div class="bg-neutral-800 text-sm flex items-center py-1 text-nowrap cursor-pointer px-4 rounded-full">
+                      <p>{tag}</p>
+                    </div>
+                  ))}
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div> -->
+    <!-- <div
+      class="duration-250 ease-in-out transition upper-image-slideshow-container brightness-75 hover:brightness-50 cursor-pointer">
+      <img
+        src={page.secondCover}
+        class="w-full h-auto max-h-screen object-cover shadow-xl upper-slideshow-image"
+        alt=""
+      />
+    </div> -->
+    <!-- <div
+      class="grid h-full grid-cols-1 md:grid-cols-2 pt-[0rem] gap-y-10-gap-x-8 gap-1 relative overflow-hidden">
+      {
+        project.page.upperSlideshow.map((image, index) => (
+          <img
+            key={image}
+            src={image}
+            class="w-full h-auto upper-slideshow-image object-cover"
+            data-slide-direction={index % 2 === 0 ? "left" : "right"}
+            alt=""
+            style={{ opacity: 0, transform: `translateX(${index % 2 === 0 ? "-100%" : "100%"})` }}
+          />
+        ))
+      }
+    </div> -->
+    <!-- <div class="py-[3rem] mx-auto px-4 container">
+      <div class="-bg-[var(--background) w-full container mx-auto py-[6rem]">
+        <p class="text-xl z-1 queens-compressed lg:text-5xl max-w-6xl">
+          "{project.page.testimonial.content}"
+        </p>
+        <p class="my-4 italic">- {project.page.testimonial.author}</p>
+      </div>
+      <script type="module">
+        gsap.to(".upper-slideshow-image", {
+          x: 0,
+          opacity: 1,
+          scrollTrigger: {
+            once: false,
+            trigger: ".upper-image-slideshow-container",
+            start: "top 20%", // When the top of the trigger hits 80% of the viewport
+            end: "bottom 10%", // When the bottom of the trigger hits 20% of the viewport
+            scrub: true, // Smoothly link animation progress to scroll
+            markers: false, // For debugging - shows start and end lines
+          },
+        });
+      </script>
+    </div> -->
+    <style>
+      :root {
+        --background: var(--color-stone-400);
+        --text: var(--color-black);
+      }
+    </style>
+  </div>
+</Layout>

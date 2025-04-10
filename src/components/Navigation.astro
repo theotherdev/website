@@ -9,7 +9,7 @@ const t = useTranslations(lang);
 // --- Define Navigation Data Once ---
 const navLinks = [
   { title: t("nav.work"), path: getRelativeLocaleUrl(lang, "work") },
-  { title: t("nav.experties"), path: getRelativeLocaleUrl(lang, "experties") }, // Spelling: "expertise"?
+  { title: t("nav.expertise"), path: getRelativeLocaleUrl(lang, "expertise") }, // Spelling: "expertise"?
   { title: t("nav.about"), path: getRelativeLocaleUrl(lang, "about") },
 ];
 
@@ -59,14 +59,14 @@ const karachiTimezone = "Asia/Karachi"; // Explicitly define Karachi timezone
 {/* --- Mobile Navigation --- */}
 <nav
   aria-label={t("nav.mobileAriaLabel") ?? "Mobile Navigation"}
-  class="lg:hidden flex justify-between items-center w-full px-6 pt-4 text-lg text-black invert bg-transparent fixed top-0 z-50 header-blend-mode"
+  class="lg:hidden flex justify-between items-center w-full px-4 pt-4 text-lg bg-transparent fixed top-0 z-50 header-blend-mode"
 >
-  <div class="font-bold text-black"> {/* Text color override if needed */}
+  <div> {/* Text color override if needed */}
     <a href="/" aria-label="Other Dev® Home">Other Dev®</a>
   </div>
   <button
     id="mobile-nav-toggle"
-    class="mobile-navigation-trigger p-2 -mr-2 text-black" {/* Text color override */}
+    class="mobile-navigation-trigger p-2 -mr-2 " {/* Text color override */}
     aria-controls="mobile-menu"
     aria-expanded="false"
     type="button"
@@ -88,7 +88,7 @@ const karachiTimezone = "Asia/Karachi"; // Explicitly define Karachi timezone
       {/* Main Nav Links */}
       {navLinks.map((item) => (
         <li class="border-b border-b-black">
-          <a href={item.path} class="block py-4 px-8 text-lg text-black hover:bg-green-600 transition-colors">
+          <a href={item.path} class="block py-4 px-4 text-lg  hover:bg-green-600 transition-colors">
             {item.title}
           </a>
         </li>
@@ -99,7 +99,7 @@ const karachiTimezone = "Asia/Karachi"; // Explicitly define Karachi timezone
             href={letsMeetLink.path}
             target={letsMeetLink.target}
             rel={letsMeetLink.target === '_blank' ? 'noopener noreferrer' : undefined}
-            class="block py-4 px-8 text-lg text-black hover:bg-green-600 transition-colors"
+            class="block py-4 px-4 text-lg hover:bg-green-600 transition-colors"
           >
             {letsMeetLink.title}
           </a>
@@ -107,13 +107,13 @@ const karachiTimezone = "Asia/Karachi"; // Explicitly define Karachi timezone
     </ul>
 
     {/* Mobile Footer Social Links */}
-    <div class="fixed px-8 bottom-0 left-0 w-full bg-green-500/80 backdrop-blur-lg flex justify-between items-center border-t border-black">
+    <div class="fixed px-4 bottom-0 left-0 w-full bg-green-500/80 backdrop-blur-lg flex justify-between items-center border-t border-black">
       {socialLinks.map(link => (
         <a
           href={link.path}
           target="_blank"
           rel="noopener noreferrer"
-          class="py-4 text-md font-medium text-black flex items-center gap-2 hover:text-neutral-800 transition-colors"
+          class="py-4 text-md font-medium  flex items-center gap-2 hover:text-neutral-800 transition-colors"
           aria-label={`${link.title} (${t('nav.opensNewTab') ?? 'opens in a new tab'})`}
         >
           {/* Inject SVG directly, set fill="currentColor" */}
@@ -128,7 +128,7 @@ const karachiTimezone = "Asia/Karachi"; // Explicitly define Karachi timezone
 {/* --- Desktop Navigation --- */}
 <nav
   aria-label={t("nav.desktopAriaLabel") ?? "Primary Navigation"}
-  class="hidden lg:flex justify-between items-center w-full px-8 pt-4 text-lg text-black bg-transparent fixed top-0 z-50 header-blend-mode invert"
+  class="hidden lg:flex justify-between container text-white items-center w-full px-4 pt-4 text-lg  bg-transparent fixed top-0 z-50 header-blend-mode"
 >
   <div class="font-bold">
     <a href="/" class="dynamic-underline dynamic-underline-left" aria-label="Other Dev® Home">Other Dev®</a>

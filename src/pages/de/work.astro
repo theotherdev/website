@@ -29,7 +29,7 @@ else
             Projects.map((item, index) => (
               <tr class="border-b-black border-b">
                 <td class="select-none text-left py-10 pl-8">{index + 1}</td>
-                <td class="group relative py-10 px-8">
+                <td class="group relative py-10 px-4">
                   {item.hasPage ?
                     <a href={`${getRelativeLocaleUrl(lang, "work/" + sanitize(item.title))}`}>
                       {item.imageSrc && (
@@ -53,7 +53,7 @@ else
                     </>
                   }
                 </td>
-                <td class="select-none text-right py-10 px-8">{item.year}</td>
+                <td class="select-none text-right py-10 px-4">{item.year}</td>
               </tr>
             ))
           }

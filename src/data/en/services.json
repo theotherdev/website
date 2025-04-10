@@ -2,25 +2,365 @@
   {
     "id": "1",
     "title": "Website Design",
-    "imageSrc": "https://cdn.jsdelivr.net/gh/kabeer11000/docs-hosted@redirector-content/theotherdev/new-web/web-design.webp",
-    "description": "We help with the creation and development of online advertising ideas, with particular focus on their visual appearance."
+    "description": "We help with the creation and development of online advertising ideas, with particular focus on their visual appearance.",
+    "excerpt": "Visually appealing and user-friendly website designs to make a lasting first impression.",
+    "keywords": "website design, web design services, creative design, visual appearance, user interface",
+    "hasPage": true,
+    "category": "Web",
+    "startingPrice": 800,
+    "benefits": [
+      "Custom Responsive Designs",
+      "User Experience Optimization",
+      "Brand-Aligned Aesthetics",
+      "Performance Optimization"
+    ],
+    "processSteps": [
+      {
+        "title": "Discovery & Research",
+        "description": "Understanding your business goals and target audience"
+      },
+      {
+        "title": "Wireframing",
+        "description": "Creating structural blueprints for optimal user flow"
+      },
+      {
+        "title": "Visual Design",
+        "description": "Developing stunning UI with brand-consistent aesthetics"
+      }
+    ],
+    "pricingTiers": [
+      {
+        "name": "Basic Website",
+        "price": 800,
+        "interval": "project",
+        "features": [
+          "5 Custom Pages",
+          "Mobile Responsive",
+          "Basic SEO Setup",
+          "1 Revision Round"
+        ]
+      },
+      {
+        "name": "Business Website",
+        "price": 2200,
+        "interval": "project",
+        "features": [
+          "10+ Custom Pages",
+          "E-commerce Integration",
+          "Advanced SEO",
+          "CMS Integration",
+          "3 Revision Rounds"
+        ]
+      }
+    ],
+    "teamMembers": [
+      {
+        "name": "Sarah Johnson",
+        "role": "Lead UI Designer",
+        "photo": "https://dummyimage.com/400x400/555/fff.png&text=Sarah+Johnson"
+      },
+      {
+        "name": "Michael Chen",
+        "role": "UX Architect",
+        "photo": "https://dummyimage.com/400x400/777/fff.png&text=Michael+Chen"
+      }
+    ],
+    "coverImage": "https://dummyimage.com/1200x800/333/fff.png&text=Website+Design",
+    "page": {
+      "excerpt": "Our website design services focus on aesthetics and functionality, ensuring your online presence is both beautiful and effective.",
+      "splitSections": [
+        {
+          "heading": "Core Features",
+          "content": "Modern design solutions that drive engagement and conversions",
+          "tags": ["UI/UX Design", "Responsive Layouts", "Prototyping", "Design Systems"]
+        },
+        {
+          "heading": "Technologies",
+          "content": "Utilizing cutting-edge tools and frameworks",
+          "tags": ["Figma", "Adobe XD", "Webflow", "WordPress"]
+        }
+      ],
+      "testimonial": {
+        "content": "Their website design transformed our online presence. We've received great feedback on the look and feel!",
+        "author": "Sarah M., Marketing Manager"
+      },
+      "upperSlideshow": [
+        "https://dummyimage.com/800x600/666/fff.png&text=Wireframing",
+        "https://dummyimage.com/1000x600/999/fff.png&text=Visual+Design"
+      ]
+    }
   },
   {
     "id": "2",
     "title": "Branding",
-    "imageSrc": "https://cdn.jsdelivr.net/gh/kabeer11000/docs-hosted@redirector-content/theotherdev/new-web/branding.webp",
-    "description": "We design key brand elements such as the logo, color scheme, typography, and other design components that makes your brand stand out from competitors."
+    "description": "We design key brand elements such as the logo, color scheme, typography, and other design components that makes your brand stand out from competitors.",
+    "excerpt": "Crafting a unique and memorable brand identity to differentiate you from the competition.",
+    "keywords": "branding, brand identity, logo design, color scheme, typography, brand strategy",
+    "hasPage": true,
+    "category": "Brand",
+    "startingPrice": 1200,
+    "benefits": [
+      "360° Brand Strategy",
+      "Market Differentiation",
+      "Brand Consistency",
+      "Cross-Platform Assets"
+    ],
+    "processSteps": [
+      {
+        "title": "Brand Audit",
+        "description": "Analyzing current brand position and market opportunities"
+      },
+      {
+        "title": "Identity Development",
+        "description": "Creating core visual and verbal brand elements"
+      },
+      {
+        "title": "Guidelines Creation",
+        "description": "Documenting brand standards for consistent application"
+      }
+    ],
+    "pricingTiers": [
+      {
+        "name": "Starter Package",
+        "price": 1200,
+        "interval": "project",
+        "features": [
+          "Logo Design",
+          "Basic Style Guide",
+          "3 Brand Concepts",
+          "2 Revision Rounds"
+        ]
+      },
+      {
+        "name": "Complete Branding",
+        "price": 3500,
+        "interval": "project",
+        "features": [
+          "Full Brand Identity",
+          "Comprehensive Guidelines",
+          "Stationery Design",
+          "Brand Strategy Session",
+          "5 Revision Rounds"
+        ]
+      }
+    ],
+    "teamMembers": [
+      {
+        "name": "Emma Wilson",
+        "role": "Brand Strategist",
+        "photo": "https://dummyimage.com/400x400/663399/fff.png&text=Emma+Wilson"
+      },
+      {
+        "name": "David Kim",
+        "role": "Visual Designer",
+        "photo": "https://dummyimage.com/400x400/330066/fff.png&text=David+Kim"
+      }
+    ],
+    "coverImage": "https://dummyimage.com/1200x800/663399/fff.png&text=Branding+Identity",
+    "page": {
+      "excerpt": "Our branding services help you establish a strong and consistent brand identity that resonates with your target audience.",
+      "splitSections": [
+        {
+          "heading": "Deliverables",
+          "content": "Complete brand identity package ready for implementation",
+          "tags": ["Logo Suite", "Color Palette", "Typography System", "Brand Guidelines"]
+        },
+        {
+          "heading": "Tools & Methods",
+          "content": "Professional tools for brand development",
+          "tags": ["Adobe Creative Suite", "Brand Archetypes", "Market Research", "Competitor Analysis"]
+        }
+      ],
+      "testimonial": {
+        "content": "Their branding work gave our company a fresh and professional image. Highly recommended!",
+        "author": "David L., CEO"
+      },
+      "upperSlideshow": [
+        "https://dummyimage.com/800x600/9966CC/fff.png&text=Logo+Design",
+        "https://dummyimage.com/1000x600/330066/fff.png&text=Brand+Guidelines"
+      ]
+    }
   },
   {
     "id": "3",
     "title": "Website Development",
-    "imageSrc": "https://cdn.jsdelivr.net/gh/kabeer11000/docs-hosted@redirector-content/theotherdev/new-web/web-developmet.webp",
-    "description": "We build and optimize your online presence.  Website is the digital entry point into your business and a powerful revenue channel."
+    "description": "We build and optimize your online presence. Website is the digital entry point into your business and a powerful revenue channel.",
+    "excerpt": "Building robust, scalable, and user-friendly websites to power your online success.",
+    "keywords": "website development, web development services, front-end, back-end, full-stack, web applications",
+    "hasPage": true,
+    "category": "Web",
+    "startingPrice": 1800,
+    "benefits": [
+      "Full-Stack Expertise",
+      "Performance Optimization",
+      "Secure Architecture",
+      "SEO-Friendly Code"
+    ],
+    "processSteps": [
+      {
+        "title": "Technical Planning",
+        "description": "Architecting the optimal technology stack"
+      },
+      {
+        "title": "Development",
+        "description": "Building core functionality with clean code"
+      },
+      {
+        "title": "Quality Assurance",
+        "description": "Rigorous testing across devices and browsers"
+      }
+    ],
+    "pricingTiers": [
+      {
+        "name": "Basic Development",
+        "price": 1800,
+        "interval": "project",
+        "features": [
+          "5-Page Website",
+          "Mobile Responsive",
+          "Contact Form",
+          "Basic CMS"
+        ]
+      },
+      {
+        "name": "Advanced Development",
+        "price": 5000,
+        "interval": "project",
+        "features": [
+          "Custom Web Application",
+          "Database Integration",
+          "API Development",
+          "E-commerce Functionality",
+          "Ongoing Support"
+        ]
+      }
+    ],
+    "teamMembers": [
+      {
+        "name": "Alex Martinez",
+        "role": "Full-Stack Developer",
+        "photo": "https://dummyimage.com/400x400/0066cc/fff.png&text=Alex+Martinez"
+      },
+      {
+        "name": "Priya Patel",
+        "role": "QA Engineer",
+        "photo": "https://dummyimage.com/400x400/0099ff/fff.png&text=Priya+Patel"
+      }
+    ],
+    "coverImage": "https://dummyimage.com/1200x800/0066cc/fff.png&text=Web+Development",
+    "page": {
+      "excerpt": "Our website development services cover everything from front-end to back-end, ensuring a seamless and high-performing online experience.",
+      "splitSections": [
+        {
+          "heading": "Front-End Technologies",
+          "content": "Modern frameworks for interactive experiences",
+          "tags": ["React", "Vue.js", "TypeScript", "Tailwind CSS"]
+        },
+        {
+          "heading": "Back-End Systems",
+          "content": "Robust server-side solutions",
+          "tags": ["Node.js", "Python", "PostgreSQL", "REST APIs"]
+        }
+      ],
+      "testimonial": {
+        "content": "Their web development team is highly skilled and delivered our complex project on time and within budget.",
+        "author": "Emily R., CTO"
+      },
+      "upperSlideshow": [
+        "https://dummyimage.com/800x600/0099ff/fff.png&text=Code+Review",
+        "https://dummyimage.com/1000x600/003366/fff.png&text=Testing+Process"
+      ]
+    }
   },
   {
     "id": "4",
     "title": "Ad's & Marketing",
-    "imageSrc": "https://cdn.jsdelivr.net/gh/kabeer11000/docs-hosted@redirector-content/theotherdev/new-web/ads.webp",
-    "description": "We combine creative design and technical skills to build striking 3D visualisations that bring your project to life."
+    "description": "We combine creative design and technical skills to build striking 3D visualisations that bring your project to life.",
+    "excerpt": "Driving growth and visibility through strategic advertising and marketing solutions.",
+    "keywords": "ads, marketing, digital marketing, social media marketing, paid advertising, SEO",
+    "hasPage": true,
+    "category": "Marketing",
+    "startingPrice": 1000,
+    "benefits": [
+      "Data-Driven Strategies",
+      "Multi-Channel Campaigns",
+      "ROI Tracking",
+      "Audience Targeting"
+    ],
+    "processSteps": [
+      {
+        "title": "Market Analysis",
+        "description": "Identifying key opportunities and audience insights"
+      },
+      {
+        "title": "Campaign Strategy",
+        "description": "Developing targeted marketing plans"
+      },
+      {
+        "title": "Execution & Optimization",
+        "description": "Launching and refining campaigns in real-time"
+      }
+    ],
+    "pricingTiers": [
+      {
+        "name": "Starter Campaign",
+        "price": 1000,
+        "interval": "month",
+        "features": [
+          "1 Marketing Channel",
+          "Basic Analytics",
+          "Monthly Reports",
+          "Ad Copywriting"
+        ]
+      },
+      {
+        "name": "Enterprise Solution",
+        "price": 5000,
+        "interval": "month",
+        "features": [
+          "Multi-Channel Management",
+          "Advanced Analytics",
+          "Weekly Optimization",
+          "Creative Team Support",
+          "Dedicated Account Manager"
+        ]
+      }
+    ],
+    "teamMembers": [
+      {
+        "name": "Chris Thompson",
+        "role": "Marketing Strategist",
+        "photo": "https://dummyimage.com/400x400/ff6600/fff.png&text=Chris+Thompson"
+      },
+      {
+        "name": "Nadia Ali",
+        "role": "SEO Specialist",
+        "photo": "https://dummyimage.com/400x400/cc3300/fff.png&text=Nadia+Ali"
+      }
+    ],
+    "coverImage": "https://dummyimage.com/1200x800/ff6600/fff.png&text=Digital+Marketing",
+    "page": {
+      "excerpt": "Our advertising and marketing services are designed to help you reach your target audience and achieve your business goals.",
+      "splitSections": [
+        {
+          "heading": "Advertising Channels",
+          "content": "Comprehensive multi-platform campaigns",
+          "tags": ["Google Ads", "Social Media", "Programmatic", "Native Advertising"]
+        },
+        {
+          "heading": "Analytics Tools",
+          "content": "Measuring and optimizing campaign performance",
+          "tags": ["Google Analytics", "Hotjar", "SEMrush", "HubSpot"]
+        }
+      ],
+      "testimonial": {
+        "content": "Their ad and marketing strategies significantly increased our leads and conversions. Very effective!",
+        "author": "Chris B., Sales Director"
+      },
+      "upperSlideshow": [
+        "https://dummyimage.com/800x600/ff9900/000.png&text=Campaign+Analytics",
+        "https://dummyimage.com/1000x600/cc0000/fff.png&text=Social+Media+Ads"
+      ]
+    }
   }
 ]

@@ -42,13 +42,13 @@ else
   </div>
   <div class="w-full flex-auto bg-green-500 pb-[4rem] overflow-hidden- max-w-screen relative">
     <div class="rounded-t-lg flex mt-[-1rem] w-full relative">
-      <div class="px-8 items-center content-center flex py-[4rem]" data-speed="clamp(0.95)">
+      <div class="px-4 items-center content-center flex py-[4rem]" data-speed="clamp(0.95)">
         <p class="mr-8" style="writing-mode: vertical-rl; text-orientation: mixed;">
           {t("about.about-the-company-text")}
         </p>
         <div class="relative flex justify-between overflow-hidden- items-center">
           <p
-            class="text-xl z-1 domaine mt-[2rem] lg:text-5xl mb-[4rem] -roboto-mono-main max-w-6xl">
+            class="text-xl z-1 queens-compressed mt-[2rem] lg:text-5xl mb-[4rem] -roboto-mono-main max-w-6xl">
             {t("about.about-otherdev")}
           </p>
 
@@ -60,19 +60,19 @@ else
     </div>
     <hr class="border-black" />
 
-    <p class="absolute px-8 text-[15vw] font-serif">{t("about.projects")}</p>
+    <p class="absolute px-4 text-[15vw] font-serif">{t("about.projects")}</p>
     <div class="mt-[15vw]">
       <Carousel carouselId={"about-page"} images={Projects.map((item) => item.imageSrc)} />
     </div>
-    <!-- <p class="absolute px-8 text-[15vw] font-serif">{"Projects"}</p>
+    <!-- <p class="absolute px-4 text-[15vw] font-serif">{"Projects"}</p>
     <div class="grid grid-cols-1 md:grid-cols-4 w-full">
       {
         Services.map((item, index) => (
           <div
             class={`text-black ${(index + 1) < Services.length ? "md:border-r md:border-black border-b md:border-b-0" : ""}`}>
             <img src={item.imageSrc} style="mix-blend-mode:exclusion;" class="invert-100 sw-full h-auto" />
-            <h2 class="text-6xl py-4 px-8 serif tracking-tight">{item.title}</h2>
-            <p class="mt-4 text-lg px-8 py-4 pb-8">{item.description}</p>
+            <h2 class="text-6xl py-4 px-4 serif tracking-tight">{item.title}</h2>
+            <p class="mt-4 text-lg px-4 py-4 pb-8">{item.description}</p>
           </div>
         ))
       }

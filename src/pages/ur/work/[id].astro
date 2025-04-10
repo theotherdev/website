@@ -75,11 +75,11 @@ const { page } = project;
 <Layout>
   <div class="-bg-gradient-to-b-from-black-to-[var(--background)]">
     <div class="pt-[35vh] mx-auto container relative">
-      <div class="relative overflow-hidden px-8">
+      <div class="relative overflow-hidden px-4">
         <div data-speed="clamp(0.5)" class="pb-[4rem] grid grid-cols-1 md:grid-cols-4 gap-x-8">
           <div class="col-span-3">
             <h1
-              class="mt-auto domaine text-[20vw] text-left align-bottom p-0 m-0 h-[6rem] md:h-[20vh] md:text-[20vh] z-0">
+              class="mt-auto queens-compressed text-[20vw] text-left align-bottom p-0 m-0 h-[6rem] md:h-[20vh] md:text-[20vh] z-0">
               {project.company}
             </h1>
           </div>
@@ -98,7 +98,7 @@ const { page } = project;
       </div>
     </div>
   </div>
-  <div class="-bg-[var(--background)] shadow relative w-full z-2 px-8">
+  <div class="-bg-[var(--background)] shadow relative w-full z-2 px-4">
     <div class="container mx-auto">
       <img
         src={project.coverImage}
@@ -111,7 +111,7 @@ const { page } = project;
         </p>
         <div class="relative flex justify-between overflow-hidden items-center">
           <p
-            class="text-xl z-1 domaine mt-[2rem] lg:text-5xl mb-[4rem] -roboto-mono-main max-w-6xl">
+            class="text-xl z-1 queens-compressed mt-[2rem] lg:text-5xl mb-[4rem] -roboto-mono-main max-w-6xl">
             {project.page.excerpt}
           </p>
         </div>
@@ -119,7 +119,7 @@ const { page } = project;
     </div>
   </div>
   <div class="border-t border-t-neutral-700"></div>
-  <div class="-bg-[var(--background)] relative py-[3rem] mx-auto px-8 container">
+  <div class="-bg-[var(--background)] relative py-[3rem] mx-auto px-4 container">
     <div class="w-full grid mx-auto text-lg grid-cols-1 md:grid-cols-2 gap-y-6 gap-x-[4rem]">
       {
         page.splitSections.map((section) => (
@@ -162,9 +162,9 @@ const { page } = project;
       ))
     }
   </div>
-  <div class="py-[3rem] mx-auto px-8 container">
+  <div class="py-[3rem] mx-auto px-4 container">
     <div class="-bg-[var(--background) w-full container mx-auto py-[6rem]">
-      <p class="text-xl z-1 domaine lg:text-5xl max-w-6xl">
+      <p class="text-xl z-1 queens-compressed lg:text-5xl max-w-6xl">
         "{project.page.testimonial.content}"
       </p>
       <p class="my-4 italic">- {project.page.testimonial.author}</p>

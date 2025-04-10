@@ -13,7 +13,7 @@ export const ui = {
         'nav.software-and-design': 'Software + Design',
         'nav.about': 'About',
         'nav.work': 'Work',
-        'nav.experties': 'Experties',
+        'nav.expertise': 'Expertise',
         'nav.lets-meet': 'Lets Meet',
         'nav.menu': 'Menu',
         'nav.close': 'Close',
@@ -31,12 +31,14 @@ export const ui = {
 
         'skip-to-content': 'Skip to Content',
         'work.view-website': 'View Website',
+        'work.view-code': 'View Code',
+        'services.learn-more': 'Learn More'
     },
     de: {
         'nav.software-and-design': 'Software + Design',
         'nav.about': 'Über uns',
         'nav.work': 'Arbeit',
-        'nav.experties': 'Kompetenzen',
+        'nav.expertise': 'Kompetenzen',
         'nav.lets-meet': 'Lass uns treffen',
         'nav.menu': 'Menü',
         'nav.close': 'Schließen',
@@ -58,7 +60,7 @@ export const ui = {
         'nav.software-and-design': 'سافٹ ویئر + ڈیزائن',
         'nav.about': 'ہمارے بارے میں',
         'nav.work': 'کام',
-        'nav.experties': 'مہارت',
+        'nav.expertise': 'مہارت',
         'nav.lets-meet': 'آئیے ملتے ہیں',
         'nav.menu': 'مینيو',
         'nav.close': 'بند کریں',

@@ -4,53 +4,75 @@
 
 :root {
   --animation-duration: 0.5s;
-  --background: var(--color-neutral-400);
-  --text: var(--color-black);
+  --background: var(--color-stone-400);
+  /* --background: var(--color-white); */
+  --text: var(--color-white);
 }
 * {
+  /* filter: grayscale(100%) invert(1); */
   /* outline: solid red 1px; */
 }
+
 @font-face {
-  font-family: 'Roboto';
-  src: url('/fonts/Roboto/static/Roboto-Regular.ttf');
+  font-family: "QueensCompressed";
+  src: url("/fonts/QueensCompressed/QueensCompressed_W-Light.woff2");
 }
 @font-face {
-  font-family: 'Domaine';
-  src: url('/fonts/Domaine/TestDomaineDisplay-Regular-BF66174a224cb3d.otf');
+  font-family: "Roboto";
+  src: url("/fonts/Roboto/static/Roboto-Regular.ttf");
 }
 @font-face {
-  font-family: 'Allura';
-  src: url('/fonts/Allura/Allura-Regular.ttf');
+  font-family: "Domaine";
+  src: url("/fonts/Domaine/TestDomaineDisplay-Regular-BF66174a224cb3d.otf");
 }
 @font-face {
-  font-family: 'Lausanne';
-  src: url('/fonts/Lausanne/Lausanne.eot');
-  src: local('Lausanne'),
-      url('/fonts/Lausanne/Lausanne.eot?#iefix') format('embedded-opentype'),
-      url('/fonts/Lausanne/Lausanne.woff2') format('woff2'),
-      url('/fonts/Lausanne/Lausanne.woff') format('woff'),
-      url('/fonts/Lausanne/Lausanne.ttf') format('truetype');
+  font-family: "Allura";
+  src: url("/fonts/Allura/Allura-Regular.ttf");
+}
+@font-face {
+  font-family: "TWKLausanne";
+  src: url("/fonts/TWKLausanne/TWKLausanne-400.woff2") format("woff2"),
+    url("/fonts/TWKLausanne/TWKLausanne-300-1.woff2") format("woff2"),
+    url("/fonts/TWKLausanne/TWKLausanne-200 (1).woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Lausanne";
+  src: url("/fonts/Lausanne/Lausanne.eot");
+  src: local("Lausanne"), url("/fonts/Lausanne/Lausanne.eot?#iefix") format("embedded-opentype"),
+    url("/fonts/Lausanne/Lausanne.woff2") format("woff2"),
+    url("/fonts/Lausanne/Lausanne.woff") format("woff"),
+    url("/fonts/Lausanne/Lausanne.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 .lausanne {
-  font-family: 'Lausanne';
+  font-family: "Lausanne";
 }
 .domaine {
-  font-family: 'Domaine';
+  font-family: "Domaine";
 }
 .allura {
-  font-family: 'Allura';
+  font-family: "Allura";
+}
+.twk-lausanne {
+  font-family: "TWKLausanne";
+}
+.queens-compressed {
+  font-family: "QueensCompressed";
+}
+p {
+  font-size: var(--text-lg);
 }
 body {
   background-color: var(--background);
-  font-family: 'Roboto', sans-serif;
-  /* font-family: 'Lausanne'; */
+  /* font-family: 'Roboto', sans-serif; */
+  font-family: "TWKLausanne", sans-serif;
 }
 .dynamic-underline-left,
 .dynamic-underline-right {
   position: relative;
-  color: var(--color-black);
+  color: var(--color-white);
   text-decoration: none;
   display: inline-block; /* Important for the underline to span only the text */
 }

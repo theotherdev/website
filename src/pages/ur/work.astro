@@ -29,7 +29,7 @@ else
             Projects.map((item, index) => (
               <tr class="border-b-black border-b">
                 <td class="select-none text-left py-10 pl-8">{index + 1}</td>
-                <td class="group relative py-10 px-8">
+                <td class="group relative py-10 px-4">
                   {item.hasPage ?
                     <a href={`${getRelativeLocaleUrl(lang, "work/" + sanitize(item.title))}`}>
                       {item.imageSrc && (
@@ -38,7 +38,7 @@ else
                           class="w-[30rem] pointer-events-none absolute max-w-[80vw] h-auto left-1/2 translate-x-1/3 bottom-[2rem] group-hover:block hidden transition-all duration-75"
                         />
                       )}
-                      <p class="select-none text-3xl">{item.title}</p>
+                      <h1 class="mt-auto queens-compressed text-left align-bottom text-3xl md:text-5xl z-0">{item.title}</h1>
                       <p class="select-none mt-2">{item.description}</p>
                     </a>
                   : <>
@@ -48,12 +48,12 @@ else
                           class="w-[30rem] pointer-events-none absolute max-w-[80vw] h-auto left-1/2 translate-x-1/3 bottom-[2rem] group-hover:block hidden transition-all duration-75"
                         />
                       )}
-                      <p class="select-none text-3xl">{item.title}</p>
+                      <h1 class="mt-auto queens-compressed text-left align-bottom text-3xl md:text-5xl z-0">{item.title}</h1>
                       <p class="select-none mt-2">{item.description}</p>
                     </>
                   }
                 </td>
-                <td class="select-none text-right py-10 px-8">{item.year}</td>
+                <td class="select-none text-right py-10 px-4">{item.year}</td>
               </tr>
             ))
           }
