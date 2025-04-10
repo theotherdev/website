@@ -90,11 +90,43 @@
     }
   },
   {
-    "id": "3",
-    "title": "Website development & Branding for Parcheh81",
+    "id": "3", 
+    "title": "Branding & website development for Parcheh81",
+    "company": "Parcheh",
+    "hasPage": true,
     "year": "2024",
-    "description": "Website Development & Design",
-    "imageSrc": "/images/projects/parcheh81-2024/parcheh81.com_.webp"
+    "description": "Website design, development & branding",
+    "imageSrc": "/images/projects/wish-2024/wishapparels.com_.webp",
+    "url": "https://parcheh81.com/",
+    "coverImage": "/images/projects/parcheh81-2024/Parcheh.nyc_collections_all.webp",
+    "coverImageAlt": "Parcheh Store Launch",
+    "page": {
+      "excerpt": "Our collaboration with Wish Apparels involved crafting a digital experience that mirrors the quality and style of their upcoming clothing line. We designed an intuitive e-commerce platform that not only showcases their products with high-quality visuals and detailed information but also provides a seamless and secure shopping journey. The branding and design elements, meticulously developed in tandem with the website, work harmoniously to communicate the brand's ethos and appeal to their target audience. This project underscores our agency's commitment to creating impactful digital solutions that drive brand growth and customer engagement for innovative businesses.",
+      "splitSections": [
+        {
+          "heading": "Challenges",
+          "content": "Establishing a New Brand Identity: As Wish Apparels was a new entrant to the market, a key challenge was to create a distinct and memorable brand identity from the ground up. This involved developing a visual language that resonated with their target demographic and effectively communicated their brand values through logo design, typography, color palettes, and overall aesthetic. Building a Scalable E-commerce Platform: We needed to develop an e-commerce website that was not only visually appealing and user-friendly but also robust and scalable to accommodate future growth in product offerings and customer traffic. Ensuring seamless integration of essential features like product browsing, secure checkout, and inventory management was crucial.",
+          "tags": ["Brand Development", "Visual Identity", "Shopify", "UI/UX Design"]
+        },
+        {
+          "heading": "Inspiration",
+          "content": "Minimalist Elegance: The design direction was heavily inspired by a desire for minimalist elegance, allowing the apparel itself to take center stage. Clean lines, ample white space, and sophisticated typography were employed to create a sense of understated luxury and timeless style. Focus on Visual Storytelling: Recognizing the importance of visual appeal in fashion, we focused on creating a platform that prioritized high-quality imagery and compelling visual storytelling. The website design aimed to immerse users in the brand's world and showcase the garments in an aspirational and engaging manner."
+        }
+      ],
+      "upperSlideshow": [
+        "/images/projects/wish-2024/upper-slideshow-1.webp",
+        "/images/projects/wish-2024/1743813808292_100.webp",
+        "/images/projects/wish-2024/wish-girl-11.webp",
+        "/images/projects/wish-2024/wish-boy-1.webp",
+        "/images/projects/wish-2024/wish-logo.webp",
+        "/images/projects/wish-2024/with-other-dev.webp"
+      ],
+      "testimonial": {
+        "content": "Working with Other Dev was a game-changer for Wish Apparels. Their holistic approach to website development and branding delivered results far beyond our expectations. The new website's user-friendly design and compelling presentation directly contributed to an incredible 500% surge in sales. The branding they crafted is sophisticated, memorable, and perfectly reflects our brand identity, which we have proudly adopted across all aspects of our business. We highly recommend Other Dev to any emerging brand looking for impactful digital solutions.",
+        "author": "Talha, Founder of Wish"
+      },
+      "secondCover": "https://images.unsplash.com/photo-1509114397022-ed747cca3f65?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    }
   },
   {
     "id": "5",
