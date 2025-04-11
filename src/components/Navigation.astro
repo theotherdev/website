@@ -59,7 +59,7 @@ const karachiTimezone = "Asia/Karachi"; // Explicitly define Karachi timezone
 {/* --- Mobile Navigation --- */}
 <nav
   aria-label={t("nav.mobileAriaLabel") ?? "Mobile Navigation"}
-  class="lg:hidden flex justify-between items-center w-full px-4 pt-4 text-lg bg-transparent fixed top-0 z-50 header-blend-mode"
+  class="lg:hidden flex justify-between items-center w-full px-4 pt-4 text-lg text-white bg-transparent fixed top-0 z-50 header-blend-mode"
 >
   <div> {/* Text color override if needed */}
     <a href="/" aria-label="Other Dev® Home">Other Dev®</a>
@@ -80,7 +80,7 @@ const karachiTimezone = "Asia/Karachi"; // Explicitly define Karachi timezone
 {/* --- Mobile Menu Panel --- */}
 <div
   id="mobile-menu"
-  class="mobile-navigation-backdrop overflow-y-auto h-0 lg:hidden fixed w-full top-0 left-0 z-40 bg-green-500 transition-height duration-500 ease-in-out"
+  class="mobile-navigation-backdrop overflow-y-auto text-black h-0 lg:hidden fixed w-full top-0 left-0 z-40 bg-green-500 transition-height duration-500 ease-in-out"
   aria-hidden="true"
 >
   <div class="pt-24 mobile-navigation-content opacity-0 transition-opacity duration-250 ease-in-out delay-200">
@@ -128,9 +128,9 @@ const karachiTimezone = "Asia/Karachi"; // Explicitly define Karachi timezone
 {/* --- Desktop Navigation --- */}
 <nav
   aria-label={t("nav.desktopAriaLabel") ?? "Primary Navigation"}
-  class="hidden md:block w-full text-red px-4 pt-4 text-lg bg-transparent text-white fixed top-0 z-50 header-blend-mode"
+  class="hidden md:block w-full text-red pt-4 text-lg bg-transparent text-white fixed top-0 z-50 header-blend-mode"
 >
-<div class="flex justify-between items-center mx-auto container">
+<div class="flex justify-between items-center px-4 mx-auto container">
   <div class="font-bold">
     <a href="/" class="dynamic-underline dynamic-underline-left" aria-label="Other Dev® Home">Other Dev®</a>
   </div>
