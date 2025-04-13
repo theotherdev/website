@@ -91,9 +91,9 @@ const isIndexPage =
 
     <!-- Favicon and App Icons -->
     <link rel="icon" href="/favicon.ico" sizes="32x32" />
-    <link rel="icon" href="/favicon-16x16.png" sizes="16x16" />
-    <link rel="icon" href="/favicon-180x180.png" sizes="180x180" />
-    <link rel="icon" href="/favicon-192x192.png" sizes="192x192" />
+    <link rel="icon" href="/favicon-16x16.webp" sizes="16x16" />
+    <link rel="icon" href="/favicon-180x180.webp" sizes="180x180" />
+    <link rel="icon" href="/favicon-192x192.webp" sizes="192x192" />
 
     <slot name="head" />
   </head>
@@ -186,7 +186,7 @@ const isIndexPage =
       </main>
       <Transition />
     </div>
-    <script is:inline>
+    <script is:inline defer async>
       !(function (f, b, e, v, n, t, s) {
         if (f.fbq) return;
         n = f.fbq = function () {
@@ -209,12 +209,12 @@ const isIndexPage =
     <noscript>
       <img
         height="1"
-        width="1"
+        width="1" loading="lazy"
         style="display:none"
         src="https://www.facebook.com/tr?id=1224083602610268&ev=PageView&noscript=1"
       /></noscript
     >
-    <script is:inline async="" src="https://www.googletagmanager.com/gtag/js?id=G-YXVG798Y18"
+    <script is:inline defer async="" src="https://www.googletagmanager.com/gtag/js?id=G-YXVG798Y18"
     ></script>
     <script is:inline>
       window.dataLayer = window.dataLayer || [];

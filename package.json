@@ -12,6 +12,7 @@
     "@astrojs/partytown": "^2.1.4",
     "@astrojs/react": "^4.2.3",
     "@astrojs/sitemap": "^3.3.0",
+    "@fileforge/pdfreader": "^0.1.46",
     "@phucbm/cursorjs": "^2.0.1",
     "@radix-ui/react-tooltip": "^1.1.8",
     "@swup/astro": "^1.6.0",

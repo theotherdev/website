@@ -34,7 +34,7 @@ else
   <div
     data-speed="clamp(0.8)"
     class="lg:h-[80vh] z-10 about-page-main-cover-image w-full lg:bg-fixed invert"
-    style="mix-blend-mode: difference; filter: grayscale(100%); background-repeat: no-repeat; background-size: cover; background-image: url('/images/about-page/thisisengineering-5FE2hIfHQzg-unsplash.webp');">
+    style="mix-blend-mode: difference; will-change: transform; filter: grayscale(100%); background-repeat: no-repeat; background-size: cover; background-image: url('/images/about-page/thisisengineering-5FE2hIfHQzg-unsplash.webp');">
     <img
       src="/images/about-page/thisisengineering-5FE2hIfHQzg-unsplash.webp"
       class="w-full opacity-0 h-auto"
@@ -56,7 +56,7 @@ else
         </div>
       </div>
       <div class="spikey-boy z-[-1] absolute top-[-6rem]"><img src="/shapes/Party.svg" /></div>
-      <!-- <div class="md:hidden z-[0] absolute bottom-[-5%] right-[-50%]"><img class=" w-[180vw]" src="/shapes/Butterfly.svg" /></div> -->
+      <!-- <div class="lg:hidden z-[0] absolute bottom-[-5%] right-[-50%]"><img class=" w-[180vw]" src="/shapes/Butterfly.svg" /></div> -->
     </div>
     <hr class="border-black" />
 
@@ -65,11 +65,11 @@ else
       <Carousel carouselId={"about-page"} images={Projects.map((item) => item.imageSrc)} />
     </div>
     <!-- <p class="absolute px-4 text-[15vw] font-serif">{"Projects"}</p>
-    <div class="grid grid-cols-1 md:grid-cols-4 w-full">
+    <div class="grid grid-cols-1 lg:grid-cols-4 w-full">
       {
         Services.map((item, index) => (
           <div
-            class={`text-black ${(index + 1) < Services.length ? "md:border-r md:border-black border-b md:border-b-0" : ""}`}>
+            class={`text-black ${(index + 1) < Services.length ? "lg:border-r lg:border-black border-b lg:border-b-0" : ""}`}>
             <img src={item.imageSrc} style="mix-blend-mode:exclusion;" class="invert-100 sw-full h-auto" />
             <h2 class="text-6xl py-4 px-4 serif tracking-tight">{item.title}</h2>
             <p class="mt-4 text-lg px-4 py-4 pb-8">{item.description}</p>

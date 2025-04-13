@@ -1,5 +1,5 @@
 ---
-const { images, carouselId: id } = Astro.props;
+const { images, carouselId: id, imageClasses } = Astro.props;
 ---
 
 <div class="relative w-full">
@@ -7,19 +7,17 @@ const { images, carouselId: id } = Astro.props;
     data-carousel-id={id}
     class="group h-full whitespace-nowrap overflow-x-scroll scrollbar-hide snap-x snap-mandatory"
     style="scroll-behavior: smooth;">
-    <div class="flex gap-4 h-full items-center">
+    <div class="flex gap-2 h-full items-center">
       {
         images.map(
           (image, index) =>
             image && (
-              <div data-speed="clamp(0.8)" class="flex justify-center items-center">
                 <img
                   src={image}
                   alt="Gallery image"
-                  class="w-auto object-contain snap-always snap-center"
-                  style="height: auto; max-height: 80vh; max-width: 80vw;"
+                  class={`snap-always snap-center ${imageClasses} `}
+                  style="max-height: 80vh; max-width: 80vw;"
                 />
-              </div>
             )
         )
       }
@@ -27,14 +25,14 @@ const { images, carouselId: id } = Astro.props;
   </div>
 
   <!-- Navigation controls (Fixed to prevent scrolling away) -->
-  <div class="absolute inset-y-0 w-full flex justify-between pointer-events-none">
+  <div class="absolute inset-y-0 w-full lg:flex justify-between pointer-events-none hidden">
     <button
       data-carousel-left={id}
-      class="absolute left-0 top-0 bottom-0 w-1/2 cursor-arrow-left bg-black/20-hover:bg-black/40 text-white opacity-0 hover:opacity-100 transition-opacity pointer-events-auto cursor-pointer"
+      class="absolute left-0 top-0 bottom-0 w-1/2 cursor-arrow-left  text-white transition-opacity pointer-events-auto cursor-pointer"
       aria-label="Previous image"></button>
     <button
       data-carousel-right={id}
-      class="absolute right-0 top-0 bottom-0 w-1/2 cursor-arrow-right bg-black/20-hover:bg-black/40 text-white opacity-0 hover:opacity-100 transition-opacity pointer-events-auto cursor-pointer"
+      class="absolute right-0 top-0 bottom-0 w-1/2 cursor-arrow-right text-white transition-opacity pointer-events-auto cursor-pointer"
       aria-label="Next image"></button>
   </div>
 </div>

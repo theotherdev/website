@@ -1,6 +1,8 @@
 ---
 const length = 7;
-import { getLangFromUrl } from "@/i18n/utils";
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+import { sanitize } from "@/pages/work/[id].astro";
+import { getRelativeLocaleUrl } from "astro:i18n";
 
 const lang = getLangFromUrl(Astro.url);
 
@@ -25,13 +27,16 @@ if (importModule) {
   // Handle error
 }
 
-projects = projects.slice(0, length - 1);
+// projects = projects.slice(0, length - 1);
 ---
 
 <div class="shapes-container">
   <div class="shape-wrapper">
     <!-- Asterisk -->
-    <div class="shape" style="display: block;">
+    <a
+      class="shape"
+      href={`${getRelativeLocaleUrl(lang, "work/" + sanitize(projects[0].title))}`}
+      style="display: block;">
       <svg
         width="229"
         height="225"
@@ -44,10 +49,13 @@ projects = projects.slice(0, length - 1);
           d="M46.1777 112.246L0.12207 85.6341L34.0677 26.8582L80.1501 53.4242L80.1761 0.246094H148.068L148.094 53.4242L194.176 26.8582L228.122 85.6341L182.066 112.246L228.122 138.858L194.176 197.634L148.094 171.068L148.068 224.246H80.1761L80.1501 171.068L34.0677 197.634L0.12207 138.858L46.1777 112.246Z"
           fill="#F8B3B8"></path>
       </svg>
-    </div>
+    </a>
 
     <!-- Butterfly -->
-    <div class="shape" style="display: none;">
+    <a
+      class="shape"
+      href={`${getRelativeLocaleUrl(lang, "work/" + sanitize(projects[1].title))}`}
+      style="display: none;">
       <svg
         width="188"
         height="192"
@@ -60,10 +68,13 @@ projects = projects.slice(0, length - 1);
           d="M94.9966 101.212C92.4316 151.415 51.1996 191.408 0.496582 191.992V0.499023C51.1996 1.08352 92.4316 41.0757 94.9966 91.279C97.5276 41.7375 137.714 2.13972 187.497 0.542824V191.949C137.714 190.352 97.5276 150.754 94.9966 101.212Z"
           fill="#F2C94C"></path>
       </svg>
-    </div>
+    </a>
 
     <!-- Flower -->
-    <div class="shape" style="display: none;">
+    <a
+      class="shape"
+      href={`${getRelativeLocaleUrl(lang, "work/" + sanitize(projects[2].title))}`}
+      style="display: none;">
       <svg
         width="212"
         height="236"
@@ -76,10 +87,13 @@ projects = projects.slice(0, length - 1);
           d="M135.351 66.9354C196.683 -4.25981 256.536 101.05 164.908 118.107C256.536 135.906 195.944 240.474 135.351 169.278C166.386 258.272 45.9396 257.531 76.9752 169.278C15.6432 240.474 -44.2106 135.906 47.4175 118.107C-44.9496 101.05 15.6432 -3.51821 76.9752 66.9354C45.2007 -21.317 166.386 -21.317 135.351 66.9354ZM105.793 104.758C113.183 104.758 119.833 110.691 119.833 118.107C119.833 125.523 113.183 132.198 105.793 132.198C98.4042 132.198 92.4922 125.523 92.4922 118.107C92.4922 110.691 98.4042 104.758 105.793 104.758Z"
           fill="#EB5757"></path>
       </svg>
-    </div>
+    </a>
 
     <!-- Magnet -->
-    <div class="shape" style="display: none;">
+    <a
+      class="shape"
+      href={`${getRelativeLocaleUrl(lang, "work/" + sanitize(projects[3].title))}`}
+      style="display: none;">
       <svg
         width="188"
         height="197"
@@ -90,10 +104,13 @@ projects = projects.slice(0, length - 1);
           d="M89.2726 0.246094H0.870605V67.9151H89.2726C106.142 67.9151 119.828 81.5541 119.828 98.2461C119.828 114.935 106.142 128.577 89.2726 128.577H0.870605V196.246H89.2726C143.618 196.246 187.871 152.318 187.871 98.2461C187.871 44.174 143.618 0.246094 89.2726 0.246094Z"
           fill="#9B51E0"></path>
       </svg>
-    </div>
+    </a>
 
     <!-- Party -->
-    <div class="shape" style="display: none;">
+    <a
+      class="shape"
+      href={`${getRelativeLocaleUrl(lang, "work/" + sanitize(projects[4].title))}`}
+      style="display: none;">
       <svg
         width="257"
         height="146"
@@ -104,10 +121,13 @@ projects = projects.slice(0, length - 1);
           d="M151.744 137.196C137.889 129.672 118.307 129.446 104.28 136.642C94.5913 141.613 83.6233 144.416 72.006 144.416C32.6516 144.416 0.748291 112.254 0.748291 72.5811C0.748291 32.9071 32.6516 0.746094 72.006 0.746094C84.2153 0.746094 95.7073 3.84159 105.752 9.29649C119.607 16.8206 139.189 17.0461 153.215 9.84989C162.905 4.87889 173.873 2.07639 185.49 2.07639C224.845 2.07639 256.748 34.2381 256.748 73.9111C256.748 113.585 224.845 145.746 185.49 145.746C173.281 145.746 161.789 142.651 151.744 137.196Z"
           fill="#219653"></path>
       </svg>
-    </div>
+    </a>
 
     <!-- Summertime Sadness -->
-    <div class="shape" style="display: none;">
+    <a
+      class="shape"
+      href={`${getRelativeLocaleUrl(lang, "work/" + sanitize(projects[5].title))}`}
+      style="display: none;">
       <svg
         width="270"
         height="269"
@@ -118,10 +138,13 @@ projects = projects.slice(0, length - 1);
           d="M134.622 0L144.682 68.2539L174.415 5.9977L163.91 74.1846L210.671 23.4578L180.535 85.519L240.169 50.8289L193.079 101.25L260.29 85.679L200.43 119.98L269.245 124.911L201.934 140.044L266.237 165.04L197.456 159.661L251.535 202.5L187.396 177.086L226.445 233.962L172.646 190.771L193.197 256.631L154.518 199.501L154.743 268.492L134.622 202.5L114.501 268.492L114.727 199.501L76.0482 256.631L96.5985 190.771L42.7992 233.962L81.8489 177.086L17.7091 202.5L71.7885 159.661L3.0072 165.04L67.3112 140.044L0 124.911L68.8149 119.98L8.9545 85.679L76.1658 101.25L29.0753 50.8289L88.7105 85.519L58.5743 23.4578L105.335 74.1846L94.8305 5.9977L124.562 68.2539L134.622 0Z"
           fill="#F0C3D2"></path>
       </svg>
-    </div>
+    </a>
 
     <!-- Donut shape -->
-    <div class="shape" style="display: none;">
+    <a
+      class="shape"
+      href={`${getRelativeLocaleUrl(lang, "work/" + sanitize(projects[6].title))}`}
+      style="display: none;">
       <svg
         width="233"
         height="233"
@@ -132,7 +155,7 @@ projects = projects.slice(0, length - 1);
           d="M58.3743 0.246094C26.3418 0.246094 0.374268 26.2136 0.374268 58.2461C0.374268 90.2791 26.3418 116.246 58.3743 116.246C26.3418 116.246 0.374268 142.213 0.374268 174.246C0.374268 206.279 26.3418 232.246 58.3743 232.246C90.4073 232.246 116.374 206.279 116.374 174.246C116.374 206.279 142.341 232.246 174.374 232.246C206.407 232.246 232.374 206.279 232.374 174.246C232.374 142.213 206.407 116.246 174.374 116.246C206.407 116.246 232.374 90.2791 232.374 58.2461C232.374 26.2136 206.407 0.246094 174.374 0.246094C142.341 0.246094 116.374 26.2136 116.374 58.2461C116.374 26.2136 90.4073 0.246094 58.3743 0.246094Z"
           fill="#A483D0"></path>
       </svg>
-    </div>
+    </a>
   </div>
 </div>
 
@@ -147,7 +170,7 @@ projects = projects.slice(0, length - 1);
     index = (index + 1) % shapes.length;
   };
 
-  let interval = setInterval(cycleShapes, 300);
+  let interval = setInterval(cycleShapes, 600);
 
   document.querySelector(".shapes-container").addEventListener("click", () => {
     clearInterval(interval);
