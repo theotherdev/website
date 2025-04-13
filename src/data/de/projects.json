@@ -90,11 +90,44 @@
     }
   },
   {
-    "id": "3",
-    "title": "Website-Entwicklung & Branding für Parcheh81",
-    "year": "2024",
-    "description": "Website-Entwicklung & Design",
-    "imageSrc": "/images/projects/parcheh81-2024/parcheh81.com_.webp"
+    {
+      "id": "3",
+      "title": "Branding & Webseitenentwicklung für Parcheh81",
+      "company": "Parcheh",
+      "hasPage": true,
+      "year": "2024",
+      "description": "Webseitendesign, Entwicklung & Branding",
+      "imageSrc": "/images/projects/parcheh81-2024/Parcheh.nyc_collections_all.webp",
+      "url": "https://parcheh81.com/",
+      "coverImage": "/images/projects/parcheh81-2024/Parcheh.nyc_collections_all.webp",
+      "coverImageAlt": "Parcheh Shop-Eröffnung",
+      "page": {
+        "excerpt": "Unsere Zusammenarbeit mit Parcheh (Persisch für 'Stoff') konzentrierte sich darauf, ein digitales Erlebnis zu schaffen, das dem Namen gerecht wird. Wir haben die einzigartige Textur, Kunstfertigkeit und Narrative ihrer Textilien in eine maßgeschneiderte E-Commerce-Plattform übersetzt, auf der die Stoffdetails wirklich zur Geltung kommen. Das Ergebnis ist eine elegante und intuitive Website, die den Nutzern eine immersive Reise in die Markenwelt bietet und unsere Fähigkeit demonstriert, den Kern einer Marke durch anspruchsvolles digitales Design zu erfassen.",
+        "splitSections": [
+          {
+            "heading": "Herausforderungen",
+            "content": "Für Parcheh bestanden die Hauptherausforderungen darin, das luxuriöse Gefühl ihrer Stoffe digital zu vermitteln und eine anspruchsvolle Ästhetik mit intuitiver Benutzerfreundlichkeit in Einklang zu bringen. Wir lösten dies durch hochauflösende Bilder, Zoomfunktionen und ansprechende Beschreibungen, ergänzt durch ein klares UI/UX mit einfacher Navigation und einem optimierten Checkout-Prozess. Entscheidend war auch, dass wir die Markengeschichte und das Bekenntnis zur Handwerkskunst von Parcheh durch spezielle Abschnitte und subtile Designelemente auf der gesamten Website verwoben haben, um die Verbindung der Kunden zu ihrem Erbe und ihrer Qualität zu stärken.",
+            "tags": ["Textilfokussierte visuelle Strategie", "Visuelle Identität", "Shopify", "Kultursensitives UI/UX-Design", "Hochdetaillierte Produktpräsentation"]
+          },
+          {
+            "heading": "Inspiration",
+            "content": "Tief inspiriert vom Stoff Parcheh selbst, konzentrierte sich unser Design darauf, dessen haptischen Reichtum und Qualität in die digitale Welt zu übertragen. Unser Ziel war es, zeitlose Handwerkskunst mit moderner Eleganz zu verbinden und ein intimes, galerieartiges Online-Erlebnis zu schaffen. Hochdetaillierte Visuals und klare, durchdachte Layouts waren der Schlüssel, um zur Erkundung der einzigartigen Kunstfertigkeit und des Erbes der Marke anzuregen."
+          }
+        ],
+        "upperSlideshow": [
+          "/images/projects/wish-2024/upper-slideshow-1.webp",
+          "/images/projects/wish-2024/1743813808292_100.webp",
+          "/images/projects/wish-2024/wish-girl-11.webp",
+          "/images/projects/wish-2024/wish-boy-1.webp",
+          "/images/projects/wish-2024/wish-logo.webp",
+          "/images/projects/wish-2024/with-other-dev.webp"
+        ],
+        "testimonial": {
+          "content": "Die Zusammenarbeit mit Other Dev hat Parcheh transformiert. Ihre kombinierte Web- und Branding-Expertise lieferte Ergebnisse, die unsere Erwartungen übertrafen – die benutzerfreundliche Website erzielte eine dramatische Umsatzsteigerung! Das anspruchsvolle Branding spiegelt unsere Identität perfekt wider und wird nun überall eingesetzt. Wir empfehlen Other Dev nachdrücklich jeder Marke, die wirkungsvolle digitale Ergebnisse benötigt.",
+          "author": "Nasir, Gründer von Parcheh"
+        }
+      }
+    }
   },
   {
     "id": "5",
