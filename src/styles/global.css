@@ -48,17 +48,22 @@
 }
 .lausanne {
   font-family: "Lausanne";
+  font-display: swap;
 }
 .domaine {
+  font-display: swap;
   font-family: "Domaine";
 }
 .allura {
+  font-display: swap;
   font-family: "Allura";
 }
 .twk-lausanne {
+  font-display: swap;
   font-family: "TWKLausanne";
 }
 .queens-compressed {
+  font-display: swap;
   font-family: "QueensCompressed";
 }
 p {
@@ -68,6 +73,7 @@ body {
   background-color: var(--background);
   /* font-family: 'Roboto', sans-serif; */
   font-family: "TWKLausanne", sans-serif;
+  font-display: swap;
 }
 .dynamic-underline-left,
 .dynamic-underline-right {

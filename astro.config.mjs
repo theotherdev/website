@@ -20,7 +20,9 @@ export default defineConfig({
     },
   },
   integrations: [
-    react(),
+    react({
+      experimentalReactChildren: true
+    }),
     robotsTxt(),
     sitemap({
       i18n: {

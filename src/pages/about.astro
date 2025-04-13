@@ -78,26 +78,16 @@ else
 </style>
 <Layout>
   <div class="about-page-scroll-start"></div>
-  <!-- <div class="container_mouse hidden lg:block">
-    <span class="mouse-btn">
-      <span class="mouse-scroll"></span>
-    </span>
-    <span>Scroll Down</span>
-  </div> -->
   <img src="/images/kabeer-and-ossaid-ai.webp" class="w-screen h-auto block lg:hidden" />
-
   <div
     data-speed="clamp(0.8)"
     class="hidden lg:block container-px-4-mx-auto z-10 lg:max-h-[100vh] about-page-main-cover-image w-full lg:bg-fixed bg-black"
-    style="mix-blend-mode: difference; background-position: center; background-repeat: no-repeat; background-size: cover; background-image: url('/images/kabeer-and-ossaid-ai-landscape.webp');">
+    style="mix-blend-mode: difference; will-change: transform; background-position: center; background-repeat: no-repeat; background-size: cover; background-image: url('/images/kabeer-and-ossaid-ai-landscape.webp');">
     <img src="/images/kabeer-and-ossaid-ai-landscape.webp" class="w-full h-full opacity-0" />
   </div>
   <div class="w-full max-w-screen relative bg-amber-500 text-black overflow-hidden">
     <div class="relative container mx-auto px-4 mt-[-1rem] flex flex-col lg:flex-row rounded-t-lg">
       <div class="flex flex-col lg:flex-row items-center py-32 w-full" data-speed="clamp(0.95)">
-        <!-- <h1 class="mr-4 text-vertical text-orientation-mixed">
-          {t("about.about-the-company-text")}
-        </h1> -->
         <div class="relative flex flex-col lg:flex-row justify-between items-center w-full">
           <p class="text-left max-w-6xl z-0">
             We’ve been building on the internet since way before it was cool—WordPress sites in
@@ -111,23 +101,15 @@ else
           </p>
           <div
             class="hidden lg:block w-full mx-auto spikey-boy-clickable"
-            style="mix-blend-mode: difference;">
+            style="mix-blend-mode: difference; will-change: transform;">
             <img src="/shapes/Party.svg" alt="Decorative shape" />
           </div>
         </div>
       </div>
 
-      <div class="spikey-boy z-[-1] absolute top-[-6rem]" style="mix-blend-mode: difference;">
+      <div class="spikey-boy z-[-1] absolute top-[-6rem]" style=" will-change: transform; mix-blend-mode: difference;">
         <img src="/shapes/Party.svg" alt="Decorative shape" />
       </div>
-
-      {
-        /*
-      <div class="lg:hidden z-0 absolute bottom-[-5%] right-[-50%]">
-        <img class="w-[180vw]" src="/shapes/Butterfly.svg" alt="Butterfly shape" />
-      </div>
-      */
-      }
     </div>
 
     <hr class="border-black" />
@@ -139,21 +121,6 @@ else
     <div class="mt-[15vw]" data-speed="clamp(0.9)">
       <Carousel carouselId="about-page" images={Projects.map((item) => item.imageSrc)} />
     </div>
-
-    <!-- <Carousel
-      carouselId={"about-page-2"}
-      images={[
-        "/images/expertise-page/control-loops-logo-design.webp",
-        "/images/expertise-page/control-loops-logo-big.webp",
-        "/images/expertise-page/packaging-od-zoomed.webp",
-        "/images/expertise-page/od-packaging.webp",
-        "/images/expertise-page/probattle-design.webp",
-        "/images/expertise-page/probattle-landscape.webp",
-        "/images/expertise-page/nb-tailors.webp",
-        "/images/expertise-page/wish-phones.webp",
-        "/images/expertise-page/od-double-d.webp",
-      ]}
-    /> -->
     <div class="w-full max-w-screen relative text-black overflow-hidden">
       <div
         class="relative container mx-auto px-4 mt-[-1rem] flex flex-col lg:flex-row rounded-t-lg">

@@ -128,7 +128,7 @@ const karachiTimezone = "Asia/Karachi"; // Explicitly define Karachi timezone
 {/* --- Desktop Navigation --- */}
 <nav
   aria-label={t("nav.desktopAriaLabel") ?? "Primary Navigation"}
-  class="hidden lg:block w-full text-red pt-4 text-lg bg-transparent text-white fixed top-0 z-50 header-blend-mode"
+  class="hidden lg:block w-full text-red pt-4 px-4 text-lg bg-transparent text-white fixed top-0 z-50 header-blend-mode"
 >
 <div class="flex justify-between items-center mx-auto container">
   <div class="font-bold">
@@ -178,6 +178,8 @@ const karachiTimezone = "Asia/Karachi"; // Explicitly define Karachi timezone
 <style is:global> /* Use is:global if styles affect injected SVGs or child elements broadly */
   .header-blend-mode {
     mix-blend-mode: exclusion;
+    
+  will-change: transform;
   }
   .mobile-navigation-backdrop {
     transition: height 0.5s ease-in-out;
