@@ -98,7 +98,7 @@ const karachiTimezone = "Asia/Karachi"; // Explicitly define Karachi timezone
       ))}
       
       {/* Let's Meet Link */}
-      <li class="border-b border-black">
+      <li class="border-b border-black border-dashed">
         <a
           href={letsMeetLink.path}
           target="_blank"
@@ -108,6 +108,24 @@ const karachiTimezone = "Asia/Karachi"; // Explicitly define Karachi timezone
           {letsMeetLink.title}
         </a>
       </li>
+      {/* Software and Design */}
+      <li class="border-b border-black border-dashed">
+        <div
+          class="block py-4 px-4 text-lg hover:bg-stone-600/10 transition-colors duration-200"
+        >
+        <span class=" ">{t("nav.software-and-design")}</span>
+      </div>
+      </li>
+ {/* Time */}
+      <li class="border-b border-black border-dashed">
+        <div
+          class="block py-4 px-4 text-lg hover:bg-stone-600/10 transition-colors duration-200"
+        >
+        <span class="  clock-time tabular-nums"></span> {/* Class for JS targeting */}
+        <span class=" ">{t('nav.location') ?? 'Karachi, Pakistan'} </span> {/* Use i18n for location */}
+      </div>
+      </li>
+
     </ul>
 
     {/* Mobile Footer Social Links */}
@@ -291,8 +309,8 @@ document.addEventListener('DOMContentLoaded', mobileNavigation);
 window.addEventListener('resize', mobileNavigation);
 // --- Karachi Time Display ---
 function displayKarachiTime() {
-  const clockElement = document.querySelector('.clock-time');
-  if (!clockElement) return;
+  const clockElements = document.querySelectorAll('.clock-time');
+  if (!clockElements) return;
 
   // Options for time display
   const options = {
@@ -326,7 +344,7 @@ function displayKarachiTime() {
       // Remove unwanted timezone abbreviation if it appears
       timeString = timeString.replace(/\s*\(PKT\)/, '');
       
-      clockElement.textContent = timeString;
+      clockElements.forEach(cl => cl.textContent = timeString);
       errorCount = 0; // Reset error count on success
       
       // Schedule next update in 1 second
@@ -338,7 +356,7 @@ function displayKarachiTime() {
       
       // Show fallback after multiple errors
       if (errorCount >= maxErrors) {
-        clockElement.textContent = '--:-- PKT';
+        clockElements.forEach(cl => cl.textContent = '--:-- PKT');
         return;
       }
       
@@ -353,12 +371,12 @@ function displayKarachiTime() {
       if (entry.isIntersecting) {
         update(); // Start when visible
       } else {
-        clockElement.textContent = ''; // Clear when not visible
+        clockElements.forEach(cl => cl.textContent = ''); // Clear when not visible
       }
     });
   }, { threshold: 0.1 });
 
-  observer.observe(clockElement);
+  clockElements.forEach(cl => observer.observe(cl));
 
   // Cleanup when component unmounts
   return () => {
