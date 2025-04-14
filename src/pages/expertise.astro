@@ -3,7 +3,7 @@ import Layout from "@/layouts/Layout.astro";
 import { getLangFromUrl } from "@/i18n/utils";
 import { useTranslations } from "@/i18n/utils";
 import Carousel from "@/components/Carousel.astro";
-// import ShapesEmbeddable from "@/components/ShapesEmbeddable.astro";
+import SEO from "@/components/SEO.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -19,80 +19,17 @@ else
 ---
 
 <slot name="head">
-  <title>Nos expertises – Studio de branding, stratégie et design | Blackpizza®</title>
-  <meta
-    name="dc.title"
-    content="Nos expertises – Studio de branding, stratégie et design | Blackpizza®"
-  />
-  <meta
-    name="dc.description"
-    content="Explorez les expertises de Blackpizza®, studio de branding 360° à Paris. Stratégie, design graphique et digital pour les marques ambitieuses."
-  />
-  <meta name="dc.language" content="fr_FR" />
-  <meta
-    name="description"
-    content="Explorez les expertises de Blackpizza®, studio de branding 360° à Paris. Stratégie, design graphique et digital pour les marques ambitieuses."
-  />
-  <meta
-    name="robots"
-    content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
-  />
-  <meta property="og:site_name" content="Blackpizza®" />
-  <meta property="og:locale" content="fr_FR" />
-  <meta property="og:type" content="article" />
-  <meta
-    property="og:title"
-    content="Nos expertises – Studio de branding, stratégie et design | Blackpizza®"
-  />
-  <meta
-    property="og:description"
-    content="Explorez les expertises de Blackpizza®, studio de branding 360° à Paris. Stratégie, design graphique et digital pour les marques ambitieuses."
-  />
-  <meta
-    property="og:image"
-    content="https://blackpizza.com/wp-content/uploads/2025/01/Expertises-Image1-blackpizza-paris.jpg"
-  />
-  <meta
-    property="og:image:secure_url"
-    content="https://blackpizza.com/wp-content/uploads/2025/01/Expertises-Image1-blackpizza-paris.jpg"
-  />
-  <meta property="og:image:width" content="1440" />
-  <meta property="og:image:height" content="900" />
-  <meta
-    property="og:image:alt"
-    content="L'équipe Blackpizza devant le studio graphique rue des Trois Bornes."
-  />
-  <meta property="fb:app_id" content="mambolive" />
-  <meta name="twitter:card" content="summary" />
-  <meta
-    name="twitter:title"
-    content="Nos expertises – Studio de branding, stratégie et design | Blackpizza®"
-  />
-  <meta
-    name="twitter:description"
-    content="Explorez les expertises de Blackpizza®, studio de branding 360° à Paris. Stratégie, design graphique et digital pour les marques ambitieuses."
-  />
-  <meta
-    name="twitter:image"
-    content="https://blackpizza.com/wp-content/uploads/2025/01/Expertises-Image1-blackpizza-paris.jpg"
-  />
+  <SEO pageName="expertise"/>
 </slot>
 <Layout>
   <div class="-bg-gradient-to-b-from-black-to-[var(--background)] bg-[var(--background)]">
     <div class="relative overflow-hidden pt-[8rem] lg:mx-auto lg:container px-4 lg:px-0" data-speed="clamp(0.9)">
       <div class="w-full relative py-4 max-w-5xl">
-        <h1 class="mt-auto queens-compressed text-left align-bottom text-5xl lg:text-7xl z-0">
-          A boutique software studio based in <span class="allura">Karachi</span>, building
-          end-to-end digital experiences for brands, startups, and creatives around the world.
-        </h1>
+        <h1 class="mt-auto queens-compressed text-left align-bottom text-5xl lg:text-7xl z-0" set:html={t('expertise.heading')}/>
         <!-- <div data-speed="clamp(.9)" class="absolute top-[3rem] h-[400px] right-5 grayscale brightness-0"><ShapesEmbeddable /></div> -->
       </div>
       <div class="gap-4 gap-x-10 text-lg w-full relative py-[6rem] pt-0 flex space-between">
-        <p class="max-w-5xl">
-          We’re Other Dev—a small, independent studio based in Karachi, working with clients across
-          the world. We partner with startups, brands, and creatives to bring bold ideas to life
-          through design, development, and end-to-end digital strategy.
-        </p>
+        <p class="max-w-5xl">{t('expertise.excerpt')}</p>
         <div class="hidden lg:flex">
           <ul>
             {
@@ -133,19 +70,11 @@ else
       <div class="gap-4 gap-x-10 text-lg w-full relative py-[6rem] pt-0 flex space-between">
         <div class="max-w-5xl">
           <p>
-            Our specialty lies in crafting websites, apps, and visual identities that don’t just
-            look good—they feel right. From the first spark of an idea to launch day and beyond, we
-            offer hands-on support through every stage of the journey. Think of us as your creative
-            and technical partner, not just another agency.
+            {t('expertise.second-paragraph')}
           </p>
           <br />
           <p>
-            Our work is driven by craft, curiosity, and a deep respect for design and technology. No
-            mass production. No soulless templates. Just intentional, high-quality work that feels
-            built—not assembled. We’re selective with our projects because we give each one the care
-            and energy it deserves. Whether it’s helping a brand tell its story online or building a
-            startup’s MVP from scratch, we approach every project with high standards and a human
-            touch.
+            {t('expertise.third-paragraph')}
           </p>
         </div>
       </div>

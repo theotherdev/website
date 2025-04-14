@@ -6,7 +6,7 @@ import { getRelativeLocaleUrl } from "astro:i18n";
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 let textColor = '--color-stone-400-inverted';
-if (['/about/', '/experties/', '/', '/about', '/experties'].includes(Astro.site.pathname)) textColor = '--color-stone-300';
+if (['/about/', '/experties/', '/', '/about', '/experties'].includes(Astro.site.pathname)) textColor = '--color-stone-400';
 // --- Define Navigation Data Once ---
 const navLinks = [
   { title: t("nav.work"), path: getRelativeLocaleUrl(lang, "work") },
@@ -56,8 +56,9 @@ const karachiTimezone = "Asia/Karachi"; // Explicitly define Karachi timezone
     }))
 })} />
 
-<div class="text-[var(--color-stone-300)]"/>
+<div class="text-[var(--color-stone-400)]"/>
 <div class="text-[var(--color-stone-400-inverted)]"/>
+<div class="menu-withclock">
 {/* --- Mobile Navigation --- */}
 <nav
   aria-label={t("nav.mobileAriaLabel") ?? "Mobile Navigation"}
@@ -155,7 +156,7 @@ const karachiTimezone = "Asia/Karachi"; // Explicitly define Karachi timezone
 >
 <div class="flex justify-between items-center lg:container mx-auto">
   <div class="font-bold">
-    <a href="/" class="dynamic-underline dynamic-underline-left  " aria-label="Other Dev® Home">Other Dev®</a>
+    <a href="/" class={`before:bg-[var(${textColor})] dynamic-underline dynamic-underline-left`} aria-label="Other Dev® Home">Other Dev®</a>
   </div>
 
   <div class=" "><p>{t("nav.software-and-design")}</p></div>
@@ -169,7 +170,7 @@ const karachiTimezone = "Asia/Karachi"; // Explicitly define Karachi timezone
   <ul class="flex gap-6">
     {navLinks.map((item) => (
       <li>
-        <a href={item.path} class="  dynamic-underline dynamic-underline-left hover:opacity-75 transition-all">
+        <a href={item.path} class={`before:bg-[var(${textColor})] dynamic-underline dynamic-underline-left hover:opacity-75 transition-all`}>
           {item.title}
         </a>
       </li>
@@ -196,7 +197,7 @@ const karachiTimezone = "Asia/Karachi"; // Explicitly define Karachi timezone
      ))}
   </ul>
 </nav>
-
+</div>
 {/* --- Global Styles --- */}
 <style> /* Use is:global if styles affect injected SVGs or child elements broadly */
   .header-blend-mode  {
@@ -253,7 +254,7 @@ const karachiTimezone = "Asia/Karachi"; // Explicitly define Karachi timezone
 
 
 {/* --- Scripts --- */}
-<script>
+<script is:inline>
 function mobileNavigation() {
   // Mobile Menu Toggle - Simple Version
 const menuButton = document.getElementById('mobile-nav-toggle');
@@ -317,7 +318,7 @@ function displayKarachiTime() {
     timeZone: 'Asia/Karachi',
     hour: '2-digit',
     minute: '2-digit',
-    hour12: false,
+    hour12: true,
     timeZoneName: 'short'
   };
 
@@ -344,7 +345,7 @@ function displayKarachiTime() {
       // Remove unwanted timezone abbreviation if it appears
       timeString = timeString.replace(/\s*\(PKT\)/, '');
       
-      clockElements.forEach(cl => cl.textContent = timeString);
+      clockElements.forEach(cl => cl.innerText = timeString);
       errorCount = 0; // Reset error count on success
       
       // Schedule next update in 1 second
@@ -356,7 +357,7 @@ function displayKarachiTime() {
       
       // Show fallback after multiple errors
       if (errorCount >= maxErrors) {
-        clockElements.forEach(cl => cl.textContent = '--:-- PKT');
+        clockElements.forEach(cl => cl.innerText = '--:-- PKT');
         return;
       }
       
@@ -364,18 +365,17 @@ function displayKarachiTime() {
       setTimeout(update, 500);
     }
   }
-
   // Start observing visibility
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         update(); // Start when visible
       } else {
-        clockElements.forEach(cl => cl.textContent = ''); // Clear when not visible
+        clockElements.forEach(cl => cl.innerText = ''); // Clear when not visible
       }
     });
-  }, { threshold: 0.1 });
-
+  }, { root: document.querySelector('.menu-withclock') });
+  
   clockElements.forEach(cl => observer.observe(cl));
 
   // Cleanup when component unmounts

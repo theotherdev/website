@@ -28,7 +28,9 @@ else
   );
 ---
 
-<SEO pageName="about" />
+<slot name="head">
+  <SEO pageName="about" />
+</slot>
 <style>
   .container_mouse {
     position: absolute;
@@ -91,19 +93,16 @@ else
       <div class="flex flex-col lg:flex-row items-center py-32 w-full" data-speed="clamp(0.95)">
         <div class="relative flex flex-col lg:flex-row justify-between items-center w-full">
           <p class="text-left max-w-5xl z-0">
-            We’ve been building on the internet since way before it was cool—WordPress sites in
-            grade school, experimental apps late at night, side projects that made no money but
-            brought all the joy. That spirit turned into Kabeer's Network, and eventually evolved
-            into what we now call Other Dev—a creative technology studio where art and code collide.
-            We’re not here to chase trends or grind 24/7. We believe life isn’t meant to be a to-do
-            list. Our philosophy is simple: work with intention, create with feeling, and make space
-            for rest and experimentation. Because that’s where the good stuff happens.
-            <!-- {t("about.about-otherdev")} -->
+            {t("about.about-otherdev")}
           </p>
           <div
             class="hidden lg:block w-full"
             style="mix-blend-mode: difference; will-change: transform;">
-            <img src="/shapes/Party.svg" class="spikey-boy-clickable cursor-pointer saturate-0 brightness-0 hover:scale-125 duration-200 ml-auto" alt="Decorative shape" />
+            <img
+              src="/shapes/Party.svg"
+              class="spikey-boy-clickable cursor-pointer saturate-0 brightness-0 hover:scale-125 duration-200 ml-auto"
+              alt="Decorative shape"
+            />
           </div>
         </div>
       </div>
@@ -125,37 +124,19 @@ else
     <div class="mt-[15vw]" data-speed="clamp(0.9)">
       <Carousel carouselId="about-page" images={Projects.map((item) => item.imageSrc)} />
     </div>
-    <div class="mt-[2rem] w-full max-w-screen relative text-black overflow-hidden">
+    <div class="mt-[4rem] w-full max-w-screen relative text-black overflow-hidden">
       <div
         class="relative lg:mx-auto lg:container px-4 lg:px-0 mt-[-1rem] flex flex-col lg:flex-row rounded-t-lg">
         <div class="flex flex-col lg:flex-row items-center py-32 w-full" data-speed="clamp(0.95)">
           <div class="relative flex flex-col lg:flex-row justify-between items-center w-full">
-            <p class="text-left max-w-5xl z-0">
-              Our philosophy is simple: great work isn’t achieved through constant hustle alone; it
-              requires balance, rest, and a space for creativity to breathe. We’re inspired by
-              visionary designers and creatives—from Dieter Rams, whose work at Braun set the gold
-              standard in design, to the cultural impact of Virgil Abloh, and from local
-              trailblazers like Zain Ahmed of Raastah and Shehzil Malik to the bold innovations of
-              Kanye West. Their work reminds us that design is not just function—it’s about
-              identity, expression, and building lasting culture. We understand that creativity
-              thrives when given room to explore.
-              <br />
-              <br />
-              There are times when inspiration fades and, instead of forcing productivity, we step back
-              to nurture our creative spirit—whether by experimenting with new ideas or developing passion
-              projects that reinvigorate our perspective. This balanced approach not only recharges us
-              but also enhances the quality and innovation of our client work.
-              <br />
-              <br />
-              At Other Dev, we’re more than a development studio. We’re a team dedicated to building
-              intentional digital experiences with soul. Our commitment to thoughtful design, technical
-              excellence, and well-being drives everything we do—ensuring that we create solutions that
-              not only work seamlessly but also resonate deeply.
-            </p>
+            <p
+              class="text-left max-w-5xl z-0"
+              set:html={t("about.second-paragraph")}
+            />
           </div>
         </div>
       </div>
-      <div
+      <!-- <div
         class="grid grid-cols-1 lg:grid-cols-2 -upper-image-slideshow-container gap-2 lg:mx-auto lg:container px-4 lg:px-0 pb-[4rem]">
         {
           [].map((item) => (
@@ -166,7 +147,7 @@ else
             />
           ))
         }
-      </div>
+      </div> -->
     </div>
   </div>
 </Layout>

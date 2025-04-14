@@ -5,7 +5,7 @@
   /* outline: red solid 1px; */
 }
 :root {
-  --color-stone-400-inverted: #595f64;
+  --color-stone-400-inverted: #575d61;
   --background: var(--color-stone-400);
   /* Spacing System */
   --space-1: 4px;
@@ -16,7 +16,7 @@
   --space-6: 24px;
   --space-8: 32px;
   --space-10: 40px;
-  
+
   /* Typography */
   --text-base: 16px;
   --text-lg: 18px;
@@ -25,7 +25,7 @@
   --text-3xl: 30px;
   --text-4xl: 36px;
   --text-5xl: 48px;
-  
+
   /* Visual Effects */
   --noise-opacity: 0.2;
   --cursor-arrow-size: 30px;
@@ -79,7 +79,7 @@ body {
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: var(--color-black);
+  /* background-color: var(--color-black); */
   transform: scaleX(0);
   transform-origin: top left;
   transition: transform var(--animation-duration) ease;
@@ -97,8 +97,9 @@ body {
   width: 100%;
   height: 2px;
   bottom: 0;
+  z-index: 999;
   left: 0; /* Corrected: Should be left: 0 for right origin */
-  background-color: var(--color-black);
+  /* background-color: var(--color-black); */
   transform: scaleX(0);
   transform-origin: top right;
   transition: transform var(--animation-duration) ease;
@@ -138,14 +139,26 @@ body {
 .grid-overlay {
   width: 100%;
   height: 100%;
-  background-image:
-    repeating-linear-gradient(to right, rgba(255, 0, 0, 0.2) 0, rgba(255, 0, 0, 0.2) 1px, transparent 1px, transparent 100px),
-    repeating-linear-gradient(to bottom, rgba(0, 0, 255, 0.2) 0, rgba(0, 0, 255, 0.2) 1px, transparent 1px, transparent 100px);
+  background-image: repeating-linear-gradient(
+      to right,
+      rgba(255, 0, 0, 0.2) 0,
+      rgba(255, 0, 0, 0.2) 1px,
+      transparent 1px,
+      transparent 100px
+    ),
+    repeating-linear-gradient(
+      to bottom,
+      rgba(0, 0, 255, 0.2) 0,
+      rgba(0, 0, 255, 0.2) 1px,
+      transparent 1px,
+      transparent 100px
+    );
 }
 
 .overlay {
   position: fixed;
-  top: 0; left: 0;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   pointer-events: none;
@@ -155,7 +168,7 @@ body {
 /* Golden Ratio Lines */
 .golden-ratio::before,
 .golden-ratio::after {
-  content: '';
+  content: "";
   position: absolute;
   background: rgba(255, 215, 0, 0.4); /* gold color */
 }
@@ -178,7 +191,7 @@ body {
 
 .thirds::before,
 .thirds::after {
-  content: '';
+  content: "";
   position: absolute;
   background: rgba(0, 255, 21, 0.3); /* cyan lines */
 }

@@ -28,8 +28,9 @@ if (importModule) {
 }
 
 ---
-
-<SEO pageName="index" />
+<slot name="head">
+  <SEO pageName="index" />
+</slot>
 <Layout>
   <div class="min-h-screen bg-stone-400 relative overflow-hidden flex flex-col">
     <div class="flex-auto w-full relative lg:container mx-auto">
@@ -38,7 +39,7 @@ if (importModule) {
         <ul class="mr-4">
           {
             projects.slice(0, 4).map((item) => (
-              <li>
+              <li key={item.imageSrc + "-home"}>
                 <a href={item.title}><p class="select-none">{item.year}</p></a>
               </li>
             ))
@@ -47,7 +48,7 @@ if (importModule) {
         <ul>
           {
             projects.slice(0, 4).map((item) => (
-              <li class="group relative">
+              <li class="group relative" key={item.imageSrc + "-home"}>
                 <img
                   src={item.imageSrc} loading="lazy"
                   class="w-[30rem] pointer-events-none absolute max-w-[80vw] h-auto left-[30%] bottom-[2rem] group-hover:block hidden transition-all duration-75"

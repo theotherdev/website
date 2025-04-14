@@ -19,11 +19,14 @@ else
   );
 ---
 
-<SEO pageName="work" />
+<slot name="head">
+  <SEO pageName="work" />
+</slot>
 <Layout>
-  <div class="pt-[10rem] w-full relative overflow-hidden flex flex-col">
+  <div
+    class="pt-[10rem] w-full relative overflow-hidden flex flex-col lg:mx-auto lg:container px-4 lg:px-0">
     <div class="flex-auto w-full overflow-visible-overflow-x-auto">
-      <table class="table-auto w-full lg:mx-auto lg:container px-4 lg:px-0">
+      <table class="table-auto w-full">
         <tbody>
           {
             Projects.map((item, index) => (
@@ -41,7 +44,7 @@ else
                             alt={item.title}
                           />
                         )}
-                        <h1 class="dynamic-underline-left text-white mt-auto queens-compressed text-left align-bottom text-3xl lg:text-5xl z-0">
+                        <h1 class="dynamic-underline-left before:bg-white text-white mt-auto queens-compressed text-left align-bottom text-3xl lg:text-5xl z-0">
                           {item.title}
                         </h1>
                         <p class="select-none mt-2">{item.description}</p>
@@ -55,7 +58,7 @@ else
                             alt={item.title}
                           />
                         )}
-                        <h1 class="dynamic-underline-left text-white mt-auto queens-compressed text-left align-bottom text-3xl lg:text-5xl z-0">
+                        <h1 class="dynamic-underline-left before:bg-white text-white mt-auto queens-compressed text-left align-bottom text-3xl lg:text-5xl z-0">
                           {item.title}
                         </h1>
                         <p class="select-none mt-2">{item.description}</p>
@@ -69,6 +72,19 @@ else
           }
         </tbody>
       </table>
+    </div>
+    <div class="py-[4rem] max-w-5xl">
+      <p>
+        Our specialty lies in crafting websites, apps, and visual identities that don’t just look
+        good—they feel right. From the first spark of an idea to launch day and beyond, we offer
+        hands-on support through every stage of the journey. Think of us as your creative and
+        technical partner, not just another agency. Our work is driven by craft, curiosity, and a
+        deep respect for design and technology. No mass production. No soulless templates. Just
+        intentional, high-quality work that feels built—not assembled. We’re selective with our
+        projects because we give each one the care and energy it deserves. Whether it’s helping a
+        brand tell its story online or building a startup’s MVP from scratch, we approach every
+        project with high standards and a human touch.
+      </p>
     </div>
   </div>
 </Layout>
