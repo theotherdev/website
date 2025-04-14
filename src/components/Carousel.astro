@@ -1,4 +1,6 @@
 ---
+import Image from "astro/components/Image.astro";
+
 const { images, carouselId: id, imageClasses } = Astro.props;
 ---
 
@@ -12,12 +14,12 @@ const { images, carouselId: id, imageClasses } = Astro.props;
         images.map(
           (image, index) =>
             image && (
-                <img
-                  src={image}
-                  alt="Gallery image"
-                  class={`snap-always snap-center ${imageClasses} `}
-                  style="max-height: 80vh; max-width: 80vw;"
-                />
+              <img
+                src={image} key={image}
+                alt="Gallery image"
+                class={`snap-always snap-center ${imageClasses} `}
+                style="max-height: 80vh; max-width: 80vw;"
+              />
             )
         )
       }
@@ -28,7 +30,7 @@ const { images, carouselId: id, imageClasses } = Astro.props;
   <div class="absolute inset-y-0 w-full lg:flex justify-between pointer-events-none hidden">
     <button
       data-carousel-left={id}
-      class="absolute left-0 top-0 bottom-0 w-1/2 cursor-arrow-left  text-white transition-opacity pointer-events-auto cursor-pointer"
+      class="absolute left-0 top-0 bottom-0 w-1/2 cursor-arrow-left text-white transition-opacity pointer-events-auto cursor-pointer"
       aria-label="Previous image"></button>
     <button
       data-carousel-right={id}

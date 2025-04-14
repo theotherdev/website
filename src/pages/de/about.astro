@@ -3,6 +3,7 @@ import Carousel from "@/components/Carousel.astro";
 import Layout from "@/layouts/Layout.astro";
 import SEO from "@/components/SEO.astro";
 import { useTranslations, getLangFromUrl } from "@/i18n/utils";
+import Image from "astro/components/Image.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -35,7 +36,7 @@ else
     data-speed="clamp(0.8)"
     class="lg:h-[80vh] z-10 about-page-main-cover-image w-full lg:bg-fixed invert"
     style="mix-blend-mode: difference; will-change: transform; filter: grayscale(100%); background-repeat: no-repeat; background-size: cover; background-image: url('/images/about-page/thisisengineering-5FE2hIfHQzg-unsplash.webp');">
-    <img
+    <img  inferSize={true} alt="about-page-image"
       src="/images/about-page/thisisengineering-5FE2hIfHQzg-unsplash.webp"
       class="w-full opacity-0 h-auto"
     />

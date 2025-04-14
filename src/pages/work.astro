@@ -1,13 +1,14 @@
 ---
 import Layout from "@/layouts/Layout.astro";
-import { getLangFromUrl } from "@/i18n/utils";
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
 import SEO from "@/components/SEO.astro";
 
 import { getRelativeLocaleUrl } from "astro:i18n";
 import { sanitize } from "./work/[id].astro";
 
-const lang = getLangFromUrl(Astro.url);
 
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 const importProjectsModule = import.meta.glob("@/data/*/projects.json")[
   `/src/data/${lang}/projects.json`
 ];
@@ -37,10 +38,10 @@ else
                     {item.hasPage ?
                       <a href={`${getRelativeLocaleUrl(lang, "work/" + sanitize(item.title))}`}>
                         {item.imageSrc && (
-                          <img
+                          <img 
                             src={item.imageSrc}
                             loading="lazy"
-                            class="w-[30rem] pointer-events-none absolute max-w-[80vw] h-auto left-1/2 translate-x-1/3 bottom-[2rem] lg:group-hover:block hidden transition-all duration-75"
+                            class="w-[30rem] pointer-events-none absolute max-w-[80vw] h-auto left-1/2 translate-x-1/3 bottom-[2rem] group-hover:block hidden transition-all duration-75"
                             alt={item.title}
                           />
                         )}
@@ -54,7 +55,7 @@ else
                           <img
                             src={item.imageSrc}
                             loading="lazy"
-                            class="w-[30rem] pointer-events-none absolute max-w-[80vw] h-auto left-1/2 translate-x-1/3 bottom-[2rem] lg:group-hover:block hidden transition-all duration-75"
+                            class="w-[30rem] pointer-events-none absolute max-w-[80vw] h-auto left-1/2 translate-x-1/3 bottom-[2rem] group-hover:block hidden transition-all duration-75"
                             alt={item.title}
                           />
                         )}
@@ -74,17 +75,7 @@ else
       </table>
     </div>
     <div class="py-[4rem] max-w-5xl">
-      <p>
-        Our specialty lies in crafting websites, apps, and visual identities that don’t just look
-        good—they feel right. From the first spark of an idea to launch day and beyond, we offer
-        hands-on support through every stage of the journey. Think of us as your creative and
-        technical partner, not just another agency. Our work is driven by craft, curiosity, and a
-        deep respect for design and technology. No mass production. No soulless templates. Just
-        intentional, high-quality work that feels built—not assembled. We’re selective with our
-        projects because we give each one the care and energy it deserves. Whether it’s helping a
-        brand tell its story online or building a startup’s MVP from scratch, we approach every
-        project with high standards and a human touch.
-      </p>
+      <p set:html={t('about.second-paragraph')}/>
     </div>
   </div>
 </Layout>

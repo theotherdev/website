@@ -2,6 +2,7 @@
 import type { GetStaticPaths } from "astro";
 import Layout from "@/layouts/Layout.astro";
 import { useTranslations, getLangFromUrl } from "@/i18n/utils";
+import Image from "astro/components/Image.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -104,12 +105,17 @@ const { page } = project;
   <div class="-bg-[var(--background)] shadow relative w-full z-2">
     <div class="lg:container lg:mx-auto px-4 lg:p-0">
       <img
+        inferSize
+        width={200}
+        height={200}
         src={project.coverImage}
         alt={project.coverImageAlt}
         class="mx-auto w-full object-contain"
       />
       <div class="items-center content-center flex py-[3rem]">
-        <p class="mr-2" style="font-size: var(--text-sm); writing-mode: vertical-rl; text-orientation: mixed;">
+        <p
+          class="mr-2"
+          style="font-size: var(--text-sm); writing-mode: vertical-rl; text-orientation: mixed;">
           {project.title}
         </p>
         <div class="relative max-w-5xl flex justify-between overflow-hidden items-center">
@@ -144,6 +150,7 @@ const { page } = project;
   <div
     class="duration-250 ease-in-out transition upper-image-slideshow-container brightness-75 hover:brightness-50 cursor-pointer">
     <img
+      inferSize
       src={page.secondCover}
       class="w-full h-auto max-h-screen object-cover shadow-xl upper-slideshow-image"
       alt=""
@@ -154,6 +161,7 @@ const { page } = project;
     {
       project.page.upperSlideshow.map((image, index) => (
         <img
+          inferSize
           key={image}
           src={image}
           class="w-full h-auto upper-slideshow-image object-cover"
@@ -166,23 +174,26 @@ const { page } = project;
   </div>
   <div class="py-[3rem] lg:mx-auto px-4 lg:px-0 lg:container">
     <div class="-bg-[var(--background) w-full mx-auto py-[6rem]">
-      <h1 class="mt-auto queens-compressed text-left max-w-5xl align-bottom text-3xl lg:text-5xl z-0">
+      <h1
+        class="mt-auto queens-compressed text-left max-w-5xl align-bottom text-3xl lg:text-5xl z-0">
         "{project.page.testimonial.content}"
       </h1>
       <p class="my-4 italic">- {project.page.testimonial.author}</p>
     </div>
-    <script type="module">
-      gsap.to(".upper-slideshow-image", {
-        x: 0,
-        opacity: 1,
-        scrollTrigger: {
-          once: false,
-          trigger: ".upper-image-slideshow-container",
-          start: "top 20%", // When the top of the trigger hits 80% of the viewport
-          end: "bottom 10%", // When the bottom of the trigger hits 20% of the viewport
-          scrub: true, // Smoothly link animation progress to scroll
-          markers: false, // For debugging - shows start and end lines
-        },
+    <script is:inline>
+      document.addEventListener("DOMContentLoaded", () => {
+        gsap.to(".upper-slideshow-image", {
+          x: 0,
+          opacity: 1,
+          scrollTrigger: {
+            once: false,
+            trigger: ".upper-image-slideshow-container",
+            start: "top 20%", // When the top of the trigger hits 80% of the viewport
+            end: "bottom 10%", // When the bottom of the trigger hits 20% of the viewport
+            scrub: true, // Smoothly link animation progress to scroll
+            markers: false, // For debugging - shows start and end lines
+          },
+        });
       });
     </script>
   </div>

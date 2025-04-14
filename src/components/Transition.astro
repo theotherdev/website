@@ -1,13 +1,6 @@
-<script is:inline src="/js/gsap/gsap.js"></script>
-<script is:inline defer src="/js/gsap/ScrollSmoother.js"></script>
-<script is:inline defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/TextPlugin.min.js"
-></script>
-<script is:inline defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"
-></script>
-
 <div class="cursor-example hidden lg:block"></div>
 <script is:inline>
-  window.addEventListener("load", () => {
+  window.addEventListener("DOMContentLoaded", () => {
     // Register GSAP plugins once on load
     gsap.config({ trialWarn: false });
     gsap.registerPlugin(TextPlugin, ScrollTrigger, ScrollSmoother);

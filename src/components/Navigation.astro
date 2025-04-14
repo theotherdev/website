@@ -58,7 +58,6 @@ const karachiTimezone = "Asia/Karachi"; // Explicitly define Karachi timezone
 
 <div class="text-[var(--color-stone-400)]"/>
 <div class="text-[var(--color-stone-400-inverted)]"/>
-<div class="menu-withclock">
 {/* --- Mobile Navigation --- */}
 <nav
   aria-label={t("nav.mobileAriaLabel") ?? "Mobile Navigation"}
@@ -79,8 +78,8 @@ const karachiTimezone = "Asia/Karachi"; // Explicitly define Karachi timezone
 
 {/* --- Mobile Menu Panel --- */}
 <div
-  id="mobile-menu"
-  class="fixed inset-0 z-40 text-black bg-stone-300 translate-y-full lg:hidden will-change-transform"
+  id="mobile-menu" 
+  class="menu-withclock hidden fixed inset-0 z-40 text-black bg-stone-300 translate-y-full lg:hidden will-change-transform"
   aria-hidden="true"
 >
   <div class="pt-24 h-full overflow-y-auto">
@@ -152,7 +151,7 @@ const karachiTimezone = "Asia/Karachi"; // Explicitly define Karachi timezone
 {/* --- Desktop Navigation --- */}
 <nav
   aria-label={t("nav.desktopAriaLabel") ?? "Primary Navigation"}
-  class={`hidden lg:block w-full text-red pt-4 px-4 text-lg header-blend-mode bg-clip-text bg-transparent text-[var(${textColor})] fixed top-0 z-50`}
+  class={`menu-withclock hidden lg:block w-full text-red pt-4 px-4 text-lg header-blend-mode bg-clip-text bg-transparent text-[var(${textColor})] fixed top-0 z-50`}
 >
 <div class="flex justify-between items-center lg:container mx-auto">
   <div class="font-bold">
@@ -197,7 +196,6 @@ const karachiTimezone = "Asia/Karachi"; // Explicitly define Karachi timezone
      ))}
   </ul>
 </nav>
-</div>
 {/* --- Global Styles --- */}
 <style> /* Use is:global if styles affect injected SVGs or child elements broadly */
   .header-blend-mode  {
@@ -264,6 +262,7 @@ if (menuButton && mobileMenu) {
     // Get text elements once
     const menuText = menuButton.querySelector('.menu-text');
     const closeText = menuButton.querySelector('.close-text');
+    mobileMenu.classList.remove('hidden');
     
     menuButton.addEventListener('click', () => {
       const isOpen = menuButton.getAttribute('aria-expanded') === 'true';
@@ -301,7 +300,8 @@ if (menuButton && mobileMenu) {
     });
     
     // Set initial positions
-    gsap.set(mobileMenu, { y: '100%' });
+    /* this was causing gsap to animate with delay causing the menu to flicker in first load*/
+    // gsap.set(mobileMenu, { y: '100%' });
     gsap.set(closeText, { y: 24 });
     gsap.set(mobileMenu.querySelector('div'), { opacity: 0 });
   }
@@ -345,7 +345,7 @@ function displayKarachiTime() {
       // Remove unwanted timezone abbreviation if it appears
       timeString = timeString.replace(/\s*\(PKT\)/, '');
       
-      clockElements.forEach(cl => cl.innerText = timeString);
+      clockElements.forEach(cl => cl.textContent  = timeString);
       errorCount = 0; // Reset error count on success
       
       // Schedule next update in 1 second
@@ -357,7 +357,7 @@ function displayKarachiTime() {
       
       // Show fallback after multiple errors
       if (errorCount >= maxErrors) {
-        clockElements.forEach(cl => cl.innerText = '--:-- PKT');
+        clockElements.forEach(cl => cl.textContent  = '--:-- PKT');
         return;
       }
       
@@ -365,22 +365,24 @@ function displayKarachiTime() {
       setTimeout(update, 500);
     }
   }
-  // Start observing visibility
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        update(); // Start when visible
-      } else {
-        clockElements.forEach(cl => cl.innerText = ''); // Clear when not visible
-      }
-    });
-  }, { root: document.querySelector('.menu-withclock') });
+//   // Start observing visibility
+//   const observer = new IntersectionObserver((entries) => {
+//     entries.forEach(entry => {
+//       if (entry.isIntersecting) {
+//         update(); // Start when visible
+//       } else {
+//         clockElements.forEach(cl => cl.innerText = ''); // Clear when not visible
+//       }
+//     });
+//   }, 
+//   {threshold: 0.1, root: document.querySelector('.menu-withclock') }
+// );
   
-  clockElements.forEach(cl => observer.observe(cl));
-
+  // clockElements.forEach(cl => observer.observe(cl));
+update()
   // Cleanup when component unmounts
   return () => {
-    observer.disconnect();
+    // observer.disconnect();
   };
 }
 

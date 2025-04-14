@@ -1,14 +1,15 @@
 ---
 import Shapes from "@/components/Shapes.astro";
 import Layout from "@/layouts/Layout.astro";
-import { getLangFromUrl } from '@/i18n/utils';
-import SEO from "@/components/SEO.astro"; 
+import { getLangFromUrl } from "@/i18n/utils";
+import SEO from "@/components/SEO.astro";
+import Image from "astro/components/Image.astro";
 
 const lang = getLangFromUrl(Astro.url);
 
 // 1. Define the glob pattern (path relative to the current file or use alias)
 // Note: Keys in the returned object might be relative or absolute depending on usage
-const projectModules = import.meta.glob('@/data/*/projects.json');
+const projectModules = import.meta.glob("@/data/*/projects.json");
 
 // 2. Construct the key to access the correct module importer function
 // The key often needs to be the full path relative to the project root,
@@ -26,20 +27,23 @@ if (importModule) {
   console.warn(`Could not find projects module importer for key: ${moduleKey}`);
   // Handle error
 }
-
 ---
 
 <SEO pageName="index" />
 <Layout>
   <div class="min-h-screen relative overflow-hidden flex flex-col">
     <div class="flex-auto w-full">
-      <div data-speed="clamp(0.9)" class="w-full flex-auto absolute overflow-hidden h-full"><Shapes /></div>
+      <div data-speed="clamp(0.9)" class="w-full flex-auto absolute overflow-hidden h-full">
+        <Shapes />
+      </div>
       <div class="absolute bottom-0 hidden lg:flex left-0 p-8 text-lg">
         <ul class="mr-4">
           {
             projects.slice(0, 4).map((item) => (
               <li>
-                <a href={item.title}><p class="select-none">{item.year}</p></a>
+                <a href={item.title}>
+                  <p class="select-none">{item.year}</p>
+                </a>
               </li>
             ))
           }
@@ -48,10 +52,15 @@ if (importModule) {
           {
             projects.slice(0, 4).map((item) => (
               <li class="group relative">
-                <img
-                  src={item.imageSrc} loading="lazy"
-                  class="w-[30rem] pointer-events-none absolute max-w-[80vw] h-auto left-[30%] bottom-[2rem] group-hover:block hidden transition-all duration-75"
-                />
+                {item.imageSrc && (
+                  <img
+                    alt={item.title}
+                    inferSize={true}
+                    src={item.imageSrc}
+                    loading="lazy"
+                    class="w-[30rem] pointer-events-none absolute max-w-[80vw] h-auto left-[30%] bottom-[2rem] group-hover:block hidden transition-all duration-75"
+                  />
+                )}
                 <p class="select-none">{item.title}</p>
               </li>
             ))

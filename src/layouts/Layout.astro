@@ -4,6 +4,7 @@ import "@/styles/global.css";
 import Footer from "@/components/Footer.astro";
 import { getLangFromUrl } from "@/i18n/utils";
 import Navigation from "@/components/Navigation.astro";
+import Image from "astro/components/Image.astro";
 const lang = getLangFromUrl(Astro.url);
 
 // 1. Define the glob pattern (path relative to the current file or use alias)
@@ -65,9 +66,9 @@ const isIndexPage =
     <meta name="robots" content="index, follow" />
 
     <link rel="sitemap" href="/sitemap-index.xml" />
-    <meta name="dc.relation" content={Astro.url.origin}>
-    <meta name="dc.source" content="https://otherdev.com/">
-  
+    <meta name="dc.relation" content={Astro.url.origin} />
+    <meta name="dc.source" content="https://otherdev.com/" />
+
     <!-- Google Business Profile -->
     <link rel="canonical" href="https://otherdev.com" />
     <meta property="og:url" content="https://otherdev.com" />
@@ -94,7 +95,13 @@ const isIndexPage =
     <link rel="icon" href="/favicon-16x16.webp" sizes="16x16" />
     <link rel="icon" href="/favicon-180x180.webp" sizes="180x180" />
     <link rel="icon" href="/favicon-192x192.webp" sizes="192x192" />
-
+    <script is:inline src="/js/gsap/gsap.js"></script>
+    <script is:inline defer src="/js/gsap/ScrollSmoother.js"></script>
+    <script is:inline defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/TextPlugin.min.js"
+    ></script>
+    <script is:inline defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"
+    ></script>
+    
     <slot name="head" />
   </head>
   <body>
@@ -111,7 +118,8 @@ const isIndexPage =
         style="position: absolute;top: 50%; left: 50%; transform: translate(-50%, -50%);">
         <svg
           width="50"
-          height="45" class="main-preloader-od-svg"
+          height="45"
+          class="main-preloader-od-svg"
           viewBox="0 0 50 45"
           fill="none"
           xmlns="http://www.w3.org/2000/svg">
@@ -212,7 +220,9 @@ const isIndexPage =
     <noscript>
       <img
         height="1"
-        width="1" loading="lazy"
+        width="1"
+        alt="facebook-tag"
+        loading="lazy"
         style="display:none"
         src="https://www.facebook.com/tr?id=1224083602610268&ev=PageView&noscript=1"
       /></noscript
@@ -226,6 +236,7 @@ const isIndexPage =
       }
       gtag("js", new Date());
       gtag("config", "G-YXVG798Y18");
+      const mo = new MutationObserver((mutations) => {});
     </script>
   </body>
 

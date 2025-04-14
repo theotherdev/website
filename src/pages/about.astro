@@ -3,7 +3,7 @@ import Carousel from "@/components/Carousel.astro";
 import Layout from "@/layouts/Layout.astro";
 import SEO from "@/components/SEO.astro";
 import { useTranslations, getLangFromUrl } from "@/i18n/utils";
-
+import Image from "astro/components/Image.astro";
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
@@ -98,7 +98,7 @@ else
           <div
             class="hidden lg:block w-full"
             style="mix-blend-mode: difference; will-change: transform;">
-            <img
+            <img  inferSize={true}
               src="/shapes/Party.svg"
               class="spikey-boy-clickable cursor-pointer saturate-0 brightness-0 hover:scale-125 duration-200 ml-auto"
               alt="Decorative shape"
