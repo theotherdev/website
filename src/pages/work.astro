@@ -21,14 +21,14 @@ else
 
 <SEO pageName="work" />
 <Layout>
-  <div class="pt-[10rem] min-h-screen w-full relative overflow-hidde-n flex flex-col">
+  <div class="pt-[10rem] w-full relative overflow-hidden flex flex-col lg:mx-auto lg:container px-4 lg:px-0">
     <div class="flex-auto w-full overflow-visible-overflow-x-auto">
       <table class="table-auto w-full">
         <tbody>
           {
             Projects.map((item, index) => (
               <tr class="border-b-black border-b">
-                <td class="select-none text-left py-10 pl-8">{index + 1}</td>
+                <td class="select-none text-left py-10">{index + 1}</td>
                 <td class="group relative py-10 px-4">
                   {item.hasPage ?
                     <a href={`${getRelativeLocaleUrl(lang, "work/" + sanitize(item.title))}`}>

@@ -35,6 +35,7 @@ if (importModule) {
     <!-- Asterisk -->
     <a
       class="shape"
+      preload-svg="#Asterisk"
       href={`${getRelativeLocaleUrl(lang, "work/" + sanitize(projects[0].title))}`}
       style="display: block;">
       <svg
@@ -42,6 +43,7 @@ if (importModule) {
         height="225"
         viewBox="0 0 229 225"
         fill="none"
+        id="Asterisk"
         xmlns="http://www.w3.org/2000/svg">
         <path
           fill-rule="evenodd"
@@ -54,10 +56,12 @@ if (importModule) {
     <!-- Butterfly -->
     <a
       class="shape"
+      preload-svg="#Butterfly"
       href={`${getRelativeLocaleUrl(lang, "work/" + sanitize(projects[1].title))}`}
       style="display: none;">
       <svg
         width="188"
+        id="Butterfly"
         height="192"
         viewBox="0 0 188 192"
         fill="none"
@@ -73,11 +77,13 @@ if (importModule) {
     <!-- Flower -->
     <a
       class="shape"
+      preload-svg="#Flower"
       href={`${getRelativeLocaleUrl(lang, "work/" + sanitize(projects[2].title))}`}
       style="display: none;">
       <svg
         width="212"
         height="236"
+        id="Flower"
         viewBox="0 0 212 236"
         fill="none"
         xmlns="http://www.w3.org/2000/svg">
@@ -92,11 +98,13 @@ if (importModule) {
     <!-- Magnet -->
     <a
       class="shape"
+      preload-svg="#Magnet"
       href={`${getRelativeLocaleUrl(lang, "work/" + sanitize(projects[3].title))}`}
       style="display: none;">
       <svg
         width="188"
         height="197"
+        id="Magnet"
         viewBox="0 0 188 197"
         fill="none"
         xmlns="http://www.w3.org/2000/svg">
@@ -109,11 +117,13 @@ if (importModule) {
     <!-- Party -->
     <a
       class="shape"
+      preload-svg="#Party"
       href={`${getRelativeLocaleUrl(lang, "work/" + sanitize(projects[4].title))}`}
       style="display: none;">
       <svg
         width="257"
         height="146"
+        id="Party"
         viewBox="0 0 257 146"
         fill="none"
         xmlns="http://www.w3.org/2000/svg">
@@ -126,11 +136,13 @@ if (importModule) {
     <!-- Summertime Sadness -->
     <a
       class="shape"
+      preload-svg="#SummertimeSadness"
       href={`${getRelativeLocaleUrl(lang, "work/" + sanitize(projects[5].title))}`}
       style="display: none;">
       <svg
         width="270"
         height="269"
+        id="SummertimeSadness"
         viewBox="0 0 270 269"
         fill="none"
         xmlns="http://www.w3.org/2000/svg">
@@ -143,11 +155,13 @@ if (importModule) {
     <!-- Donut shape -->
     <a
       class="shape"
+      preload-svg="#Donut"
       href={`${getRelativeLocaleUrl(lang, "work/" + sanitize(projects[6].title))}`}
       style="display: none;">
       <svg
         width="233"
         height="233"
+        id="Donut"
         viewBox="0 0 233 233"
         fill="none"
         xmlns="http://www.w3.org/2000/svg">
@@ -210,7 +224,9 @@ if (importModule) {
     pointer-events: auto;
     user-select: none;
   }
-
+  .shape {
+    /* outline: none !important; */
+  }
   @media (max-width: 768px) {
     .shapes-container {
       width: 60vh;

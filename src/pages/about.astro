@@ -86,10 +86,11 @@ else
     <img src="/images/kabeer-and-ossaid-ai-landscape.webp" class="w-full h-full opacity-0" />
   </div> -->
   <div class="w-full max-w-screen relative bg-amber-500 text-black overflow-hidden">
-    <div class="relative container mx-auto px-4 mt-[-1rem] flex flex-col lg:flex-row rounded-t-lg">
+    <div
+      class="relative lg:mx-auto lg:container px-4 lg:px-0 mt-[-1rem] flex flex-col lg:flex-row rounded-t-lg">
       <div class="flex flex-col lg:flex-row items-center py-32 w-full" data-speed="clamp(0.95)">
         <div class="relative flex flex-col lg:flex-row justify-between items-center w-full">
-          <p class="text-left max-w-6xl z-0">
+          <p class="text-left max-w-5xl z-0">
             We’ve been building on the internet since way before it was cool—WordPress sites in
             grade school, experimental apps late at night, side projects that made no money but
             brought all the joy. That spirit turned into Kabeer's Network, and eventually evolved
@@ -100,33 +101,36 @@ else
             <!-- {t("about.about-otherdev")} -->
           </p>
           <div
-            class="hidden lg:block w-full mx-auto spikey-boy-clickable"
+            class="hidden lg:block w-full"
             style="mix-blend-mode: difference; will-change: transform;">
-            <img src="/shapes/Party.svg" alt="Decorative shape" />
+            <img src="/shapes/Party.svg" class="spikey-boy-clickable cursor-pointer saturate-0 brightness-0 hover:scale-125 duration-200 ml-auto" alt="Decorative shape" />
           </div>
         </div>
       </div>
-
-      <div class="spikey-boy z-[-1] absolute top-[-6rem]" style=" will-change: transform; mix-blend-mode: difference;">
+      <div
+        class="spikey-boy z-[-1] left-auto ml-auto absolute float-end top-[-6rem]"
+        style=" will-change: transform; mix-blend-mode: difference;">
         <img src="/shapes/Party.svg" alt="Decorative shape" />
       </div>
     </div>
 
     <hr class="border-black" />
 
-    <h4 class="absolute text-[15vw] font-serif container px-4">
-      {t("about.projects")}
-    </h4>
+    <div class="lg:mx-auto lg:container px-4 lg:px-0">
+      <h4 class="absolute text-[15vw] font-serif">
+        {t("about.projects")}
+      </h4>
+    </div>
 
     <div class="mt-[15vw]" data-speed="clamp(0.9)">
       <Carousel carouselId="about-page" images={Projects.map((item) => item.imageSrc)} />
     </div>
-    <div class="mt-[4rem] w-full max-w-screen relative text-black overflow-hidden">
+    <div class="mt-[2rem] w-full max-w-screen relative text-black overflow-hidden">
       <div
-        class="relative container mx-auto px-4 mt-[-1rem] flex flex-col lg:flex-row rounded-t-lg">
+        class="relative lg:mx-auto lg:container px-4 lg:px-0 mt-[-1rem] flex flex-col lg:flex-row rounded-t-lg">
         <div class="flex flex-col lg:flex-row items-center py-32 w-full" data-speed="clamp(0.95)">
           <div class="relative flex flex-col lg:flex-row justify-between items-center w-full">
-            <p class="text-left max-w-6xl z-0">
+            <p class="text-left max-w-5xl z-0">
               Our philosophy is simple: great work isn’t achieved through constant hustle alone; it
               requires balance, rest, and a space for creativity to breathe. We’re inspired by
               visionary designers and creatives—from Dieter Rams, whose work at Braun set the gold
@@ -151,11 +155,15 @@ else
           </div>
         </div>
       </div>
-      <div class="grid grid-cols-1 lg:grid-cols-2 -upper-image-slideshow-container gap-2 container mx-auto pb-[4rem]">
+      <div
+        class="grid grid-cols-1 lg:grid-cols-2 -upper-image-slideshow-container gap-2 lg:mx-auto lg:container px-4 lg:px-0 pb-[4rem]">
         {
-          [
-          ].map((item) => (
-            <img class="object-cover w-full h-full upper-slideshow-image" style="offset-anchor: right;" src={item} />
+          [].map((item) => (
+            <img
+              class="object-cover w-full h-full upper-slideshow-image"
+              style="offset-anchor: right;"
+              src={item}
+            />
           ))
         }
       </div>

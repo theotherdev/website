@@ -1,7 +1,12 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+* {
+  /* outline: red solid 1px; */
+}
 :root {
+  --color-stone-400-inverted: #595f64;
+  --background: var(--color-stone-400);
   /* Spacing System */
   --space-1: 4px;
   --space-2: 8px;
@@ -54,6 +59,7 @@ body {
   font-family: "TWKLausanne", sans-serif;
   font-display: swap;
 }
+
 .dynamic-underline-left,
 .dynamic-underline-right {
   position: relative;
@@ -128,4 +134,67 @@ body {
   opacity: 0.2;
   filter: grayscale(100%);
   filter: url(#noise-bg-fx);
+}
+.grid-overlay {
+  width: 100%;
+  height: 100%;
+  background-image:
+    repeating-linear-gradient(to right, rgba(255, 0, 0, 0.2) 0, rgba(255, 0, 0, 0.2) 1px, transparent 1px, transparent 100px),
+    repeating-linear-gradient(to bottom, rgba(0, 0, 255, 0.2) 0, rgba(0, 0, 255, 0.2) 1px, transparent 1px, transparent 100px);
+}
+
+.overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* Golden Ratio Lines */
+.golden-ratio::before,
+.golden-ratio::after {
+  content: '';
+  position: absolute;
+  background: rgba(255, 215, 0, 0.4); /* gold color */
+}
+
+/* Vertical Golden Ratio Line */
+.golden-ratio::before {
+  width: 1px;
+  height: 100%;
+  left: 61.8%;
+  top: 0;
+}
+
+/* Horizontal Golden Ratio Line */
+.golden-ratio::after {
+  height: 1px;
+  width: 100%;
+  top: 61.8%;
+  left: 0;
+}
+
+.thirds::before,
+.thirds::after {
+  content: '';
+  position: absolute;
+  background: rgba(0, 255, 21, 0.3); /* cyan lines */
+}
+
+/* Vertical thirds */
+.thirds::before {
+  width: 2px;
+  height: 100%;
+  left: 33.33%;
+  box-shadow: 33.33vw 0 rgba(0, 255, 21, 0.3);
+}
+
+/* Horizontal thirds */
+.thirds::after {
+  height: 2px;
+  width: 100%;
+  top: 33.33%;
+  box-shadow: 0 33.33vh rgba(0, 255, 21, 0.3);
 }

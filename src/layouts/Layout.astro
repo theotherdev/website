@@ -98,17 +98,18 @@ const isIndexPage =
     <slot name="head" />
   </head>
   <body>
+    <!-- <div class="golden-ratio thirds -grid overlay"></div> -->
     <div>
       <a class="hidden" href="#">Skip to content</a>
     </div>
     <div
       class="w-full h-screen fixed bg-black z-[10001] pointer-events-none top-0 left-0 opacity-100 load-curtain">
       <div
-        class="w-[2rem] h-[2rem]"
-        style="position: absolute;top: 50%; left: 50%;transform: translate(-50%, -50%);">
+        class="w-[2rem] relative h-[2rem] main-preloader-container"
+        style="position: absolute;top: 50%; left: 50%; transform: translate(-50%, -50%);">
         <svg
           width="50"
-          height="45"
+          height="45" class="main-preloader-od-svg"
           viewBox="0 0 50 45"
           fill="none"
           xmlns="http://www.w3.org/2000/svg">
@@ -174,7 +175,7 @@ const isIndexPage =
         </svg>
       </div>
 
-      <main class="page snap-always relative snap-mandatory snap-y smooth-content">
+      <main class="page snap-always relative snap-mandatory snap-y smooth-content no-scrollbar">
         <div class="snap-center"><slot /></div>
         {
           !isIndexPage && (

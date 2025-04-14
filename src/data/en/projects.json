@@ -90,7 +90,49 @@
     }
   },
   {
-    "id": "3", 
+    "id": "54",
+    "title": "Branding & application / SAAS development for Finlit",
+    "company": "Finlit",
+    "hasPage": true,
+    "year": "2025",
+    "description": "Design, development & branding",
+    "imageSrc": "/images/projects/finlit-2025/finlit.deployments.otherdev.com_.png",
+    "url": "https://wishapparels.com/",
+    "coverImage": "/images/projects/finlit-2025/finlit.deployments.otherdev.com_.png",
+    "coverImageAlt": "Finlit Product Launch",
+    "page": {
+      "excerpt": "Our collaboration with Wish Apparels involved crafting a digital experience that mirrors the quality and style of their upcoming clothing line. We designed an intuitive e-commerce platform that not only showcases their products with high-quality visuals and detailed information but also provides a seamless and secure shopping journey. The branding and design elements, meticulously developed in tandem with the website, work harmoniously to communicate the brand's ethos and appeal to their target audience. This project underscores our agency's commitment to creating impactful digital solutions that drive brand growth and customer engagement for innovative businesses.",
+      "splitSections": [
+        {
+          "heading": "Challenges",
+          "content": "Establishing a New Brand Identity: As Wish Apparels was a new entrant to the market, a key challenge was to create a distinct and memorable brand identity from the ground up. This involved developing a visual language that resonated with their target demographic and effectively communicated their brand values through logo design, typography, color palettes, and overall aesthetic. Building a Scalable E-commerce Platform: We needed to develop an e-commerce website that was not only visually appealing and user-friendly but also robust and scalable to accommodate future growth in product offerings and customer traffic. Ensuring seamless integration of essential features like product browsing, secure checkout, and inventory management was crucial.",
+          "tags": ["Brand Development", "Visual Identity", "Shopify", "UI/UX Design"]
+        },
+        {
+          "heading": "Inspiration",
+          "content": "Minimalist Elegance: The design direction was heavily inspired by a desire for minimalist elegance, allowing the apparel itself to take center stage. Clean lines, ample white space, and sophisticated typography were employed to create a sense of understated luxury and timeless style. Focus on Visual Storytelling: Recognizing the importance of visual appeal in fashion, we focused on creating a platform that prioritized high-quality imagery and compelling visual storytelling. The website design aimed to immerse users in the brand's world and showcase the garments in an aspirational and engaging manner."
+        }
+      ],
+      "upperSlideshow": [
+        "/images/projects/finlit-2025/finlit-group.png",
+        "/images/projects/finlit-2025/finlit-home-mobile.png",
+
+
+        "/images/projects/finlit-2025/team-groupchat.png",
+        "/images/projects/finlit-2025/finlit-courses-macbook.png",
+        "/images/projects/finlit-2025/finlit-logo.png",
+        "/images/projects/finlit-2025/finlit.deployments.otherdev.com_trading_1x1.png"
+      ],
+      "testimonial": {
+        "content": "Working with Other Dev was a game-changer for Wish Apparels. Their holistic approach to website development and branding delivered results far beyond our expectations. The new website's user-friendly design and compelling presentation directly contributed to an incredible 500% surge in sales. The branding they crafted is sophisticated, memorable, and perfectly reflects our brand identity, which we have proudly adopted across all aspects of our business. We highly recommend Other Dev to any emerging brand looking for impactful digital solutions.",
+        "author": "Talha, Founder of Wish"
+      },
+      "secondCover": "https://images.unsplash.com/photo-1509114397022-ed747cca3f65?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    }
+  },
+
+  {
+    "id": "3",
     "title": "Branding & website development for Parcheh81",
     "company": "Parcheh",
     "hasPage": true,
@@ -106,7 +148,58 @@
         {
           "heading": "Challenges",
           "content": "For Parcheh, key challenges included digitally conveying the luxurious feel of their fabrics and balancing a sophisticated aesthetic with intuitive usability. We addressed this with high-resolution imagery, zoom features, and evocative descriptions, alongside a clean UI/UX featuring clear navigation and streamlined checkout. Crucially, we also wove Parcheh's brand story and commitment to craftsmanship throughout the site using dedicated sections and subtle design cues, enriching the customer connection to their heritage and quality.",
-          "tags": ["Textile-Focused Visual Strategy", "Visual Identity", "Shopify", "Culturally Sensitive UI/UX Design", "High-Fidelity Product Presentation"]
+          "tags": [
+            "Textile-Focused Visual Strategy",
+            "Visual Identity",
+            "Shopify",
+            "Culturally Sensitive UI/UX Design",
+            "High-Fidelity Product Presentation"
+          ]
+        },
+        {
+          "heading": "Inspiration",
+          "content": "Deeply inspired by the fabric Parcheh itself, our design focused on translating its tactile richness and quality into the digital realm. We aimed to merge timeless craftsmanship with modern elegance, creating an intimate, gallery-like online experience. High-fidelity visuals and clean, considered layouts were key, encouraging thoughtful exploration of the brand's unique artistry and heritage."
+        }
+      ],
+      "upperSlideshow": [
+        "/images/projects/wish-2024/upper-slideshow-1.webp",
+        "/images/projects/wish-2024/1743813808292_100.webp",
+        "/images/projects/wish-2024/wish-girl-11.webp",
+        "/images/projects/wish-2024/wish-boy-1.webp",
+        "/images/projects/wish-2024/wish-logo.webp",
+        "/images/projects/wish-2024/with-other-dev.webp"
+      ],
+      "testimonial": {
+        "content": "Working with Other Dev transformed Parcheh. Their combined web and branding expertise delivered results beyond expectations. The user-friendly site achieved a dramatic boost in sales, The sophisticated branding reflects our identity perfectly and is now used everywhere. We highly recommend Other Dev to any brand needing impactful digital results.",
+        "author": "Nasir, Founder of Parcheh"
+      },
+      "secondCover": "https://images.unsplash.com/photo-1509114397022-ed747cca3f65?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    }
+  },
+  {
+    "id": "5",
+    "title": "Branding & website development for Groovy Attires",
+    "company": "Groovy",
+    "hasPage": true,
+    "year": "2024",
+    "description": "Website design, development & branding",
+    "imageSrc": "/images/projects/groovy-pakistan-2024/groovy-main.png",
+    "url": "https://groovypakistan.com/",
+    "coverImage": "/images/projects/groovy-pakistan-2024/groovy-main.png",
+    "coverImageAlt": "Groovy Store Optimisation",
+    "page": {
+      "excerpt": "Our collaboration with Parcheh (Persian for 'fabric') focused on crafting a digital experience true to its name. We translated the unique texture, artistry, and narrative of their textiles into a tailored e-commerce platform where the fabric's details truly shine. The result is an elegant and intuitive site offering users an immersive journey into the brand's world, showcasing our ability to capture a brand's core essence through sophisticated digital design.",
+      "splitSections": [
+        {
+          "heading": "Challenges",
+          "content": "For Parcheh, key challenges included digitally conveying the luxurious feel of their fabrics and balancing a sophisticated aesthetic with intuitive usability. We addressed this with high-resolution imagery, zoom features, and evocative descriptions, alongside a clean UI/UX featuring clear navigation and streamlined checkout. Crucially, we also wove Parcheh's brand story and commitment to craftsmanship throughout the site using dedicated sections and subtle design cues, enriching the customer connection to their heritage and quality.",
+          "tags": [
+            "Textile-Focused Visual Strategy",
+            "Visual Identity",
+            "Shopify",
+            "Culturally Sensitive UI/UX Design",
+            "High-Fidelity Product Presentation"
+          ]
         },
         {
           "heading": "Inspiration",
@@ -127,45 +220,6 @@
       },
       "secondCover": "https://images.unsplash.com/photo-1509114397022-ed747cca3f65?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     }
-  },
-  {
-    "id": "5", 
-    "title": "Branding & website development for Groovy Attires",
-    "company": "Groovy",
-    "hasPage": true,
-    "year": "2024",
-    "description": "Website design, development & branding",
-    "imageSrc": "/images/projects/groovy-pakistan-2024/groovy-main.png",
-    "url": "https://groovypakistan.com/",
-    "coverImage": "/images/projects/groovy-pakistan-2024/groovy-main.png",
-    "coverImageAlt": "Groovy Store Optimisation",
-    "page": {
-      "excerpt": "Our collaboration with Parcheh (Persian for 'fabric') focused on crafting a digital experience true to its name. We translated the unique texture, artistry, and narrative of their textiles into a tailored e-commerce platform where the fabric's details truly shine. The result is an elegant and intuitive site offering users an immersive journey into the brand's world, showcasing our ability to capture a brand's core essence through sophisticated digital design.",
-      "splitSections": [
-        {
-          "heading": "Challenges",
-          "content": "For Parcheh, key challenges included digitally conveying the luxurious feel of their fabrics and balancing a sophisticated aesthetic with intuitive usability. We addressed this with high-resolution imagery, zoom features, and evocative descriptions, alongside a clean UI/UX featuring clear navigation and streamlined checkout. Crucially, we also wove Parcheh's brand story and commitment to craftsmanship throughout the site using dedicated sections and subtle design cues, enriching the customer connection to their heritage and quality.",
-          "tags": ["Textile-Focused Visual Strategy", "Visual Identity", "Shopify", "Culturally Sensitive UI/UX Design", "High-Fidelity Product Presentation"]
-        },
-        {
-          "heading": "Inspiration",
-          "content": "Deeply inspired by the fabric Parcheh itself, our design focused on translating its tactile richness and quality into the digital realm. We aimed to merge timeless craftsmanship with modern elegance, creating an intimate, gallery-like online experience. High-fidelity visuals and clean, considered layouts were key, encouraging thoughtful exploration of the brand's unique artistry and heritage."
-        }
-      ],
-      "upperSlideshow": [
-        "/images/projects/wish-2024/upper-slideshow-1.webp",
-        "/images/projects/wish-2024/1743813808292_100.webp",
-        "/images/projects/wish-2024/wish-girl-11.webp",
-        "/images/projects/wish-2024/wish-boy-1.webp",
-        "/images/projects/wish-2024/wish-logo.webp",
-        "/images/projects/wish-2024/with-other-dev.webp"
-      ],
-      "testimonial": {
-        "content": "Working with Other Dev transformed Parcheh. Their combined web and branding expertise delivered results beyond expectations – the user-friendly site achieved a dramatic boost in sales! The sophisticated branding reflects our identity perfectly and is now used everywhere. We highly recommend Other Dev to any brand needing impactful digital results.",
-        "author": "Nasir, Founder of Parcheh"
-      },
-      "secondCover": "https://images.unsplash.com/photo-1509114397022-ed747cca3f65?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-   }
   },
   {
     "id": "6",

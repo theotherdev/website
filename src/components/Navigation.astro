@@ -5,7 +5,8 @@ import { getRelativeLocaleUrl } from "astro:i18n";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
-
+let textColor = '--color-stone-400-inverted';
+if (['/about/', '/experties/', '/', '/about', '/experties'].includes(Astro.site.pathname)) textColor = '--color-stone-300';
 // --- Define Navigation Data Once ---
 const navLinks = [
   { title: t("nav.work"), path: getRelativeLocaleUrl(lang, "work") },
@@ -19,7 +20,7 @@ const letsMeetLink = {
     path: "https://calendly.com/otherdev/30-minute-consultation-call-1",
     target: "_blank",
     // SVG for the arrow icon (used on desktop)
-    svgArrow: `<svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" aria-hidden="true"><g clip-path="url(#clip0_659_90_desktop)"><path d="M27.9487 0L28 23.6922H23.8898V6.97433L2.87707 28L0 25.1281L21.0128 4.10256H4.31559V0H27.9487Z" fill="currentColor"></path></g><defs><clipPath id="clip0_659_90_desktop"><rect width="28" height="28" fill="white"></rect></clipPath></defs></svg>`
+    svgArrow: `<svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" aria-hidden="true"><g clip-path="url(#clip0_659_90_desktop)"><path d="M27.9487 0L28 23.6922H23.8898V6.97433L2.87707 28L0 25.1281L21.0128 4.10256H4.31559V0H27.9487Z" fill="currentColor"></path></g><defs><clipPath id="clip0_659_90_desktop"><rect width="28" height="28" fill="${textColor}"></rect></clipPath></defs></svg>`
 };
 
 const socialLinks = [
@@ -27,7 +28,7 @@ const socialLinks = [
     title: "LinkedIn",
     path: "https://www.linkedin.com/company/theotherdev/",
     // SVG for LinkedIn
-    svgContent: `<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" aria-hidden="true"><g clip-path="url(#clip0_659_84_social)"><path d="M88.0952 0H11.9048C5.33333 0 0 5.33333 0 11.9048V88.0952C0 94.6667 5.33333 100 11.9048 100H88.0952C94.6667 100 100 94.6667 100 88.0952V11.9048C100 5.33333 94.6667 0 88.0952 0ZM30.9524 38.0952V83.3333H16.6667V38.0952H30.9524ZM16.6667 24.9286C16.6667 21.5952 19.5238 19.0476 23.8095 19.0476C28.0952 19.0476 30.7857 21.5952 30.9524 24.9286C30.9524 28.2619 28.2857 30.9524 23.8095 30.9524C19.5238 30.9524 16.6667 28.2619 16.6667 24.9286ZM83.3333 83.3333H69.0476C69.0476 83.3333 69.0476 61.2857 69.0476 59.5238C69.0476 54.7619 66.6667 50 60.7143 49.9048H60.5238C54.7619 49.9048 52.381 54.8095 52.381 59.5238C52.381 61.6905 52.381 83.3333 52.381 83.3333H38.0952V38.0952H52.381V44.1905C52.381 44.1905 56.9762 38.0952 66.2143 38.0952C75.6667 38.0952 83.3333 44.5952 83.3333 57.7619V83.3333Z" fill="currentColor"></path></g><defs><clipPath id="clip0_659_84_social"><rect width="100" height="100" fill="white"></rect></clipPath></defs></svg>`
+    svgContent: `<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" aria-hidden="true"><g clip-path="url(#clip0_659_84_social)"><path d="M88.0952 0H11.9048C5.33333 0 0 5.33333 0 11.9048V88.0952C0 94.6667 5.33333 100 11.9048 100H88.0952C94.6667 100 100 94.6667 100 88.0952V11.9048C100 5.33333 94.6667 0 88.0952 0ZM30.9524 38.0952V83.3333H16.6667V38.0952H30.9524ZM16.6667 24.9286C16.6667 21.5952 19.5238 19.0476 23.8095 19.0476C28.0952 19.0476 30.7857 21.5952 30.9524 24.9286C30.9524 28.2619 28.2857 30.9524 23.8095 30.9524C19.5238 30.9524 16.6667 28.2619 16.6667 24.9286ZM83.3333 83.3333H69.0476C69.0476 83.3333 69.0476 61.2857 69.0476 59.5238C69.0476 54.7619 66.6667 50 60.7143 49.9048H60.5238C54.7619 49.9048 52.381 54.8095 52.381 59.5238C52.381 61.6905 52.381 83.3333 52.381 83.3333H38.0952V38.0952H52.381V44.1905C52.381 44.1905 56.9762 38.0952 66.2143 38.0952C75.6667 38.0952 83.3333 44.5952 83.3333 57.7619V83.3333Z" fill="currentColor"></path></g><defs><clipPath id="clip0_659_84_social"><rect width="100" height="100" fill="${textColor}"></rect></clipPath></defs></svg>`
   },
   {
     title: "Instagram",
@@ -55,17 +56,18 @@ const karachiTimezone = "Asia/Karachi"; // Explicitly define Karachi timezone
     }))
 })} />
 
-
+<div class="text-[var(--color-stone-300)]"/>
+<div class="text-[var(--color-stone-400-inverted)]"/>
 {/* --- Mobile Navigation --- */}
 <nav
   aria-label={t("nav.mobileAriaLabel") ?? "Mobile Navigation"}
-  class="lg:hidden flex justify-between items-center w-full px-4 pt-4 text-sm text-white bg-transparent fixed top-0 z-50 header-blend-mode"
+  class={`text-[var(${textColor})] lg:hidden flex justify-between header-blend-mode items-center w-full px-4 pt-4 text-sm fixed top-0 z-50`}
 >
   <div> {/* Text color override if needed */}
-    <a href="/" aria-label="Other Dev® Home">Other Dev®</a>
+    <a href="/" class=" " aria-label="Other Dev® Home">Other Dev®</a>
   </div>
   <button id="mobile-nav-toggle" aria-expanded="false"     aria-controls="mobile-menu"
-  class="mobile-navigation-trigger p-2 -mr-2 ">
+  class="  mobile-navigation-trigger p-2 -mr-2 ">
     <span class="sr-only">{t("nav.menu")}</span>
     <div class="relative h-6 overflow-hidden">
       <span class="menu-text block">{t("nav.menu")}</span>
@@ -77,7 +79,7 @@ const karachiTimezone = "Asia/Karachi"; // Explicitly define Karachi timezone
 {/* --- Mobile Menu Panel --- */}
 <div
   id="mobile-menu"
-  class="fixed inset-0 z-40 text-black bg-green-500 translate-y-full lg:hidden will-change-transform"
+  class="fixed inset-0 z-40 text-black bg-stone-300 translate-y-full lg:hidden will-change-transform"
   aria-hidden="true"
 >
   <div class="pt-24 h-full overflow-y-auto">
@@ -87,7 +89,7 @@ const karachiTimezone = "Asia/Karachi"; // Explicitly define Karachi timezone
         <li class="border-b border-black">
           <a 
             href={item.path} 
-            class="block py-4 px-4 text-lg hover:bg-green-600/10 transition-colors duration-200"
+            class="block py-4 px-4 text-lg hover:bg-stone-600/10 transition-colors duration-200"
             onclick="document.getElementById('mobile-menu').classList.remove('!translate-y-0')"
           >
             {item.title}
@@ -101,7 +103,7 @@ const karachiTimezone = "Asia/Karachi"; // Explicitly define Karachi timezone
           href={letsMeetLink.path}
           target="_blank"
           rel="noopener noreferrer"
-          class="block py-4 px-4 text-lg hover:bg-green-600/10 transition-colors duration-200"
+          class="block py-4 px-4 text-lg hover:bg-stone-600/10 transition-colors duration-200"
         >
           {letsMeetLink.title}
         </a>
@@ -109,7 +111,7 @@ const karachiTimezone = "Asia/Karachi"; // Explicitly define Karachi timezone
     </ul>
 
     {/* Mobile Footer Social Links */}
-    <div class="fixed px-4 bottom-0 left-0 w-full bg-green-500/90 backdrop-blur-sm flex justify-between items-center py-4 border-t border-black">
+    <div class="fixed px-4 bottom-0 left-0 w-full bg-stone-400/90 backdrop-blur-sm flex justify-between items-center py-4 border-t border-black">
       {socialLinks.map(link => (
         <a
           href={link.path}
@@ -131,25 +133,25 @@ const karachiTimezone = "Asia/Karachi"; // Explicitly define Karachi timezone
 {/* --- Desktop Navigation --- */}
 <nav
   aria-label={t("nav.desktopAriaLabel") ?? "Primary Navigation"}
-  class="hidden lg:block w-full text-red pt-4 px-4 text-lg bg-transparent text-white fixed top-0 z-50 header-blend-mode"
+  class={`hidden lg:block w-full text-red pt-4 px-4 text-lg header-blend-mode bg-clip-text bg-transparent text-[var(${textColor})] fixed top-0 z-50`}
 >
-<div class="flex justify-between items-center mx-auto container">
+<div class="flex justify-between items-center lg:container mx-auto">
   <div class="font-bold">
-    <a href="/" class="dynamic-underline dynamic-underline-left" aria-label="Other Dev® Home">Other Dev®</a>
+    <a href="/" class="dynamic-underline dynamic-underline-left  " aria-label="Other Dev® Home">Other Dev®</a>
   </div>
 
-  <div>{t("nav.software-and-design")}</div>
+  <div class=" "><p>{t("nav.software-and-design")}</p></div>
 
   <div class="flex items-center gap-2">
-    <span class="clock-time tabular-nums"></span> {/* Class for JS targeting */}
-    <span>{t('nav.location') ?? 'Karachi, Pakistan'} </span> {/* Use i18n for location */}
+    <span class="  clock-time tabular-nums"></span> {/* Class for JS targeting */}
+    <span class=" ">{t('nav.location') ?? 'Karachi, Pakistan'} </span> {/* Use i18n for location */}
   </div>
 
   {/* Main Desktop Links */}
   <ul class="flex gap-6">
     {navLinks.map((item) => (
       <li>
-        <a href={item.path} class="dynamic-underline dynamic-underline-left hover:opacity-75 transition-all">
+        <a href={item.path} class="  dynamic-underline dynamic-underline-left hover:opacity-75 transition-all">
           {item.title}
         </a>
       </li>
@@ -164,7 +166,7 @@ const karachiTimezone = "Asia/Karachi"; // Explicitly define Karachi timezone
           href={link.path}
           target={link.target ?? "_blank"} /* Default to _blank if not specified */
           rel={ (link.target === '_blank' || !link.target) ? 'noopener noreferrer' : undefined}
-          class="flex items-center gap-2 text-sm hover:opacity-80 transition-opacity"
+          class="  flex items-center gap-2 text-sm hover:opacity-80 transition-opacity"
           aria-label={`${link.title}${ (link.target === '_blank' || !link.target) ? ` (${t('nav.opensNewTab') ?? 'opens in a new tab'})` : ''}`}
         >
           {/* Inject SVG content conditionally */}
@@ -178,11 +180,13 @@ const karachiTimezone = "Asia/Karachi"; // Explicitly define Karachi timezone
 </nav>
 
 {/* --- Global Styles --- */}
-<style is:global> /* Use is:global if styles affect injected SVGs or child elements broadly */
-  .header-blend-mode {
-    mix-blend-mode: exclusion;
-    
-  will-change: transform;
+<style> /* Use is:global if styles affect injected SVGs or child elements broadly */
+  .header-blend-mode  {
+/* color: transparent; */
+    mix-blend-mode: difference;  
+    will-change: transform; 
+    isolation: isolate; 
+    /* filter: brightness(150%); */
   }
     /* Smooth transitions */
     #mobile-menu {
@@ -224,7 +228,7 @@ const karachiTimezone = "Asia/Karachi"; // Explicitly define Karachi timezone
   }
   /* Ensure SVGs inherit color correctly if needed */
   .invert svg path[fill="currentColor"] {
-      fill: white; /* Or handled by parent invert */
+      fill: var(textColor); /* Or handled by parent invert */
   }
   /* You might need more specific selectors ifcurrentColor isn't working as expected */
 </style>
