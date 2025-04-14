@@ -59,72 +59,75 @@ const karachiTimezone = "Asia/Karachi"; // Explicitly define Karachi timezone
 {/* --- Mobile Navigation --- */}
 <nav
   aria-label={t("nav.mobileAriaLabel") ?? "Mobile Navigation"}
-  class="lg:hidden flex justify-between items-center w-full px-4 pt-4 text-lg text-white bg-transparent fixed top-0 z-50 header-blend-mode"
+  class="lg:hidden flex justify-between items-center w-full px-4 pt-4 text-sm text-white bg-transparent fixed top-0 z-50 header-blend-mode"
 >
   <div> {/* Text color override if needed */}
     <a href="/" aria-label="Other Dev® Home">Other Dev®</a>
   </div>
-  <button
-    id="mobile-nav-toggle"
-    class="mobile-navigation-trigger p-2 -mr-2 " {/* Text color override */}
-    aria-controls="mobile-menu"
-    aria-expanded="false"
-    type="button"
-  >
-    <span class="sr-only close">{t("nav.close") ?? "Close"}</span>
-    <span class="menu-text">{t("nav.menu") ?? "Menu"}</span>
-     {/* Add burger/close icon SVGs here if desired, toggling visibility with JS/CSS */}
+  <button id="mobile-nav-toggle" aria-expanded="false"     aria-controls="mobile-menu"
+  class="mobile-navigation-trigger p-2 -mr-2 ">
+    <span class="sr-only">{t("nav.menu")}</span>
+    <div class="relative h-6 overflow-hidden">
+      <span class="menu-text block">{t("nav.menu")}</span>
+      <span class="close-text absolute top-0 left-0 translate-y-6">{t("nav.close")}</span>
+    </div>
   </button>
 </nav>
 
 {/* --- Mobile Menu Panel --- */}
 <div
   id="mobile-menu"
-  class="mobile-navigation-backdrop overflow-y-auto text-black h-0 lg:hidden fixed w-full top-0 left-0 z-40 bg-green-500 transition-height duration-500 ease-in-out"
+  class="fixed inset-0 z-40 text-black bg-green-500 translate-y-full lg:hidden will-change-transform"
   aria-hidden="true"
 >
-  <div class="pt-24 mobile-navigation-content opacity-0 transition-opacity duration-250 ease-in-out delay-200">
-    <ul class="pb-12" aria-label={t("nav.mobileAriaLabelLinks") ?? "Mobile Navigation Links"}>
+  <div class="pt-24 h-full overflow-y-auto">
+    <ul class="pb-20" aria-label={t("nav.mobileAriaLabelLinks") ?? "Mobile Navigation Links"}>
       {/* Main Nav Links */}
       {navLinks.map((item) => (
-        <li class="border-b border-b-black">
-          <a href={item.path} class="block py-4 px-4 text-lg  hover:bg-green-600 transition-colors">
+        <li class="border-b border-black">
+          <a 
+            href={item.path} 
+            class="block py-4 px-4 text-lg hover:bg-green-600/10 transition-colors duration-200"
+            onclick="document.getElementById('mobile-menu').classList.remove('!translate-y-0')"
+          >
             {item.title}
           </a>
         </li>
       ))}
+      
       {/* Let's Meet Link */}
-      <li class="border-b border-b-black">
-          <a
-            href={letsMeetLink.path}
-            target={letsMeetLink.target}
-            rel={letsMeetLink.target === '_blank' ? 'noopener noreferrer' : undefined}
-            class="block py-4 px-4 text-lg hover:bg-green-600 transition-colors"
-          >
-            {letsMeetLink.title}
-          </a>
+      <li class="border-b border-black">
+        <a
+          href={letsMeetLink.path}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="block py-4 px-4 text-lg hover:bg-green-600/10 transition-colors duration-200"
+        >
+          {letsMeetLink.title}
+        </a>
       </li>
     </ul>
 
     {/* Mobile Footer Social Links */}
-    <div class="fixed px-4 bottom-0 left-0 w-full bg-green-500/80 backdrop-blur-lg flex justify-between items-center border-t border-black">
+    <div class="fixed px-4 bottom-0 left-0 w-full bg-green-500/90 backdrop-blur-sm flex justify-between items-center py-4 border-t border-black">
       {socialLinks.map(link => (
         <a
           href={link.path}
           target="_blank"
           rel="noopener noreferrer"
-          class="py-4 text-md font-medium  flex items-center gap-2 hover:text-neutral-800 transition-colors"
+          class="flex items-center gap-2 text-sm hover:opacity-80 transition-opacity"
           aria-label={`${link.title} (${t('nav.opensNewTab') ?? 'opens in a new tab'})`}
         >
-          {/* Inject SVG directly, set fill="currentColor" */}
-          <Fragment set:html={link.svgContent} />
-          {link.title}
+          <span 
+            set:html={link.svgContent}
+            class="w-4 h-4 inline-block"
+          />
+          <span>{link.title}</span>
         </a>
       ))}
     </div>
   </div>
 </div>
-
 {/* --- Desktop Navigation --- */}
 <nav
   aria-label={t("nav.desktopAriaLabel") ?? "Primary Navigation"}
@@ -139,7 +142,7 @@ const karachiTimezone = "Asia/Karachi"; // Explicitly define Karachi timezone
 
   <div class="flex items-center gap-2">
     <span class="clock-time tabular-nums"></span> {/* Class for JS targeting */}
-    <span>{t('nav.location', { default: 'Karachi' })}</span> {/* Use i18n for location */}
+    <span>{t('nav.location') ?? 'Karachi, Pakistan'} </span> {/* Use i18n for location */}
   </div>
 
   {/* Main Desktop Links */}
@@ -181,6 +184,29 @@ const karachiTimezone = "Asia/Karachi"; // Explicitly define Karachi timezone
     
   will-change: transform;
   }
+    /* Smooth transitions */
+    #mobile-menu {
+    transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  
+  #mobile-menu .mobile-navigation-content {
+    transition: opacity 0.3s ease-out 0.2s;
+  }
+  
+  /* Active state */
+  #mobile-menu.active {
+    transform: translateY(0);
+  }
+  
+  /* Ensure proper scrolling */
+  #mobile-menu > div {
+    overscroll-behavior-y: contain;
+  }
+  
+  /* Pixel-perfect borders */
+  #mobile-menu li {
+    border-bottom-width: 1px;
+  }
   .mobile-navigation-backdrop {
     transition: height 0.5s ease-in-out;
   }
@@ -206,80 +232,136 @@ const karachiTimezone = "Asia/Karachi"; // Explicitly define Karachi timezone
 
 {/* --- Scripts --- */}
 <script>
-  // --- Mobile Menu Toggle ---
-  const mobileNavTrigger = document.getElementById('mobile-nav-toggle');
-  const mobileMenu = document.getElementById('mobile-menu');
-  const menuTextSpan = mobileNavTrigger?.querySelector('.menu-text');
-  const close = mobileNavTrigger?.querySelector('.close');
+function mobileNavigation() {
+  // Mobile Menu Toggle - Simple Version
+const menuButton = document.getElementById('mobile-nav-toggle');
+const mobileMenu = document.getElementById('mobile-menu');
 
-  const textMenu = close.innerText;
-  const textClose = menuTextSpan.innerText;
+if (menuButton && mobileMenu) {
+    // Get text elements once
+    const menuText = menuButton.querySelector('.menu-text');
+    const closeText = menuButton.querySelector('.close-text');
+    
+    menuButton.addEventListener('click', () => {
+      const isOpen = menuButton.getAttribute('aria-expanded') === 'true';
+      
+      // Toggle menu visibility
+      gsap.to(mobileMenu, {
+        y: isOpen ? '100%' : '0%',
+        duration: 0.5,
+        ease: "power3.inOut"
+      });
+      
+      // Animate text swap
+      gsap.to(menuText, {
+        y: isOpen ? 0 : -24,
+        duration: 0.3,
+        ease: "power2.inOut"
+      });
+      
+      gsap.to(closeText, {
+        y: isOpen ? 24 : 0,
+        duration: 0.3,
+        ease: "power2.inOut"
+      });
+      
+      // Toggle content fade
+      gsap.to(mobileMenu.querySelector('div'), {
+        opacity: isOpen ? 0 : 1,
+        duration: 0.2,
+        delay: isOpen ? 0 : 0.3
+      });
+      
+      // Update accessibility attributes
+      menuButton.setAttribute('aria-expanded', !isOpen);
+      mobileMenu.setAttribute('aria-hidden', isOpen);
+    });
+    
+    // Set initial positions
+    gsap.set(mobileMenu, { y: '100%' });
+    gsap.set(closeText, { y: 24 });
+    gsap.set(mobileMenu.querySelector('div'), { opacity: 0 });
+  }
+}
+document.addEventListener('DOMContentLoaded', mobileNavigation);
+window.addEventListener('resize', mobileNavigation);
+// --- Karachi Time Display ---
+function displayKarachiTime() {
+  const clockElement = document.querySelector('.clock-time');
+  if (!clockElement) return;
 
+  // Options for time display
+  const options = {
+    timeZone: 'Asia/Karachi',
+    hour: '2-digit',
+    minute: '2-digit',
+    hour12: false,
+    timeZoneName: 'short'
+  };
 
-  if (mobileNavTrigger && mobileMenu && menuTextSpan) {
-    mobileNavTrigger.addEventListener('click', () => {
-      const isActive = mobileNavTrigger.getAttribute('aria-expanded') === 'true';
+  let errorCount = 0;
+  const maxErrors = 3;
 
-      if (isActive) {
-        mobileNavTrigger.setAttribute('aria-expanded', 'false');
-        mobileMenu.classList.remove('active');
-        mobileMenu.setAttribute('aria-hidden', 'true');
-        menuTextSpan.textContent = textMenu;
+  function update() {
+    try {
+      const now = new Date();
+      let timeString;
+      
+      // First try with seconds
+      if (errorCount === 0) {
+        timeString = now.toLocaleTimeString('en-US', {
+          ...options,
+          second: '2-digit'
+        });
+      } 
+      // Fallback without seconds if errors occur
+      else {
+        timeString = now.toLocaleTimeString('en-US', options);
+      }
+
+      // Remove unwanted timezone abbreviation if it appears
+      timeString = timeString.replace(/\s*\(PKT\)/, '');
+      
+      clockElement.textContent = timeString;
+      errorCount = 0; // Reset error count on success
+      
+      // Schedule next update in 1 second
+      setTimeout(update, 1000 - (now.getMilliseconds() % 1000));
+      
+    } catch (error) {
+      errorCount++;
+      console.error("Time display error:", error);
+      
+      // Show fallback after multiple errors
+      if (errorCount >= maxErrors) {
+        clockElement.textContent = '--:-- PKT';
+        return;
+      }
+      
+      // Retry sooner after error
+      setTimeout(update, 500);
+    }
+  }
+
+  // Start observing visibility
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        update(); // Start when visible
       } else {
-        mobileNavTrigger.setAttribute('aria-expanded', 'true');
-        mobileMenu.classList.add('active');
-        mobileMenu.setAttribute('aria-hidden', 'false');
-        menuTextSpan.textContent = textClose;
+        clockElement.textContent = ''; // Clear when not visible
       }
     });
-  } else {
-      console.error("Mobile navigation elements not found.");
-  }
+  }, { threshold: 0.1 });
 
-  // --- Desktop Clock - Karachi Time ---
-  const clockElement = document.querySelector('.clock-time');
-  const karachiTimezone = 'Asia/Karachi'; // Ensure correct timezone ID
+  observer.observe(clockElement);
 
-  function updateClockTime() {
-    const now = new Date();
-    try {
-        const timeString = now.toLocaleTimeString('en-US', { // Using 'en-US' locale for formatting consistency, adjust if needed
-          timeZone: karachiTimezone,
-          hour: '2-digit',
-          minute: '2-digit',
-          second: '2-digit',
-          hour12: false // 24-hour format
-        });
-        if (clockElement) {
-            clockElement.textContent = timeString;
-        }
-    } catch (error) {
-        console.error("Error formatting time for timezone:", karachiTimezone, error);
-        // Display fallback or clear the element
-        if (clockElement) clockElement.textContent = '--:--:--';
-        // Stop the loop if timezone is invalid
-        clockElement._isClockVisible = false;
-    }
+  // Cleanup when component unmounts
+  return () => {
+    observer.disconnect();
+  };
+}
 
-    if (clockElement?._isClockVisible) {
-        requestAnimationFrame(updateClockTime);
-    }
-  }
-
-  if (clockElement) {
-      const observer = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-              clockElement._isClockVisible = entry.isIntersecting;
-              if (entry.isIntersecting) {
-                  requestAnimationFrame(updateClockTime); // Start/resume updates
-              }
-          });
-      }, { threshold: 0.1 }); // Trigger when 10% visible
-
-      observer.observe(clockElement);
-
-  } else {
-      console.error("Clock element not found.");
-  }
-
+// Initialize when DOM is ready
+document.addEventListener('DOMContentLoaded', displayKarachiTime);
 </script>
