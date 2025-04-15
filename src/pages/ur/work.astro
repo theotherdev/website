@@ -1,13 +1,14 @@
 ---
 import Layout from "@/layouts/Layout.astro";
-import { getLangFromUrl } from "@/i18n/utils";
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
 import SEO from "@/components/SEO.astro";
 
 import { getRelativeLocaleUrl } from "astro:i18n";
 import { sanitize } from "./work/[id].astro";
 
-const lang = getLangFromUrl(Astro.url);
 
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 const importProjectsModule = import.meta.glob("@/data/*/projects.json")[
   `/src/data/${lang}/projects.json`
 ];
@@ -19,46 +20,62 @@ else
   );
 ---
 
-<SEO pageName="work" />
+<slot name="head">
+  <SEO pageName="work" />
+</slot>
 <Layout>
-  <div class="pt-[10rem] min-h-screen w-full relative overflow-hidde-n flex flex-col">
+  <div
+    class="pt-[10rem] w-full overflow-hidden flex flex-col lg:mx-auto lg:container px-4 lg:px-0">
     <div class="flex-auto w-full overflow-visible-overflow-x-auto">
       <table class="table-auto w-full">
         <tbody>
           {
             Projects.map((item, index) => (
-              <tr class="border-b-black border-b">
-                <td class="select-none text-left py-10 pl-8">{index + 1}</td>
-                <td class="group relative py-10 px-4">
-                  {item.hasPage ?
-                    <a href={`${getRelativeLocaleUrl(lang, "work/" + sanitize(item.title))}`}>
-                      {item.imageSrc && (
-                        <img
-                          src={item.imageSrc} loading="lazy"
-                          class="w-[30rem] pointer-events-none absolute max-w-[80vw] h-auto left-1/2 translate-x-1/3 bottom-[2rem] group-hover:block hidden transition-all duration-75"
-                        />
-                      )}
-                      <h1 class="mt-auto queens-compressed text-left align-bottom text-3xl lg:text-5xl z-0">{item.title}</h1>
-                      <p class="select-none mt-2">{item.description}</p>
-                    </a>
-                  : <>
-                      {item.imageSrc && (
-                        <img
-                          src={item.imageSrc} loading="lazy"
-                          class="w-[30rem] pointer-events-none absolute max-w-[80vw] h-auto left-1/2 translate-x-1/3 bottom-[2rem] group-hover:block hidden transition-all duration-75"
-                        />
-                      )}
-                      <h1 class="mt-auto queens-compressed text-left align-bottom text-3xl lg:text-5xl z-0">{item.title}</h1>
-                      <p class="select-none mt-2">{item.description}</p>
-                    </>
-                  }
-                </td>
-                <td class="select-none text-right py-10 px-4">{item.year}</td>
-              </tr>
+              <div class="group">
+                <tr>
+                  <td class="select-none text-left py-10">{index + 1}</td>
+                  <td class="py-10 px-4">
+                    {item.hasPage ?
+                      <a href={`${getRelativeLocaleUrl(lang, "work/" + sanitize(item.title))}`}>
+                        {item.imageSrc && (
+                          <img 
+                            src={item.imageSrc}
+                            loading="lazy"
+                            class="w-[30rem] pointer-events-none absolute max-w-[80vw] h-auto left-1/2 translate-x-1/3 bottom-[2rem] group-hover:block hidden transition-all duration-75"
+                            alt={item.title}
+                          />
+                        )}
+                        <h1 class="dynamic-underline-left before:bg-white text-white mt-auto queens-compressed text-left align-bottom text-3xl lg:text-5xl z-0">
+                          {item.title}
+                        </h1>
+                        <p class="select-none mt-2">{item.description}</p>
+                      </a>
+                    : <>
+                        {item.imageSrc && (
+                          <img
+                            src={item.imageSrc}
+                            loading="lazy"
+                            class="w-[30rem] pointer-events-none absolute max-w-[80vw] h-auto left-1/2 translate-x-1/3 bottom-[2rem] group-hover:block hidden transition-all duration-75"
+                            alt={item.title}
+                          />
+                        )}
+                        <h1 class="dynamic-underline-left before:bg-white text-white mt-auto queens-compressed text-left align-bottom text-3xl lg:text-5xl z-0">
+                          {item.title}
+                        </h1>
+                        <p class="select-none mt-2">{item.description}</p>
+                      </>
+                    }
+                  </td>
+                  <td class="select-none text-right py-10">{item.year}</td>
+                </tr>
+              </div>
             ))
           }
         </tbody>
       </table>
+    </div>
+    <div class="py-[4rem] max-w-5xl">
+      <p set:html={t('about.second-paragraph')}/>
     </div>
   </div>
 </Layout>

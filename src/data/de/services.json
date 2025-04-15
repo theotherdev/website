@@ -1,26 +1,366 @@
 [
   {
-      "id": "1",
-      "title": "Webseiten-Design",
-      "imageSrc": "https://cdn.jsdelivr.net/gh/kabeer11000/docs-hosted@redirector-content/theotherdev/new-web/web-design.webp",
-      "description": "Wir helfen bei der Erstellung und Entwicklung von Online-Werbeideen, mit besonderem Augenmerk auf deren visuelle Erscheinung."
-    },
-    {
-      "id": "2",
-      "title": "Branding",
-      "imageSrc": "https://cdn.jsdelivr.net/gh/kabeer11000/docs-hosted@redirector-content/theotherdev/new-web/branding.webp",
-      "description": "Wir gestalten zentrale Markenelemente wie das Logo, das Farbschema, die Typografie und andere Designkomponenten, die Ihre Marke von der Konkurrenz abheben."
-    },
-    {
-      "id": "3",
-      "title": "Webseitenentwicklung",
-      "imageSrc": "https://cdn.jsdelivr.net/gh/kabeer11000/docs-hosted@redirector-content/theotherdev/new-web/web-developmet.webp",
-      "description": "Wir erstellen und optimieren Ihre Online-Präsenz. Die Website ist der digitale Einstiegspunkt in Ihr Unternehmen und ein leistungsstarker Umsatzkanal."
-    },
-    {
-      "id": "4",
-      "title": "Werbung & Marketing",
-      "imageSrc": "https://cdn.jsdelivr.net/gh/kabeer11000/docs-hosted@redirector-content/theotherdev/new-web/ads.webp",
-      "description": "Wir kombinieren kreatives Design und technische Fähigkeiten, um eindrucksvolle 3D-Visualisierungen zu erstellen, die Ihr Projekt zum Leben erwecken."
+    "id": "1",
+    "title": "Webseiten-Design",
+    "description": "Wir helfen bei der Erstellung und Entwicklung von Online-Werbeideen mit besonderem Fokus auf ihr visuelles Erscheinungsbild.",
+    "excerpt": "Visuell ansprechende und benutzerfreundliche Webdesigns, die einen bleibenden ersten Eindruck hinterlassen.",
+    "keywords": "Webseiten-Design, Webdesign-Dienstleistungen, kreatives Design, visuelles Erscheinungsbild, Benutzeroberfläche",
+    "hasPage": true,
+    "category": "Web",
+    "startingPrice": 800,
+    "benefits": [
+      "Maßgeschneiderte responsive Designs",
+      "Optimierung der Benutzererfahrung",
+      "Markenkonforme Ästhetik",
+      "Leistungsoptimierung"
+    ],
+    "processSteps": [
+      {
+        "title": "Entdeckung & Recherche",
+        "description": "Verständnis Ihrer Geschäftsziele und Zielgruppe"
+      },
+      {
+        "title": "Wireframing",
+        "description": "Erstellung struktureller Blaupausen für optimalen Benutzerfluss"
+      },
+      {
+        "title": "Visuelles Design",
+        "description": "Entwicklung beeindruckender UI mit markenkonformer Ästhetik"
+      }
+    ],
+    "pricingTiers": [
+      {
+        "name": "Basis-Webseite",
+        "price": 800,
+        "interval": "Projekt",
+        "features": [
+          "5 individuelle Seiten",
+          "Mobile Optimierung",
+          "Grundlegende SEO-Einrichtung",
+          "1 Überarbeitungsrunde"
+        ]
+      },
+      {
+        "name": "Business-Webseite",
+        "price": 2200,
+        "interval": "Projekt",
+        "features": [
+          "10+ individuelle Seiten",
+          "E-Commerce-Integration",
+          "Erweiterte SEO",
+          "CMS-Integration",
+          "3 Überarbeitungsrunden"
+        ]
+      }
+    ],
+    "teamMembers": [
+      {
+        "name": "Sarah Johnson",
+        "role": "Lead UI-Designer",
+        "photo": "https://dummyimage.com/400x400/555/fff.png&text=Sarah+Johnson"
+      },
+      {
+        "name": "Michael Chen",
+        "role": "UX-Architekt",
+        "photo": "https://dummyimage.com/400x400/777/fff.png&text=Michael+Chen"
+      }
+    ],
+    "coverImage": "https://dummyimage.com/1200x800/333/fff.png&text=Website+Design",
+    "page": {
+      "excerpt": "Unsere Webdesign-Dienstleistungen konzentrieren sich auf Ästhetik und Funktionalität, um sicherzustellen, dass Ihre Online-Präsenz sowohl schön als auch effektiv ist.",
+      "splitSections": [
+        {
+          "heading": "Kernfunktionen",
+          "content": "Moderne Designlösungen, die Engagement und Konversionen fördern",
+          "tags": ["UI/UX-Design", "Responsive Layouts", "Prototyping", "Design-Systeme"]
+        },
+        {
+          "heading": "Technologien",
+          "content": "Nutzung modernster Tools und Frameworks",
+          "tags": ["Figma", "Adobe XD", "Webflow", "WordPress"]
+        }
+      ],
+      "testimonial": {
+        "content": "Ihr Webdesign hat unsere Online-Präsenz transformiert. Wir haben großartiges Feedback zu Aussehen und Gefühl erhalten!",
+        "author": "Sarah M., Marketing Manager"
+      },
+      "upperSlideshow": [
+        "https://dummyimage.com/800x600/666/fff.png&text=Wireframing",
+        "https://dummyimage.com/1000x600/999/fff.png&text=Visual+Design"
+      ]
     }
+  },
+  {
+    "id": "2",
+    "title": "Branding",
+    "description": "Wir gestalten Schlüsselelemente wie Logo, Farbschema, Typografie und andere Designkomponenten, die Ihre Marke von der Konkurrenz abheben.",
+    "excerpt": "Schaffung einer einzigartigen und unvergesslichen Markenidentität, die Sie von der Konkurrenz unterscheidet.",
+    "keywords": "Branding, Markenidentität, Logo-Design, Farbschema, Typografie, Markenstrategie",
+    "hasPage": true,
+    "category": "Marke",
+    "startingPrice": 1200,
+    "benefits": [
+      "360° Markenstrategie",
+      "Marktdifferenzierung",
+      "Markenkonsistenz",
+      "Cross-Plattform-Assets"
+    ],
+    "processSteps": [
+      {
+        "title": "Markenanalyse",
+        "description": "Analyse der aktuellen Markenposition und Marktchancen"
+      },
+      {
+        "title": "Identitätsentwicklung",
+        "description": "Erstellung zentraler visueller und verbaler Markenelemente"
+      },
+      {
+        "title": "Richtlinienentwurf",
+        "description": "Dokumentation von Markenstandards für konsistente Anwendung"
+      }
+    ],
+    "pricingTiers": [
+      {
+        "name": "Starter-Paket",
+        "price": 1200,
+        "interval": "Projekt",
+        "features": [
+          "Logo-Design",
+          "Basis-Styleguide",
+          "3 Markenkonzepte",
+          "2 Überarbeitungsrunden"
+        ]
+      },
+      {
+        "name": "Komplettes Branding",
+        "price": 3500,
+        "interval": "Projekt",
+        "features": [
+          "Vollständige Markenidentität",
+          "Umfassende Richtlinien",
+          "Briefpapier-Design",
+          "Markenstrategie-Session",
+          "5 Überarbeitungsrunden"
+        ]
+      }
+    ],
+    "teamMembers": [
+      {
+        "name": "Emma Wilson",
+        "role": "Markenstrategin",
+        "photo": "https://dummyimage.com/400x400/663399/fff.png&text=Emma+Wilson"
+      },
+      {
+        "name": "David Kim",
+        "role": "Visueller Designer",
+        "photo": "https://dummyimage.com/400x400/330066/fff.png&text=David+Kim"
+      }
+    ],
+    "coverImage": "https://dummyimage.com/1200x800/663399/fff.png&text=Branding+Identity",
+    "page": {
+      "excerpt": "Unsere Branding-Dienstleistungen helfen Ihnen, eine starke und konsistente Markenidentität aufzubauen, die bei Ihrer Zielgruppe Anklang findet.",
+      "splitSections": [
+        {
+          "heading": "Lieferumfang",
+          "content": "Komplettes Markenidentitätspaket zur Implementierung",
+          "tags": ["Logo-Suite", "Farbpalette", "Typografie-System", "Markenrichtlinien"]
+        },
+        {
+          "heading": "Tools & Methoden",
+          "content": "Professionelle Tools für Markenentwicklung",
+          "tags": ["Adobe Creative Suite", "Markenarchetypen", "Marktforschung", "Wettbewerbsanalyse"]
+        }
+      ],
+      "testimonial": {
+        "content": "Ihr Branding hat unserem Unternehmen ein frisches und professionelles Image verliehen. Sehr empfehlenswert!",
+        "author": "David L., CEO"
+      },
+      "upperSlideshow": [
+        "https://dummyimage.com/800x600/9966CC/fff.png&text=Logo+Design",
+        "https://dummyimage.com/1000x600/330066/fff.png&text=Brand+Guidelines"
+      ]
+    }
+  },
+  {
+    "id": "3",
+    "title": "Webseiten-Entwicklung",
+    "description": "Wir bauen und optimieren Ihre Online-Präsenz. Eine Webseite ist der digitale Einstiegspunkt in Ihr Unternehmen und ein leistungsstarker Umsatzkanal.",
+    "excerpt": "Erstellung robuster, skalierbarer und benutzerfreundlicher Webseiten für Ihren Online-Erfolg.",
+    "keywords": "Webseiten-Entwicklung, Webentwicklungs-Dienstleistungen, Frontend, Backend, Full-Stack, Webanwendungen",
+    "hasPage": true,
+    "category": "Web",
+    "startingPrice": 1800,
+    "benefits": [
+      "Full-Stack-Expertise",
+      "Leistungsoptimierung",
+      "Sichere Architektur",
+      "SEO-freundlicher Code"
+    ],
+    "processSteps": [
+      {
+        "title": "Technische Planung",
+        "description": "Entwurf des optimalen Technologie-Stacks"
+      },
+      {
+        "title": "Entwicklung",
+        "description": "Aufbau der Kernfunktionalität mit sauberem Code"
+      },
+      {
+        "title": "Qualitätssicherung",
+        "description": "Rigoroses Testen über Geräte und Browser hinweg"
+      }
+    ],
+    "pricingTiers": [
+      {
+        "name": "Basis-Entwicklung",
+        "price": 1800,
+        "interval": "Projekt",
+        "features": [
+          "5-seitige Webseite",
+          "Mobile Optimierung",
+          "Kontaktformular",
+          "Basis-CMS"
+        ]
+      },
+      {
+        "name": "Erweiterte Entwicklung",
+        "price": 5000,
+        "interval": "Projekt",
+        "features": [
+          "Individuelle Webanwendung",
+          "Datenbank-Integration",
+          "API-Entwicklung",
+          "E-Commerce-Funktionalität",
+          "Laufende Unterstützung"
+        ]
+      }
+    ],
+    "teamMembers": [
+      {
+        "name": "Alex Martinez",
+        "role": "Full-Stack-Entwickler",
+        "photo": "https://dummyimage.com/400x400/0066cc/fff.png&text=Alex+Martinez"
+      },
+      {
+        "name": "Priya Patel",
+        "role": "QA-Ingenieurin",
+        "photo": "https://dummyimage.com/400x400/0099ff/fff.png&text=Priya+Patel"
+      }
+    ],
+    "coverImage": "https://dummyimage.com/1200x800/0066cc/fff.png&text=Web+Development",
+    "page": {
+      "excerpt": "Unsere Webentwicklungs-Dienstleistungen umfassen alles von Frontend bis Backend, um ein nahtloses und leistungsstarkes Online-Erlebnis zu gewährleisten.",
+      "splitSections": [
+        {
+          "heading": "Frontend-Technologien",
+          "content": "Moderne Frameworks für interaktive Erlebnisse",
+          "tags": ["React", "Vue.js", "TypeScript", "Tailwind CSS"]
+        },
+        {
+          "heading": "Backend-Systeme",
+          "content": "Robuste Server-seitige Lösungen",
+          "tags": ["Node.js", "Python", "PostgreSQL", "REST-APIs"]
+        }
+      ],
+      "testimonial": {
+        "content": "Ihr Webentwicklungsteam ist hochqualifiziert und hat unser komplexes Projekt termingerecht und im Budget abgeliefert.",
+        "author": "Emily R., CTO"
+      },
+      "upperSlideshow": [
+        "https://dummyimage.com/800x600/0099ff/fff.png&text=Code+Review",
+        "https://dummyimage.com/1000x600/003366/fff.png&text=Testing+Process"
+      ]
+    }
+  },
+  {
+    "id": "4",
+    "title": "Werbung & Marketing",
+    "description": "Wir kombinieren kreatives Design und technisches Know-how, um beeindruckende 3D-Visualisierungen zu erstellen, die Ihr Projekt zum Leben erwecken.",
+    "excerpt": "Förderung von Wachstum und Sichtbarkeit durch strategische Werbe- und Marketinglösungen.",
+    "keywords": "Werbung, Marketing, Digitales Marketing, Social-Media-Marketing, bezahlte Werbung, SEO",
+    "hasPage": true,
+    "category": "Marketing",
+    "startingPrice": 1000,
+    "benefits": [
+      "Datengetriebene Strategien",
+      "Multi-Channel-Kampagnen",
+      "ROI-Verfolgung",
+      "Zielgruppenansprache"
+    ],
+    "processSteps": [
+      {
+        "title": "Marktanalyse",
+        "description": "Identifikation von Schlüsselchancen und Zielgruppeneinsichten"
+      },
+      {
+        "title": "Kampagnenstrategie",
+        "description": "Entwicklung zielgerichteter Marketingpläne"
+      },
+      {
+        "title": "Umsetzung & Optimierung",
+        "description": "Echtzeit-Start und Verbesserung von Kampagnen"
+      }
+    ],
+    "pricingTiers": [
+      {
+        "name": "Starter-Kampagne",
+        "price": 1000,
+        "interval": "Monat",
+        "features": [
+          "1 Marketing-Kanal",
+          "Basis-Analytics",
+          "Monatliche Berichte",
+          "Werbetext-Erstellung"
+        ]
+      },
+      {
+        "name": "Unternehmenslösung",
+        "price": 5000,
+        "interval": "Monat",
+        "features": [
+          "Multi-Channel-Management",
+          "Erweiterte Analytics",
+          "Wöchentliche Optimierung",
+          "Unterstützung durch Kreativteam",
+          "Dedizierter Account Manager"
+        ]
+      }
+    ],
+    "teamMembers": [
+      {
+        "name": "Chris Thompson",
+        "role": "Marketingstratege",
+        "photo": "https://dummyimage.com/400x400/ff6600/fff.png&text=Chris+Thompson"
+      },
+      {
+        "name": "Nadia Ali",
+        "role": "SEO-Spezialistin",
+        "photo": "https://dummyimage.com/400x400/cc3300/fff.png&text=Nadia+Ali"
+      }
+    ],
+    "coverImage": "https://dummyimage.com/1200x800/ff6600/fff.png&text=Digital+Marketing",
+    "page": {
+      "excerpt": "Unsere Werbe- und Marketingdienstleistungen sind darauf ausgelegt, Ihre Zielgruppe zu erreichen und Ihre Geschäftsziele zu erreichen.",
+      "splitSections": [
+        {
+          "heading": "Werbekanäle",
+          "content": "Umfassende Multi-Plattform-Kampagnen",
+          "tags": ["Google Ads", "Social Media", "Programmatisch", "Native Werbung"]
+        },
+        {
+          "heading": "Analytics-Tools",
+          "content": "Messung und Optimierung der Kampagnenleistung",
+          "tags": ["Google Analytics", "Hotjar", "SEMrush", "HubSpot"]
+        }
+      ],
+      "testimonial": {
+        "content": "Ihre Werbe- und Marketingstrategien haben unsere Leads und Konversionen deutlich erhöht. Hocheffektiv!",
+        "author": "Chris B., Vertriebsleiter"
+      },
+      "upperSlideshow": [
+        "https://dummyimage.com/800x600/ff9900/000.png&text=Campaign+Analytics",
+        "https://dummyimage.com/1000x600/cc0000/fff.png&text=Social+Media+Ads"
+      ]
+    }
+  }
 ]

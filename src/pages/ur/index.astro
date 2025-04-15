@@ -1,14 +1,14 @@
 ---
 import Shapes from "@/components/Shapes.astro";
 import Layout from "@/layouts/Layout.astro";
-import { getLangFromUrl } from '@/i18n/utils';
-import SEO from "@/components/SEO.astro"; 
+import { getLangFromUrl } from "@/i18n/utils";
+import SEO from "@/components/SEO.astro";
 
 const lang = getLangFromUrl(Astro.url);
 
 // 1. Define the glob pattern (path relative to the current file or use alias)
 // Note: Keys in the returned object might be relative or absolute depending on usage
-const projectModules = import.meta.glob('@/data/*/projects.json');
+const projectModules = import.meta.glob("@/data/*/projects.json");
 
 // 2. Construct the key to access the correct module importer function
 // The key often needs to be the full path relative to the project root,
@@ -26,20 +26,25 @@ if (importModule) {
   console.warn(`Could not find projects module importer for key: ${moduleKey}`);
   // Handle error
 }
-
 ---
 
-<SEO pageName="index" />
+<slot name="head">
+  <SEO pageName="index" />
+</slot>
 <Layout>
-  <div class="min-h-screen relative overflow-hidden flex flex-col">
-    <div class="flex-auto w-full">
-      <div data-speed="clamp(0.9)" class="w-full flex-auto absolute overflow-hidden h-full"><Shapes /></div>
-      <div class="absolute bottom-0 hidden lg:flex left-0 p-8 text-lg">
+  <div class="min-h-screen bg-stone-400 relative overflow-hidden flex flex-col">
+    <div class="flex-auto w-full relative lg:container mx-auto">
+      <div data-speed="clamp(0.9)" class="w-full flex-auto absolute overflow-hidden h-full">
+        <Shapes />
+      </div>
+      <div class="absolute -px-4 bottom-0 hidden text-black lg:flex left-0 py-8 text-lg">
         <ul class="mr-4">
           {
             projects.slice(0, 4).map((item) => (
-              <li>
-                <a href={item.title}><p class="select-none">{item.year}</p></a>
+              <li key={item.imageSrc + "-home"}>
+                <a href={item.title}>
+                  <p class="select-none">{item.year}</p>
+                </a>
               </li>
             ))
           }
@@ -47,11 +52,17 @@ if (importModule) {
         <ul>
           {
             projects.slice(0, 4).map((item) => (
-              <li class="group relative">
-                <img
-                  src={item.imageSrc} loading="lazy"
-                  class="w-[30rem] pointer-events-none absolute max-w-[80vw] h-auto left-[30%] bottom-[2rem] group-hover:block hidden transition-all duration-75"
-                />
+              <li class="group relative" key={item.imageSrc + "-home"}>
+                {item.imageSrc && (
+                  <img
+                    alt={item.title}
+                    width={400}
+                    height={"100%"}
+                    src={item.imageSrc}
+                    loading="lazy"
+                    class="w-[30rem] pointer-events-none absolute max-w-[80vw] h-auto left-[30%] bottom-[2rem] group-hover:block hidden transition-all duration-75"
+                  />
+                )}
                 <p class="select-none">{item.title}</p>
               </li>
             ))

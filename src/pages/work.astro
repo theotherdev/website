@@ -25,16 +25,16 @@ else
 </slot>
 <Layout>
   <div
-    class="pt-[10rem] w-full relative overflow-hidden flex flex-col lg:mx-auto lg:container px-4 lg:px-0">
+    class="pt-[10rem] w-full overflow-hidden flex flex-col lg:mx-auto lg:container px-4 lg:px-0">
     <div class="flex-auto w-full overflow-visible-overflow-x-auto">
       <table class="table-auto w-full">
         <tbody>
           {
             Projects.map((item, index) => (
-              <div class="group relative">
-                <tr class="relative">
-                  <td class="select-none lg:pl-0 pl-4 text-left py-10">{index + 1}</td>
-                  <td class="relative py-10 px-4">
+              <div class="group">
+                <tr>
+                  <td class="select-none text-left py-10">{index + 1}</td>
+                  <td class="py-10 px-4">
                     {item.hasPage ?
                       <a href={`${getRelativeLocaleUrl(lang, "work/" + sanitize(item.title))}`}>
                         {item.imageSrc && (
@@ -66,7 +66,7 @@ else
                       </>
                     }
                   </td>
-                  <td class="select-none text-right py-10 px-4">{item.year}</td>
+                  <td class="select-none text-right py-10">{item.year}</td>
                 </tr>
               </div>
             ))

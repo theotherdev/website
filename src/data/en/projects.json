@@ -91,46 +91,140 @@
   },
   {
     "id": "54",
-    "title": "Branding & application / SAAS development for Finlit",
+    "title": "Branding & SaaS Platform Development for Finlit",
     "company": "Finlit",
     "hasPage": true,
     "year": "2025",
-    "description": "Design, development & branding",
+    "description": "End-to-end design, website / SAAS development & branding.",
     "imageSrc": "/images/projects/finlit-2025/finlit.deployments.otherdev.com_.png",
-    "url": "https://wishapparels.com/",
+    "url": "https://finlit.deployments.otherdev.com/",
     "coverImage": "/images/projects/finlit-2025/finlit.deployments.otherdev.com_.png",
-    "coverImageAlt": "Finlit Product Launch",
+    "coverImageAlt": "Finlit SaaS Platform Interface",
     "page": {
-      "excerpt": "Our collaboration with Wish Apparels involved crafting a digital experience that mirrors the quality and style of their upcoming clothing line. We designed an intuitive e-commerce platform that not only showcases their products with high-quality visuals and detailed information but also provides a seamless and secure shopping journey. The branding and design elements, meticulously developed in tandem with the website, work harmoniously to communicate the brand's ethos and appeal to their target audience. This project underscores our agency's commitment to creating impactful digital solutions that drive brand growth and customer engagement for innovative businesses.",
+      "excerpt": "Our collaboration with Finlit involved the comprehensive creation of their SaaS platform, from initial branding and visual identity to the full-stack development of an intuitive and engaging learning application. We focused on delivering a minimalist yet impactful digital experience that empowers users to confidently navigate the world of finance.",
       "splitSections": [
         {
-          "heading": "Challenges",
-          "content": "Establishing a New Brand Identity: As Wish Apparels was a new entrant to the market, a key challenge was to create a distinct and memorable brand identity from the ground up. This involved developing a visual language that resonated with their target demographic and effectively communicated their brand values through logo design, typography, color palettes, and overall aesthetic. Building a Scalable E-commerce Platform: We needed to develop an e-commerce website that was not only visually appealing and user-friendly but also robust and scalable to accommodate future growth in product offerings and customer traffic. Ensuring seamless integration of essential features like product browsing, secure checkout, and inventory management was crucial.",
-          "tags": ["Brand Development", "Visual Identity", "Shopify", "UI/UX Design"]
+          "heading": "Project Objectives",
+          "content": "The core objectives for Finlit were to establish a strong and trustworthy brand presence and to develop a user-friendly SaaS platform that demystifies complex financial concepts. This involved crafting a clear visual identity, including logo design and brand guidelines, and building a scalable web application with interactive learning modules, progress tracking, and a seamless user experience. Our aim was to create a platform that felt both accessible and authoritative, encouraging users to actively engage with financial education.",
+          "tags": [
+            "SaaS Platform Development",
+            "Branding Strategy",
+            "Logo Design",
+            "UI/UX Design",
+            "E-learning Development",
+            "Financial Literacy"
+          ]
         },
         {
-          "heading": "Inspiration",
-          "content": "Minimalist Elegance: The design direction was heavily inspired by a desire for minimalist elegance, allowing the apparel itself to take center stage. Clean lines, ample white space, and sophisticated typography were employed to create a sense of understated luxury and timeless style. Focus on Visual Storytelling: Recognizing the importance of visual appeal in fashion, we focused on creating a platform that prioritized high-quality imagery and compelling visual storytelling. The website design aimed to immerse users in the brand's world and showcase the garments in an aspirational and engaging manner."
+          "heading": "Branding & Visual Identity",
+          "content": "For Finlit, we developed a brand identity centered around clarity and approachability. The logo design minimal and clean, was created to be both memorable and representative of the platform's mission to simplify finance. We established a clean and modern color palette and typography system that conveys trust and ease of understanding. These branding elements were meticulously integrated into the design of the SaaS platform, ensuring a cohesive and professional user experience across all touchpoints.",
+          "tags": [
+            "Brand Identity",
+            "Logo Design",
+            "Color Palette",
+            "Typography",
+            "Visual Guidelines"
+          ]
+        },
+        {
+          "heading": "SaaS Platform Development",
+          "content": "The development of the Finlit SaaS platform focused on creating an engaging and effective learning environment. We built a scalable web application featuring structured courses, interactive lessons, quizzes, and progress tracking mechanisms. The user interface was designed with a minimalist aesthetic to prioritize content and minimize distractions, ensuring a focused learning experience. We paid close attention to user flow and navigation to create an intuitive and enjoyable path for users to build their financial knowledge. The platform was built using Astro, Next.js & deployed on Vercel with a focus on performance and scalability to accommodate a growing user base and expanding content library.",
+          "tags": [
+            "Full-Stack Development",
+            "SaaS Architecture",
+            "E-learning Platform Development",
+            "Interactive Content",
+            "User Progress Tracking",
+            "Scalability"
+          ]
+        },
+        {
+          "heading": "Design & User Experience",
+          "content": "Our design philosophy for Finlit prioritized clarity and ease of use. We opted for a minimalist aesthetic with ample white space and clear typography to enhance readability and reduce cognitive load. The user interface was designed to be intuitive and consistent, allowing users to navigate the platform effortlessly. We focused on creating a seamless learning flow, ensuring that users could easily access course materials, track their progress, and engage with interactive elements. Our goal was to create a digital learning environment that felt both professional and approachable, making financial education accessible to everyone.",
+          "tags": [
+            "Minimalist Design",
+            "User Experience (UX)",
+            "User Interface (UI)",
+            "Information Architecture",
+            "Usability",
+            "Accessibility"
+          ]
         }
       ],
       "upperSlideshow": [
         "/images/projects/finlit-2025/finlit-group.png",
         "/images/projects/finlit-2025/finlit-home-mobile.png",
-
-
         "/images/projects/finlit-2025/team-groupchat.png",
         "/images/projects/finlit-2025/finlit-courses-macbook.png",
         "/images/projects/finlit-2025/finlit-logo.png",
         "/images/projects/finlit-2025/finlit.deployments.otherdev.com_trading_1x1.png"
       ],
       "testimonial": {
-        "content": "Working with Other Dev was a game-changer for Wish Apparels. Their holistic approach to website development and branding delivered results far beyond our expectations. The new website's user-friendly design and compelling presentation directly contributed to an incredible 500% surge in sales. The branding they crafted is sophisticated, memorable, and perfectly reflects our brand identity, which we have proudly adopted across all aspects of our business. We highly recommend Other Dev to any emerging brand looking for impactful digital solutions.",
-        "author": "Talha, Founder of Wish"
+        "content": "Developing Finlit from the ground up was an exciting and rewarding project for our team at Other Dev. We embraced the challenge of creating a comprehensive SaaS platform that simplifies financial literacy through thoughtful branding and intuitive design. Seeing Finlit empower individuals to take control of their financial futures is a testament to the power of well-executed digital solutions.",
+        "author": "Kabeer, Founder of Other Dev"
       },
-      "secondCover": "https://images.unsplash.com/photo-1509114397022-ed747cca3f65?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      "secondCover": "https://images.unsplash.com/photo-1550565211-5608309e310e?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     }
   },
-
+  {
+    "id": "5",
+    "title": "Website Development for Groovy Pakistan",
+    "company": "Groovy",
+    "hasPage": true,
+    "year": "2024",
+    "description": "Website development & Shopify integrations",
+    "imageSrc": "/images/projects/groovy-pakistan-2024/groovy-main.png",
+    "url": "https://groovypakistan.com/",
+    "coverImage": "/images/projects/groovy-pakistan-2024/groovy-main.png",
+    "coverImageAlt": "Groovy Pakistan Online Storefront",
+    "page": {
+      "excerpt": "The core of our engagement with Groovy Pakistan was the strategic design and robust development of their e-commerce website. Our aim was to construct a digital space that not only mirrors the brand's dynamic spirit but also provides a straightforward and engaging pathway for customers to explore and purchase their products.",
+      "splitSections": [
+        {
+          "heading": "Work",
+          "content": "Our work with Groovy Pakistan centered on architecting a digital storefront that embodies the energy and accessibility of their brand. We meticulously developed an intuitive e-commerce platform (groovypakistan.com) designed to not only exhibit their diverse product range through compelling visuals and comprehensive details but also to ensure a fluid and secure transaction process. The website's design and user experience were carefully considered to resonate with their target demographic and foster a seamless online shopping environment. This project exemplifies our studio's dedication to building impactful digital infrastructures that empower businesses to connect effectively with their customers and drive online growth."
+        },
+        {
+          "heading": "Development Challenges",
+          "content": "For Groovy Pakistan, a primary challenge was establishing a cohesive and effective online sales channel that could cater to their diverse customer base. This involved creating a website that was both visually appealing and highly functional, capable of seamlessly handling product browsing, order management, and secure payments. Ensuring a responsive design that performed flawlessly across various devices was also a critical consideration to reach their broad audience. Furthermore, the platform needed to be scalable to accommodate their evolving product catalog and increasing customer traffic.",
+          "tags": [
+            "E-commerce Platform Development",
+            "User Experience (UX) Design",
+            "Responsive Web Design",
+            "Scalable Architecture",
+            "Payment Gateway Integration"
+          ]
+        },
+        {
+          "heading": "Our Website Solution",
+          "content": "Our approach focused on building a user-centric e-commerce experience for Groovy Pakistan. We prioritized clear navigation, intuitive search and filtering functionalities, and visually rich product presentations to enable customers to easily find and appreciate the offerings. The checkout process was designed to be as seamless and secure as possible, minimizing friction and encouraging conversions. The underlying technology stack was chosen for its reliability and scalability, ensuring a robust platform capable of supporting Groovy Pakistan's growth in the online marketplace. We focused on creating a digital environment that felt both accessible and trustworthy for their customers."
+        },
+        {
+          "heading": "Key Website Features",
+          "content": "The Groovy Pakistan website (groovypakistan.com) incorporates a range of features specifically designed to enhance the online shopping experience. These include detailed product pages with high-resolution imagery and comprehensive descriptions, a robust search and filtering system to easily navigate their catalog, secure user accounts for order tracking and saved information, a straightforward shopping cart and checkout flow with multiple payment options, and integrated customer support channels. Each element was implemented with a focus on usability and efficiency, aiming to create a positive and seamless journey for Groovy Pakistan's online shoppers.",
+          "tags": [
+            "Product Showcases",
+            "Advanced Search & Filtering",
+            "User Account Management",
+            "Simplified Checkout",
+            "Payment Integration",
+            "Customer Support Features"
+          ]
+        }
+      ],
+      "upperSlideshow": [
+        "/images/projects/groovy-pakistan-2024/groovy-group.png",
+        "/images/projects/groovy-pakistan-2024/groovy-home-mobile.png",
+        "/images/projects/groovy-pakistan-2024/pants.jpg",
+        "/images/projects/groovy-pakistan-2024/shirts-cropped.png"
+      ],
+      "testimonial": {
+        "content": "Working with Groovy Pakistan on their e-commerce development was a rewarding experience for our team at Other Dev. We focused on understanding their brand ethos and translating that into a functional and visually engaging online platform. Seeing their vision come to life digitally and knowing we played a key role in establishing their online presence is something we take pride in.",
+        "author": "Kabeer, Founder of Other Dev"
+      },
+      "secondCover": "/images/projects/groovy-pakistan-2024/second-cover.png"
+    }
+  },
   {
     "id": "3",
     "title": "Branding & website development for Parcheh81",
@@ -162,60 +256,14 @@
         }
       ],
       "upperSlideshow": [
-        "/images/projects/wish-2024/upper-slideshow-1.webp",
-        "/images/projects/wish-2024/1743813808292_100.webp",
-        "/images/projects/wish-2024/wish-girl-11.webp",
-        "/images/projects/wish-2024/wish-boy-1.webp",
-        "/images/projects/wish-2024/wish-logo.webp",
-        "/images/projects/wish-2024/with-other-dev.webp"
+        "/images/projects/parcheh81-2024/parcheh-home-mobile.png",
+        "/images/projects/parcheh81-2024/parcheh-menu-mobile.png",
+        "/images/projects/parcheh81-2024/parcheh-logo-gridded.png",
+        "/images/projects/parcheh81-2024/girl-standing-square.png"
+
       ],
       "testimonial": {
         "content": "Working with Other Dev transformed Parcheh. Their combined web and branding expertise delivered results beyond expectations. The user-friendly site achieved a dramatic boost in sales, The sophisticated branding reflects our identity perfectly and is now used everywhere. We highly recommend Other Dev to any brand needing impactful digital results.",
-        "author": "Nasir, Founder of Parcheh"
-      },
-      "secondCover": "https://images.unsplash.com/photo-1509114397022-ed747cca3f65?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-    }
-  },
-  {
-    "id": "5",
-    "title": "Branding & website development for Groovy Pakistan",
-    "company": "Groovy",
-    "hasPage": true,
-    "year": "2024",
-    "description": "Website design, development & branding",
-    "imageSrc": "/images/projects/groovy-pakistan-2024/groovy-main.png",
-    "url": "https://groovypakistan.com/",
-    "coverImage": "/images/projects/groovy-pakistan-2024/groovy-main.png",
-    "coverImageAlt": "Groovy Store Optimisation",
-    "page": {
-      "excerpt": "Our collaboration with Parcheh (Persian for 'fabric') focused on crafting a digital experience true to its name. We translated the unique texture, artistry, and narrative of their textiles into a tailored e-commerce platform where the fabric's details truly shine. The result is an elegant and intuitive site offering users an immersive journey into the brand's world, showcasing our ability to capture a brand's core essence through sophisticated digital design.",
-      "splitSections": [
-        {
-          "heading": "Challenges",
-          "content": "For Parcheh, key challenges included digitally conveying the luxurious feel of their fabrics and balancing a sophisticated aesthetic with intuitive usability. We addressed this with high-resolution imagery, zoom features, and evocative descriptions, alongside a clean UI/UX featuring clear navigation and streamlined checkout. Crucially, we also wove Parcheh's brand story and commitment to craftsmanship throughout the site using dedicated sections and subtle design cues, enriching the customer connection to their heritage and quality.",
-          "tags": [
-            "Textile-Focused Visual Strategy",
-            "Visual Identity",
-            "Shopify",
-            "Culturally Sensitive UI/UX Design",
-            "High-Fidelity Product Presentation"
-          ]
-        },
-        {
-          "heading": "Inspiration",
-          "content": "Deeply inspired by the fabric Parcheh itself, our design focused on translating its tactile richness and quality into the digital realm. We aimed to merge timeless craftsmanship with modern elegance, creating an intimate, gallery-like online experience. High-fidelity visuals and clean, considered layouts were key, encouraging thoughtful exploration of the brand's unique artistry and heritage."
-        }
-      ],
-      "upperSlideshow": [
-        "/images/projects/wish-2024/upper-slideshow-1.webp",
-        "/images/projects/wish-2024/1743813808292_100.webp",
-        "/images/projects/wish-2024/wish-girl-11.webp",
-        "/images/projects/wish-2024/wish-boy-1.webp",
-        "/images/projects/wish-2024/wish-logo.webp",
-        "/images/projects/wish-2024/with-other-dev.webp"
-      ],
-      "testimonial": {
-        "content": "Working with Other Dev transformed Parcheh. Their combined web and branding expertise delivered results beyond expectations – the user-friendly site achieved a dramatic boost in sales! The sophisticated branding reflects our identity perfectly and is now used everywhere. We highly recommend Other Dev to any brand needing impactful digital results.",
         "author": "Nasir, Founder of Parcheh"
       },
       "secondCover": "https://images.unsplash.com/photo-1509114397022-ed747cca3f65?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"

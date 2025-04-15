@@ -2,7 +2,6 @@
 import type { GetStaticPaths } from "astro";
 import Layout from "@/layouts/Layout.astro";
 import { useTranslations, getLangFromUrl } from "@/i18n/utils";
-import Image from "astro/components/Image.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -178,7 +177,7 @@ const { page } = project;
         class="mt-auto queens-compressed text-left max-w-5xl align-bottom text-3xl lg:text-5xl z-0">
         "{project.page.testimonial.content}"
       </h1>
-      <p class="my-4 italic">- {project.page.testimonial.author}</p>
+      {project.page.testimonial.author && <p class="my-4 italic">- {project.page.testimonial.author}</p>}
     </div>
     <script is:inline>
       document.addEventListener("DOMContentLoaded", () => {

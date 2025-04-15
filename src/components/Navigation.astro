@@ -2,6 +2,7 @@
 // src/components/Header.astro
 import { getLangFromUrl, useTranslations } from "@/i18n/utils";
 import { getRelativeLocaleUrl } from "astro:i18n";
+import Clock from "./ui/clock";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -64,14 +65,14 @@ const karachiTimezone = "Asia/Karachi"; // Explicitly define Karachi timezone
   class={`text-[var(${textColor})] lg:hidden flex justify-between header-blend-mode items-center w-full px-4 pt-4 text-sm fixed top-0 z-50`}
 >
   <div> {/* Text color override if needed */}
-    <a href="/" class=" " aria-label="Other Dev® Home">Other Dev®</a>
+    <a href={getRelativeLocaleUrl(lang, "/")} class="w-full flex-1/2" aria-label="Other Dev® Home">Other Dev®</a>
   </div>
   <button id="mobile-nav-toggle" aria-expanded="false"     aria-controls="mobile-menu"
-  class="  mobile-navigation-trigger p-2 -mr-2 ">
+  class="  mobile-navigation-trigger flex-1/2 p-2 -mr-2 w-full text-right">
     <span class="sr-only">{t("nav.menu")}</span>
     <div class="relative h-6 overflow-hidden">
       <span class="menu-text block">{t("nav.menu")}</span>
-      <span class="close-text absolute top-0 left-0 translate-y-6">{t("nav.close")}</span>
+      <span class="close-text absolute top-0 right-0 translate-y-6">{t("nav.close")}</span>
     </div>
   </button>
 </nav>
@@ -121,8 +122,8 @@ const karachiTimezone = "Asia/Karachi"; // Explicitly define Karachi timezone
         <div
           class="block py-4 px-4 text-lg hover:bg-stone-600/10 transition-colors duration-200"
         >
-        <span class="  clock-time tabular-nums"></span> {/* Class for JS targeting */}
-        <span class=" ">{t('nav.location') ?? 'Karachi, Pakistan'} </span> {/* Use i18n for location */}
+        <Clock client:load/>
+        <span>{t('nav.location') ?? 'Karachi, Pakistan'}</span>
       </div>
       </li>
 
@@ -155,15 +156,15 @@ const karachiTimezone = "Asia/Karachi"; // Explicitly define Karachi timezone
 >
 <div class="flex justify-between items-center lg:container mx-auto">
   <div class="font-bold">
-    <a href="/" class={`before:bg-[var(${textColor})] dynamic-underline dynamic-underline-left`} aria-label="Other Dev® Home">Other Dev®</a>
+    <a href={getRelativeLocaleUrl(lang, "/")} class={`before:bg-[var(${textColor})] dynamic-underline dynamic-underline-left`} aria-label="Other Dev® Home">Other Dev®</a>
   </div>
 
   <div class=" "><p>{t("nav.software-and-design")}</p></div>
 
   <div class="flex items-center gap-2">
-    <span class="  clock-time tabular-nums"></span> {/* Class for JS targeting */}
-    <span class=" ">{t('nav.location') ?? 'Karachi, Pakistan'} </span> {/* Use i18n for location */}
-  </div>
+    <Clock client:load/>
+    <span>{t('nav.location') ?? 'Karachi, Pakistan'}</span>
+</div>
 
   {/* Main Desktop Links */}
   <ul class="flex gap-6">
@@ -308,84 +309,4 @@ if (menuButton && mobileMenu) {
 }
 document.addEventListener('DOMContentLoaded', mobileNavigation);
 window.addEventListener('resize', mobileNavigation);
-// --- Karachi Time Display ---
-function displayKarachiTime() {
-  const clockElements = document.querySelectorAll('.clock-time');
-  if (!clockElements) return;
-
-  // Options for time display
-  const options = {
-    timeZone: 'Asia/Karachi',
-    hour: '2-digit',
-    minute: '2-digit',
-    hour12: true,
-    timeZoneName: 'short'
-  };
-
-  let errorCount = 0;
-  const maxErrors = 3;
-
-  function update() {
-    try {
-      const now = new Date();
-      let timeString;
-      
-      // First try with seconds
-      if (errorCount === 0) {
-        timeString = now.toLocaleTimeString('en-US', {
-          ...options,
-          second: '2-digit'
-        });
-      } 
-      // Fallback without seconds if errors occur
-      else {
-        timeString = now.toLocaleTimeString('en-US', options);
-      }
-
-      // Remove unwanted timezone abbreviation if it appears
-      timeString = timeString.replace(/\s*\(PKT\)/, '');
-      
-      clockElements.forEach(cl => cl.textContent  = timeString);
-      errorCount = 0; // Reset error count on success
-      
-      // Schedule next update in 1 second
-      setTimeout(update, 1000 - (now.getMilliseconds() % 1000));
-      
-    } catch (error) {
-      errorCount++;
-      console.error("Time display error:", error);
-      
-      // Show fallback after multiple errors
-      if (errorCount >= maxErrors) {
-        clockElements.forEach(cl => cl.textContent  = '--:-- PKT');
-        return;
-      }
-      
-      // Retry sooner after error
-      setTimeout(update, 500);
-    }
-  }
-//   // Start observing visibility
-//   const observer = new IntersectionObserver((entries) => {
-//     entries.forEach(entry => {
-//       if (entry.isIntersecting) {
-//         update(); // Start when visible
-//       } else {
-//         clockElements.forEach(cl => cl.innerText = ''); // Clear when not visible
-//       }
-//     });
-//   }, 
-//   {threshold: 0.1, root: document.querySelector('.menu-withclock') }
-// );
-  
-  // clockElements.forEach(cl => observer.observe(cl));
-update()
-  // Cleanup when component unmounts
-  return () => {
-    // observer.disconnect();
-  };
-}
-
-// Initialize when DOM is ready
-document.addEventListener('DOMContentLoaded', displayKarachiTime);
 </script>

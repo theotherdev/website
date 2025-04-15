@@ -1,10 +1,13 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import { getLangFromUrl } from "@/i18n/utils";
+import { useTranslations } from "@/i18n/utils";
+import Carousel from "@/components/Carousel.astro";
 import SEO from "@/components/SEO.astro";
+import Image from "astro/components/Image.astro";
 
 const lang = getLangFromUrl(Astro.url);
-
+const t = useTranslations(lang);
 const importProjectsModule = import.meta.glob("@/data/*/services.json")[
   `/src/data/${lang}/services.json`
 ];
@@ -16,32 +19,133 @@ else
   );
 ---
 
-<SEO pageName="expertise" />
+<slot name="head">
+  <SEO pageName="expertise" />
+</slot>
 <Layout>
-  <div class="pt-[10rem] min-h-screen w-full relative overflow-hidde-n flex flex-col">
-    <div class="flex-auto w-full overflow-visible-overflow-x-auto">
-      <table class="table-auto w-full">
-        <tbody>
-          {
-            Services.map((item, index) => (
-              <tr class="border-b-black border-b">
-                <td class="select-none text-left py-10 pl-8">{index + 1}</td>
-                <td class="group relative py-10 px-4">
+  <div class="-bg-gradient-to-b-from-black-to-[var(--background)] bg-[var(--background)]">
+    <div
+      class="relative overflow-hidden pt-[8rem] lg:mx-auto lg:container px-4 lg:px-0"
+      data-speed="clamp(0.9)">
+      <div class="w-full relative py-4 max-w-5xl">
+        <h1
+          class="mt-auto queens-compressed text-left align-bottom text-5xl lg:text-7xl z-0"
+          set:html={t("expertise.heading")}
+        />
+        <!-- <div data-speed="clamp(.9)" class="absolute top-[3rem] h-[400px] right-5 grayscale brightness-0"><ShapesEmbeddable /></div> -->
+      </div>
+      <div class="gap-4 gap-x-10 text-lg w-full relative py-[6rem] pt-0 flex space-between">
+        <p class="max-w-5xl">{t("expertise.excerpt")}</p>
+        <div class="hidden lg:flex">
+          <ul>
+            {
+              Services.slice(0, 4).map((item) => (
+                <li class="group relative">
                   {item.imageSrc && (
                     <img
+                      inferSize={true}
                       src={item.imageSrc}
-                      class="w-[30rem] pointer-events-none absolute max-w-[80vw] h-auto left-1/2 translate-x-1/3 bottom-[2rem] group-hover:block hidden transition-all duration-75"
+                      loading="lazy"
+                      alt={item.title}
+                      class="w-[30rem] pointer-events-none absolute max-w-[80vw] h-auto left-[30%] bottom-[2rem] group-hover:block hidden transition-all duration-75"
                     />
                   )}
-                  <p class="select-none text-3xl">{item.title}</p>
-                  <p class="select-none mt-2">{item.description}</p>
-                </td>
-                <td class="select-none text-right py-10 px-4">{item.year}</td>
-              </tr>
-            ))
-          }
-        </tbody>
-      </table>
+                  <p class="select-none">
+                    <a href="#" class="dynamic-underline-left">
+                      {item.title}
+                    </a>
+                  </p>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="relative w-full z-2 lg:mx-auto lg:container px-4 lg:px-0">
+      <div class="w-full h-full bg-black py-4 grid grid-cols-2">
+        <img
+        
+          src={"/images/kabeer-and-ossaid/ossaid.jpg"}
+          alt={"project.coverImageAlt"}
+          class=" object-contain grayscale"
+        />
+        <img
+          
+          src={"/images/kabeer-and-ossaid/kabeer.jpg"}
+          alt={"project.coverImageAlt"}
+          class="object-contain grayscale"
+        />
+      </div>
+    </div>
+    <div class="relative overflow-hidden py-[4rem] lg:mx-auto lg:container px-4 lg:px-0">
+      <!-- <div class="w-full relative py-4 max-w-5xl">
+        <h1 class="mt-auto queens-compressed text-left align-bottom text-5xl lg:text-7xl z-0">
+          Our Journey
+        </h1>
+      </div> -->
+      <div class="gap-4 gap-x-10 text-lg w-full relative py-[6rem] pt-0 flex space-between">
+        <div class="max-w-5xl">
+          <p>
+            {t("expertise.second-paragraph")}
+          </p>
+          <br />
+          <p>
+            {t("expertise.third-paragraph")}
+          </p>
+        </div>
+      </div>
+      <div class="gap-4 gap-x-10 text-lg w-full relative py-[6rem] pt-0 flex space-between">
+        <table class="table-auto w-full">
+          <tbody>
+            {
+              Services.map((item, index) => (
+                <tr class="border-b-black border-b">
+                  <td class="select-none text-left py-10 pr-4">{index + 1}</td>
+                  <td class="group relative py-10 px-4">
+                    {item.imageSrc && (
+                      <img
+                        inferSize={true}
+                        src={item.imageSrc}
+                        loading="lazy"
+                        alt={item.title}
+                        class="w-[30rem] pointer-events-none absolute max-w-[80vw] h-auto left-1/2 translate-x-1/3 bottom-[2rem] group-hover:block hidden transition-all duration-75"
+                      />
+                    )}
+                    <h1 class="mt-auto queens-compressed text-left align-bottom text-3xl max-w-5xl lg:text-5xl z-0">
+                      {item.title}
+                    </h1>
+                    <p class="select-none mt-2 max-w-5xl">{item.description}</p>
+                  </td>
+                  <td class="select-none text-right py-10 px-4">{item.year}</td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
+  <div>
+    <Carousel
+      carouselId={"expertise-page"}
+      imageClasses="aspect-9/16 object-cover"
+      images={[
+        "/images/expertise-page/control-loops-logo-design.webp",
+        "/images/about-page/control-loops-vertical.webp",
+        "/images/expertise-page/packaging-od-zoomed.webp",
+        "/images/about-page/packaging-vertical.webp",
+        "/images/expertise-page/probattle-design.webp",
+        "/images/expertise-page/nb-tailors.webp",
+        "/images/expertise-page/wish-phones.webp",
+        "/images/expertise-page/od-double-d.webp",
+      ]}
+    />
+  </div>
+  <style>
+    :root {
+      --background: var(--color-stone-400);
+      --text: var(--color-black);
+    }
+  </style>
 </Layout>
