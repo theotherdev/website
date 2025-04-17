@@ -30,5 +30,5 @@ export default function Clock() {
     return () => clearInterval(interval); // clean up
   }, []);
 
-  return <span className="clock-time tabular-nums">{time}</span>;
+  return <span className="clock-time min-w-[17ch] tabular-nums">{time}</span>;
 }
