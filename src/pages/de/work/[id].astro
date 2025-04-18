@@ -75,7 +75,7 @@ const { page } = project;
 <Layout>
   <div class="-bg-gradient-to-b-from-black-to-[var(--background)]">
     <div class="pt-[34vh] lg:mx-auto lg:container relative">
-      <div class="relative overflow-hidden lg:px-0 px-4">
+      <div class="relative overflow-hidden -lg:px-0 px-4">
         <div data-speed="clamp(0.5)" class="pb-[4rem] grid grid-cols-1 lg:grid-cols-6 gap-x-8">
           <div class="col-span-4">
             <h1
@@ -126,7 +126,7 @@ const { page } = project;
     </div>
   </div>
   <div class="border-t border-t-neutral-700"></div>
-  <div class="-bg-[var(--background)] relative py-[3rem] lg:mx-auto px-4 lg:px-0 lg:container">
+  <div class="-bg-[var(--background)] relative py-[3rem] lg:mx-auto px-4 -lg:px-0 lg:container">
     <div class="w-full grid mx-auto text-lg grid-cols-1 lg:grid-cols-2 gap-y-6 gap-x-[4rem]">
       {
         page.splitSections.map((section) => (
@@ -171,7 +171,7 @@ const { page } = project;
       ))
     }
   </div>
-  <div class="py-[3rem] lg:mx-auto px-4 lg:px-0 lg:container">
+  <div class="py-[3rem] lg:mx-auto px-4 -lg:px-0 lg:container">
     <div class="-bg-[var(--background) w-full mx-auto py-[6rem]">
       <h1
         class="mt-auto queens-compressed text-left max-w-5xl align-bottom text-3xl lg:text-5xl z-0">
