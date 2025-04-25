@@ -1,6 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://otherdev.com/sitemap-index.xml
-Sitemap: https://otherdev.com/ur/sitemap-index.xml
-Sitemap: https://otherdev.com/de/sitemap-index.xml
