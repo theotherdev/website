@@ -272,10 +272,45 @@
   {
     "id": "6",
     "title": "Payment infrastructure migration for Tiny Footprint Coffee",
+    "company": "TinyFootprintCoffee",
+    "hasPage": true,
     "year": "2024",
-    "description": "Website Design, Recharge Migration & Shopify Theme Development",
-    "imageSrc": "https://cdn.jsdelivr.net/gh/kabeer11000/docs-hosted@redirector-content/theotherdev/new-web/tinyfootprintcoffee.webp",
-    "url": "/blog/dc423a1a-f68e-42bd-a9b3-430bd57f82c1"
+    "description": "Supporting a mission-driven brand with subscription migration (Recharge to Shopify Payments) & optimization.",
+    "imageSrc": "/images/projects/parcheh81-2024/Parcheh.nyc_collections_all.webp",
+    "url": "https://www.tinyfootprintcoffee.com/",
+    "coverImage": "/images/projects/tinyfootprintcoffee/tinyfootprintcoffeecoverpage.png",
+    "coverImageAlt": "tinyfootprintcoffeecover",
+    "page": {
+      "excerpt": "Our collaboration with Tiny Footprint Coffee, the world's first carbon-negative coffee company, centered on strategically migrating their vital subscription services from Recharge to Shopify Payments. The goal was to unify their e-commerce operations and streamline backend management, freeing them to better focus on their core mission of funding reforestation through coffee sales, while maintaining a seamless experience for their loyal, mission-supporting subscribers. We executed a meticulously planned transition ensuring data integrity and uninterrupted service, resulting in an efficient subscription system fully integrated within Shopify. This project highlights our expertise in complex e-commerce migrations for purpose-driven brands.",
+      "splitSections": [
+        {
+          "heading": "Challenges",
+          "content": "Migrating Tiny Footprint Coffee's active subscribers required careful handling, as maintaining trust and continuity for supporters of this mission-driven brand was essential. Key technical challenges included the secure, accurate transfer of sensitive subscription data and payment information between platforms. Minimizing service disruption for their dedicated customer base demanded meticulous planning. We also adapted the storefront and customer portal to integrate seamlessly with Shopify's native tools, ensuring a consistent, user-friendly experience that reflects the brand's commitment to quality and transparency in every interaction",
+          "tags": [
+            "Subscription Migration",
+            "Shopify Payments",
+            "Recharge API",
+            "Data Migration"
+          ]
+        },
+        {
+          "heading": "Inspiration",
+          "content": "Inspired by Tiny Footprint Coffee's mission to make a difference through everyday enjoyment, our migration focused on a seamless and reliable subscription experience. We aimed to create an efficient payment infrastructure that supports their carbon-negative practices and reforestation efforts without disruption. Just as their coffee emphasizes quality and care, our strategy prioritized precision, ensuring customers can effortlessly support their impactful mission with every renewal. The goal was a dependable system mirroring the transparency and positive impact of Tiny Footprint Coffee."
+        }
+      ],
+      "upperSlideshow": [
+        "/images/projects/parcheh81-2024/parcheh-home-mobile.png",
+        "/images/projects/parcheh81-2024/parcheh-menu-mobile.png",
+        "/images/projects/parcheh81-2024/parcheh-logo-gridded.png",
+        "/images/projects/parcheh81-2024/girl-standing-square.png"
+
+      ],
+      "testimonial": {
+        "content": "Other Dev expertly handled our complex subscription migration from Recharge to Shopify Payments. The transition was remarkably smooth, with zero disruption to our subscribers who support our reforestation mission. Managing subscriptions is now much simpler within Shopify, freeing up valuable time for our team to focus on our coffee quality and environmental impact. Their technical skill and careful planning were evident throughout. We highly recommend Other Dev for critical e-commerce migrations, especially for purpose-driven brands.",
+        "author": "Alan, Operations Manager at Tiny Footprint Coffee"
+      },
+      "secondCover": "https://images.unsplash.com/photo-1509114397022-ed747cca3f65?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    }
   },
   {
     "id": "7",
