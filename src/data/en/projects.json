@@ -271,15 +271,15 @@
   },
   {
     "id": "6",
-    "title": "Payment infrastructure migration for Tiny Footprint Coffee",
-    "company": "TinyFootprintCoffee",
+    "title": "Payment infrastructure migration for Tiny-Footprint Coffee",
+    "company": "TinyFootprint Coffee",
     "hasPage": true,
     "year": "2024",
     "description": "Supporting a mission-driven brand with subscription migration (Recharge to Shopify Payments) & optimization.",
-    "imageSrc": "/images/projects/parcheh81-2024/Parcheh.nyc_collections_all.webp",
+    "imageSrc": "/images/projects/tinyfootprintcoffee/tinyfootprintcoffeecoverpage.png",
     "url": "https://www.tinyfootprintcoffee.com/",
     "coverImage": "/images/projects/tinyfootprintcoffee/tinyfootprintcoffeecoverpage.png",
-    "coverImageAlt": "tinyfootprintcoffeecover",
+    "coverImageAlt": "TinyFoot-print Coffee Website",
     "page": {
       "excerpt": "Our collaboration with Tiny Footprint Coffee, the world's first carbon-negative coffee company, centered on strategically migrating their vital subscription services from Recharge to Shopify Payments. The goal was to unify their e-commerce operations and streamline backend management, freeing them to better focus on their core mission of funding reforestation through coffee sales, while maintaining a seamless experience for their loyal, mission-supporting subscribers. We executed a meticulously planned transition ensuring data integrity and uninterrupted service, resulting in an efficient subscription system fully integrated within Shopify. This project highlights our expertise in complex e-commerce migrations for purpose-driven brands.",
       "splitSections": [
