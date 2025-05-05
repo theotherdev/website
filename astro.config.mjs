@@ -6,14 +6,20 @@ import sitemap from "@astrojs/sitemap";
 import robotsTxt from "astro-robots-txt";
 import tailwindcss from "@tailwindcss/vite";
 
+import vercel from "@astrojs/vercel";
+
 export default defineConfig({
   site: "https://www.otherdev.com",
   compressHTML: true,
   output: 'server',
-  url: "https://www.otherdev.com", // Optional redundancy for certain plugins
+
+  // Optional redundancy for certain plugins
+  url: "https://www.otherdev.com",
+
   vite: {
     plugins: [tailwindcss()],
   },
+
   i18n: {
     locales: ["en", "de", "ur"],
     defaultLocale: "en",
@@ -21,6 +27,7 @@ export default defineConfig({
       prefixDefaultLocale: false,
     },
   },
+
   integrations: [
     react({
       experimentalReactChildren: true
@@ -37,4 +44,6 @@ export default defineConfig({
       },
     }),
   ],
+
+  adapter: vercel(),
 });
