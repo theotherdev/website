@@ -1,79 +1,112 @@
 ---
 import { useTranslations, getLangFromUrl } from "@/i18n/utils";
+
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<script type="module" client:load>
-  async function subscribe(e) {
-    e.preventDefault();
-    const input = document.querySelector("#newsletter-email");
-    const email = input.value;
-    const msgBox = document.querySelector("#subscribe-msg");
-    msgBox.textContent = "";
-
-    if (!email) return (msgBox.textContent = "Please enter an email");
-
-    try {
-      const res = await fetch("/api/subscribe", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email }),
-      });
-
-      if (!res.ok) throw new Error(await res.text());
-      msgBox.textContent = "🎉 Subscribed successfully!";
-      input.value = "";
-    } catch (err) {
-      msgBox.textContent = `❌ ${err.message}`;
-    }
-  }
-</script>
-
 <div class="px-4 bg-black w-full">
-  <div class="bg-black text-white min-h-screen flex flex-col justify-between lg:container mx-auto py-12">
+  <div
+    class="bg-black text-white min-h-screen flex flex-col justify-between lg:container mx-auto py-12">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-      <div class="mt-4 lg:mt-8">
-        <span class="text-2xl lg:text-3xl">{t("footer.subscribe-to-our-newsletter")}</span>
-        <form class="border-b mt-4 pb-2 flex items-center" onSubmit="subscribe(event)">
-          <input
-            id="newsletter-email"
-            type="email"
-            placeholder={t("footer.mailing-address")}
-            class="bg-black w-full text-white outline-none placeholder-stone-400 text-lg"
-            required
-          />
-          <button type="submit" class="ml-4 text-lg lg:text-xl">↗</button>
+      <div class="mt-4 lg:mt-8 opacity-0 translate-y-8" id="message-box-container">
+        <span class="text-2xl lg:text-3xl block" id="newsletter-title">{t("footer.subscribe-to-our-newsletter")}</span>
+        <form class="clear mt-4" id="newsletter-form">
+          <div class="border-b pb-2 flex items-center">
+            <input
+              type="email"
+              placeholder={t("footer.mailing-address")} required
+              class="bg-black w-full text-white outline-none placeholder-stone-400 text-lg"
+              id="newsletter-input"
+            />
+            <button type="submit" class="clear ml-4 text-lg lg:text-xl opacity-0 translate-x-4" id="newsletter-button">↗</button>
+          </div>
         </form>
-        <div id="subscribe-msg" class="mt-2 text-sm text-green-400"></div>
+        <div id="message-box" class="text-sm mt-2 text-white opacity-0 translate-y-4"></div>
       </div>
 
-      <!-- Contact -->
-      <div class="grid grid-cols-1 lg:grid-cols-2 mt-4 lg:mt-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 mt-4 lg:mt-8 opacity-0 translate-y-8" id="contact-info-container">
         <div class="hidden lg:block"></div>
         <div class="gap-y-4">
-          <div class="text-lg">
-            <span>hello@otherdev.com</span>
-            <span>+92 315 6893331</span><br/>
-            <span class="mt-2">- 78905 Karachi, Pakistan</span><br/>
-            <span>- 75011 Chicago, Illinois</span>
+          <div class="text-lg" id="contact-details">
+            <span class="block">hello@otherdev.com</span>
+            <span class="block">+92 315 6893331</span><br/>
+            <span class="block mt-2">- 78905 Karachi, Pakistan</span><br/>
+            <span class="block">- 75011 Chicago, Illinois</span>
           </div>
-          <div class="mt-6 lg:mt-0 text-sm">
-            <span>{t("footer.easter-egg")}</span>
-            <span>©2025 The Other Dev</span>
+          <div class="mt-6 lg:mt-0 text-sm" id="legal-info">
+            <span class="block">{t("footer.easter-egg")}</span>
+            <span class="block">©2025 The Other Dev</span>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Brand section -->
-    <div class="flex flex-col relative overflow-hidden lg:flex-row items-center justify-between gap-6 mt-12">
-      <h1 class="text-6xl queens-compressed lg:text-[15vw] font-serif tracking-tight leading-none text-left">
+    <div
+      class="flex relative overflow-hidden lg:flex-row items-center justify-start lg:justify-between gap-6 mt-12 opacity-0 translate-y-12"
+      id="bottom-section"
+    >
+      <h1
+        class="queens-compressed text-7xl lg:text-[15vw] font-serif tracking-tight leading-none text-left lg:text-left"
+        id="big-text"
+      >
         {t("footer.bottom-big-text")}
       </h1>
-      <div class="w-[20%] lg:w-[20%] hidden lg:block">
-        <img inferSize={true} src="/shapes/Party.svg" loading="lazy" class="w-full h-auto object-contain" alt="Party Shape" />
+      <div class="w-[20%] lg:w-[20%] hidden lg:block opacity-0 translate-x-8" id="party-shape">
+        <img src="/shapes/Party.svg" loading="lazy" class="w-full h-auto object-contain" alt="Party Shape" />
       </div>
     </div>
   </div>
 </div>
+<script client:load>
+  function subscribe(e) {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const input = form.querySelector("input[type=email]");
+    const msgBox = document.getElementById("message-box");
+    const email = input.value.trim();
+    input.disabled=true;
+    gsap.to(msgBox, { text: "processing...", duration: 0.3, overwrite: true });
+    gsap.to(msgBox, { className: "text-sm mt-2 text-white", duration: 0.3 });
+
+    if (!email) {
+      gsap.to(msgBox, { text: "Please enter a valid email.", duration: 0.3, className: "text-sm mt-2 text-red-400" });
+      input.disabled=false;
+      return;
+    }
+
+    fetch("/api/subscribe", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email }),
+    })
+      .then(async (res) => {
+        if (!res.ok) throw new Error(await res.text());
+        gsap.to(msgBox, { text: "Subscribed successfully!", duration: 0.3, className: "text-sm mt-2 text-green-400" });
+        gsap.to(input, { value: "", duration: 0.3 });
+      })
+      .catch((err) => {
+        input.disabled=false;
+        gsap.to(msgBox, { text: `Error: ${err.message}`, duration: 0.3, className: "text-sm mt-2 text-red-400" });
+      });
+  }
+
+  window.addEventListener("DOMContentLoaded", () => {
+    const form = document.querySelector("#newsletter-form");
+    if (form) form.addEventListener("submit", subscribe);
+
+    // GSAP Animations on Load
+    const tl = gsap.timeline({ defaults: { duration: 0.6, ease: "power2.out" } });
+
+    tl.fromTo("#message-box-container", { opacity: 0, y: 8 }, { opacity: 1, y: 0 })
+      .fromTo("#newsletter-title", { opacity: 0, y: 6 }, { opacity: 1, y: 0 }, "-=0.4")
+      .fromTo("#newsletter-input", { opacity: 0 }, { opacity: 1 }, "-=0.2")
+      .fromTo("#newsletter-button", { opacity: 0, x: 4 }, { opacity: 1, x: 0 }, "-=0.4")
+      .fromTo("#contact-info-container", { opacity: 0, y: 8 }, { opacity: 1, y: 0 }, "-=0.4")
+      .fromTo("#contact-details > span", { opacity: 0, y: 6, stagger: 0.1 }, { opacity: 1, y: 0, stagger: 0.1 }, "-=0.4")
+      .fromTo("#legal-info > span", { opacity: 0, y: 6, stagger: 0.1 }, { opacity: 1, y: 0, stagger: 0.1 }, "-=0.4")
+      .fromTo("#bottom-section", { opacity: 0, y: 12 }, { opacity: 1, y: 0 }, "-=0.4")
+      .fromTo("#big-text", { opacity: 0 }, { opacity: 1 }, "-=0.4")
+      .fromTo("#party-shape", { opacity: 0, x: 8 }, { opacity: 1, x: 0 }, "-=0.6");
+  });
+</script>

@@ -9,6 +9,7 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineConfig({
   site: "https://www.otherdev.com",
   compressHTML: true,
+  output: 'server',
   url: "https://www.otherdev.com", // Optional redundancy for certain plugins
   vite: {
     plugins: [tailwindcss()],

@@ -2,7 +2,7 @@ import KVClient from "@/lib/kabeer-cloud";
 import { APIRoute } from "astro";
 import nodemailer from "nodemailer";
 
-const client = new KVClient();
+const client = new KVClient(import.meta.env.STORAGE_CLIENT);
 
 export const POST: APIRoute = async ({ request }) => {
   const data = await request.json();
@@ -13,16 +13,16 @@ export const POST: APIRoute = async ({ request }) => {
   }
 
   try {
-    await client.create("otherdevemails", email, JSON.stringify({ subscribed: true }));
+    await client.create(import.meta.env.KABEERCLOUD_BUCKET, email, JSON.stringify({ subscribed: true, source: 'web.frontend' }));
 
     // Create a test account or replace with real credentials.
     const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST,
+      host: import.meta.env.SMTP_HOST,
       port: 465,
       secure: true, // true for 465, false for other ports
       auth: {
-        user: process.env.SMTP_USERNAME,
-        pass: process.env.SMTP_PASSWORD,
+        user: import.meta.env.SMTP_USERNAME,
+        pass: import.meta.env.SMTP_PASSWORD,
       },
     });
 
@@ -34,7 +34,7 @@ export const POST: APIRoute = async ({ request }) => {
     });
     await transporter.sendMail({
       from: 'Kabeer from Other Dev <noreply@otherdev.com>',
-      to: process.env.NOTIFICATION_EMAIL,
+      to: import.meta.env.NOTIFICATION_EMAIL,
       subject: `${email} subscribed to Other Dev's Website`,
       text: "",
     });
@@ -44,6 +44,7 @@ export const POST: APIRoute = async ({ request }) => {
       headers: { "Content-Type": "application/json" },
     });
   } catch (e: any) {
+    console.log(e)
     return new Response(e.message, { status: 500 });
   }
 };
