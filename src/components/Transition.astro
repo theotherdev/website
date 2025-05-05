@@ -2,17 +2,21 @@
 <script is:inline>
   window.addEventListener("DOMContentLoaded", () => {
     // Register GSAP plugins once on load
-    gsap.config({ trialWarn: false });
+    gsap.config({ trialWarn: false,
+nullTargetWarn: false, nullTarget: null, nullTargetWarn: false });
     gsap.registerPlugin(TextPlugin, ScrollTrigger, ScrollSmoother);
-
+    ScrollTrigger.create({
+      preventDefault: true,
+      normalizeScroll: true,
+    })
     // Initialize ScrollSmoother with settings
     ScrollSmoother.create({
       trialWarn: false,
-      smooth: 2,
-      effects: true,
-      preventDefault: true,
-      ignoreMobileResize: false,
-      normalizeScroll: false,
+  smooth: 2,
+  speed: 2,
+  effects: true,
+ // normalizeScroll: true,
+  smoothTouch: 0.1,
     });
 
     // Curtain animation on page load
@@ -61,52 +65,52 @@
       });
     });
 
-    // Detect if the device is a touch device (optimized)
-    const isTouchDevice =
-      "ontouchstart" in window || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0;
+    // // Detect if the device is a touch device (optimized)
+    // const isTouchDevice =
+    //   "ontouchstart" in window || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0;
 
-    // Cursor animation for non-touch devices
-    if (!isTouchDevice) {
-      let posX = 0,
-        posY = 0;
-      let mouseX = 0,
-        mouseY = 0;
+    // // Cursor animation for non-touch devices
+    // if (!isTouchDevice) {
+    //   let posX = 0,
+    //     posY = 0;
+    //   let mouseX = 0,
+    //     mouseY = 0;
 
-      // Use requestAnimationFrame for smoother, performant updates
-      const updateCursor = () => {
-        posX += (mouseX - posX) / 8;
-        posY += (mouseY - posY) / 8;
-        gsap.set(".cursor-example", {
-          left: posX - 1,
-          top: posY - 2,
-        });
-        requestAnimationFrame(updateCursor); // Continuously update the cursor
-      };
+    //   // Use requestAnimationFrame for smoother, performant updates
+    //   const updateCursor = () => {
+    //     posX += (mouseX - posX) / 8;
+    //     posY += (mouseY - posY) / 8;
+    //     gsap.set(".cursor-example", {
+    //       left: posX - 1,
+    //       top: posY - 2,
+    //     });
+    //     requestAnimationFrame(updateCursor); // Continuously update the cursor
+    //   };
 
-      document.addEventListener("mousemove", (e) => {
-        mouseX = e.clientX;
-        mouseY = e.clientY;
-      });
+    //   document.addEventListener("mousemove", (e) => {
+    //     mouseX = e.clientX;
+    //     mouseY = e.clientY;
+    //   });
 
-      // Start cursor animation
-      updateCursor();
-      let transitioning = false;
-      const cursor = document.querySelector(".cursor-example");
-      // Simplified click effect on cursor with GSAP
-      window.addEventListener("click", (e) => {
-        if (transitioning) return;
-        transitioning = true;
-        const initialScale = cursor.style.transform;
-        gsap.to(cursor, {
-          scale: 3,
-          duration: 0.25,
-          onComplete: () => {
-            cursor.style.transform = initialScale;
-            transitioning = false;
-          },
-        });
-      });
-    }
+    //   // Start cursor animation
+    //   updateCursor();
+    //   let transitioning = false;
+    //   const cursor = document.querySelector(".cursor-example");
+    //   // Simplified click effect on cursor with GSAP
+    //   window.addEventListener("click", (e) => {
+    //     if (transitioning) return;
+    //     transitioning = true;
+    //     const initialScale = cursor.style.transform;
+    //     gsap.to(cursor, {
+    //       scale: 3,
+    //       duration: 0.25,
+    //       onComplete: () => {
+    //         cursor.style.transform = initialScale;
+    //         transitioning = false;
+    //       },
+    //     });
+    //   });
+    // }
   });
 </script>
 
