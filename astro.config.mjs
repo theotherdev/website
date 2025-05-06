@@ -11,7 +11,7 @@ import vercel from "@astrojs/vercel";
 export default defineConfig({
   site: "https://www.otherdev.com",
   compressHTML: true,
-  output: 'server',
+  output: 'hybrid',
 
   // Optional redundancy for certain plugins
   url: "https://www.otherdev.com",
