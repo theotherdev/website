@@ -5,6 +5,7 @@ import { useTranslations } from "@/i18n/utils";
 import Carousel from "@/components/Carousel.astro";
 import SEO from "@/components/SEO.astro";
 import Image from "astro/components/Image.astro";
+import Accordion from "@/components/ui/accordian.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -62,22 +63,20 @@ else
         </div>
       </div>
     </div>
-    <div class="relative w-full z-2 lg:mx-auto lg:container px-4 lg:px-0">
+    <!-- <div class="relative w-full z-2 lg:mx-auto lg:container px-4 lg:px-0">
       <div class="w-full h-full bg-black py-4 grid grid-cols-2">
         <img
-        
           src={"/images/kabeer-and-ossaid/ossaid.jpg"}
           alt={"project.coverImageAlt"}
-          class=" object-contain grayscale"
+          class="object-contain grayscale"
         />
         <img
-          
           src={"/images/kabeer-and-ossaid/kabeer.jpg"}
           alt={"project.coverImageAlt"}
           class="object-contain grayscale"
         />
       </div>
-    </div>
+    </div> -->
     <div class="relative overflow-hidden py-[4rem] lg:mx-auto lg:container px-4 lg:px-0">
       <!-- <div class="w-full relative py-4 max-w-5xl">
         <h1 class="mt-auto queens-compressed text-left align-bottom text-5xl lg:text-7xl z-0">
@@ -116,8 +115,15 @@ else
                       {item.title}
                     </h1>
                     <p class="select-none mt-2 max-w-5xl">{item.description}</p>
+
+                    <Accordion
+                    id={item.title}
+                      items={item.processSteps.map((item, index) => ({
+                        ...item,
+                        content: item.description,
+                      }))}
+                    />
                   </td>
-                  <td class="select-none text-right py-10 px-4">{item.year}</td>
                 </tr>
               ))
             }
